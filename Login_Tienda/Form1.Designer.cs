@@ -28,12 +28,201 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button_aseptar = new System.Windows.Forms.Button();
+            this.button_salir = new System.Windows.Forms.Button();
+            this.textBox_usuario = new System.Windows.Forms.TextBox();
+            this.textBox_contraseña = new System.Windows.Forms.TextBox();
+            this.checkBox_mostrar_contraseña = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button_rejistrarse = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(37, 61);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 22);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "USUARIO";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(37, 110);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(148, 22);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "CONTRASEÑA";
+            // 
+            // button_aseptar
+            // 
+            this.button_aseptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button_aseptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_aseptar.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_aseptar.Location = new System.Drawing.Point(103, 141);
+            this.button_aseptar.Name = "button_aseptar";
+            this.button_aseptar.Size = new System.Drawing.Size(89, 32);
+            this.button_aseptar.TabIndex = 2;
+            this.button_aseptar.Text = "Aceptar";
+            this.button_aseptar.UseVisualStyleBackColor = false;
+            this.button_aseptar.Click += new System.EventHandler(this.button_aseptar_Click);
+            // 
+            // button_salir
+            // 
+            this.button_salir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button_salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_salir.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_salir.Location = new System.Drawing.Point(281, 141);
+            this.button_salir.Name = "button_salir";
+            this.button_salir.Size = new System.Drawing.Size(96, 32);
+            this.button_salir.TabIndex = 3;
+            this.button_salir.Text = "Salir";
+            this.button_salir.UseVisualStyleBackColor = false;
+            this.button_salir.Click += new System.EventHandler(this.button_salir_Click);
+            // 
+            // textBox_usuario
+            // 
+            this.textBox_usuario.Location = new System.Drawing.Point(150, 65);
+            this.textBox_usuario.Name = "textBox_usuario";
+            this.textBox_usuario.Size = new System.Drawing.Size(210, 20);
+            this.textBox_usuario.TabIndex = 5;
+            // 
+            // textBox_contraseña
+            // 
+            this.textBox_contraseña.Location = new System.Drawing.Point(191, 110);
+            this.textBox_contraseña.Name = "textBox_contraseña";
+            this.textBox_contraseña.Size = new System.Drawing.Size(169, 20);
+            this.textBox_contraseña.TabIndex = 6;
+            this.textBox_contraseña.UseSystemPasswordChar = true;
+            this.textBox_contraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_contraseña_KeyPress);
+            // 
+            // checkBox_mostrar_contraseña
+            // 
+            this.checkBox_mostrar_contraseña.AutoSize = true;
+            this.checkBox_mostrar_contraseña.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox_mostrar_contraseña.Font = new System.Drawing.Font("Calisto MT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox_mostrar_contraseña.Location = new System.Drawing.Point(380, 114);
+            this.checkBox_mostrar_contraseña.MaximumSize = new System.Drawing.Size(0, 20);
+            this.checkBox_mostrar_contraseña.MinimumSize = new System.Drawing.Size(30, 20);
+            this.checkBox_mostrar_contraseña.Name = "checkBox_mostrar_contraseña";
+            this.checkBox_mostrar_contraseña.Size = new System.Drawing.Size(82, 20);
+            this.checkBox_mostrar_contraseña.TabIndex = 7;
+            this.checkBox_mostrar_contraseña.Text = "Mostrar";
+            this.checkBox_mostrar_contraseña.UseVisualStyleBackColor = false;
+            this.checkBox_mostrar_contraseña.CheckedChanged += new System.EventHandler(this.checkBox_mostrar_contraseña_CheckedChanged);
+            this.checkBox_mostrar_contraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkBox_mostrar_contraseña_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.MinimumSize = new System.Drawing.Size(493, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(493, 30);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Abarrotes El Abra";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button_rejistrarse
+            // 
+            this.button_rejistrarse.BackColor = System.Drawing.Color.Transparent;
+            this.button_rejistrarse.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_rejistrarse.BackgroundImage")));
+            this.button_rejistrarse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_rejistrarse.Location = new System.Drawing.Point(429, 31);
+            this.button_rejistrarse.Name = "button_rejistrarse";
+            this.button_rejistrarse.Size = new System.Drawing.Size(53, 52);
+            this.button_rejistrarse.TabIndex = 4;
+            this.button_rejistrarse.UseVisualStyleBackColor = false;
+            this.button_rejistrarse.Click += new System.EventHandler(this.button_rejistrarse_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.label4.Location = new System.Drawing.Point(1, 30);
+            this.label4.MinimumSize = new System.Drawing.Size(10, 170);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(10, 170);
+            this.label4.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.label5.Location = new System.Drawing.Point(2, 187);
+            this.label5.MinimumSize = new System.Drawing.Size(495, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(495, 13);
+            this.label5.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.label6.Location = new System.Drawing.Point(483, 30);
+            this.label6.MinimumSize = new System.Drawing.Size(10, 160);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(10, 160);
+            this.label6.TabIndex = 11;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(494, 200);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.checkBox_mostrar_contraseña);
+            this.Controls.Add(this.textBox_contraseña);
+            this.Controls.Add(this.textBox_usuario);
+            this.Controls.Add(this.button_rejistrarse);
+            this.Controls.Add(this.button_salir);
+            this.Controls.Add(this.button_aseptar);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button_aseptar;
+        private System.Windows.Forms.Button button_salir;
+        private System.Windows.Forms.Button button_rejistrarse;
+        private System.Windows.Forms.TextBox textBox_usuario;
+        private System.Windows.Forms.TextBox textBox_contraseña;
+        private System.Windows.Forms.CheckBox checkBox_mostrar_contraseña;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
 
