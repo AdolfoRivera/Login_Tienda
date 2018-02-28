@@ -33,7 +33,7 @@ namespace Login_Tienda
             Visible = false;
             //
 
-
+        
         }
 
         private void menu_Load(object sender, EventArgs e)
