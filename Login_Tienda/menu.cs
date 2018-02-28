@@ -46,5 +46,11 @@ namespace Login_Tienda
         {
 
         }
+
+        private void button_ventas_Click(object sender, EventArgs e)
+        {
+            ventas obj = new ventas();
+            obj.ShowDialog();
+        }
     }
 }

@@ -131,6 +131,7 @@
             this.button_ventas.TabIndex = 10;
             this.button_ventas.Text = "Ventas";
             this.button_ventas.UseVisualStyleBackColor = true;
+            this.button_ventas.Click += new System.EventHandler(this.button_ventas_Click);
             // 
             // button_clientes
             // 
