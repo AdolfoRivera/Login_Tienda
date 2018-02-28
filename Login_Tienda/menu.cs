@@ -32,6 +32,7 @@ namespace Login_Tienda
             obj.Visible = true;
             Visible = false;
             //
+
         }
 
         private void menu_Load(object sender, EventArgs e)
