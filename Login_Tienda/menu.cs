@@ -33,6 +33,7 @@ namespace Login_Tienda
             Visible = false;
             //
 
+
        
         }
 
