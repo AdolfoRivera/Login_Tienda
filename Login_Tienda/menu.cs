@@ -32,7 +32,7 @@ namespace Login_Tienda
             obj.Visible = true;
             Visible = false;
             //
-
+            //prueba de cambio
 
 
        
