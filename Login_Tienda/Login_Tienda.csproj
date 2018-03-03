@@ -45,11 +45,65 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abonar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abonar.Designer.cs">
+      <DependentUpon>Abonar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="agregar_cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="agregar_cliente.Designer.cs">
+      <DependentUpon>agregar_cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="buscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="buscar.Designer.cs">
+      <DependentUpon>buscar.cs</DependentUpon>
+    </Compile>
     <Compile Include="clave.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="clave.Designer.cs">
       <DependentUpon>clave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cliente.Designer.cs">
+      <DependentUpon>cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="eliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="eliminar.Designer.cs">
+      <DependentUpon>eliminar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="eliminar_cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="eliminar_cliente.Designer.cs">
+      <DependentUpon>eliminar_cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="enter_cobrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="enter_cobrar.Designer.cs">
+      <DependentUpon>enter_cobrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="entradas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="entradas.Designer.cs">
+      <DependentUpon>entradas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="estado de cuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="estado de cuenta.Designer.cs">
+      <DependentUpon>estado de cuenta.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -57,11 +111,35 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="liquidar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="liquidar.Designer.cs">
+      <DependentUpon>liquidar.cs</DependentUpon>
+    </Compile>
     <Compile Include="menu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="menu.Designer.cs">
       <DependentUpon>menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modificar.Designer.cs">
+      <DependentUpon>modificar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modificar_cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modificar_cliente.Designer.cs">
+      <DependentUpon>modificar_cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="productos.Designer.cs">
+      <DependentUpon>productos.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,20 +149,65 @@
     <Compile Include="Registro.Designer.cs">
       <DependentUpon>Registro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Salidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Salidas.Designer.cs">
+      <DependentUpon>Salidas.cs</DependentUpon>
+    </Compile>
     <Compile Include="ventas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ventas.Designer.cs">
       <DependentUpon>ventas.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Abonar.resx">
+      <DependentUpon>Abonar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="agregar_cliente.resx">
+      <DependentUpon>agregar_cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="buscar.resx">
+      <DependentUpon>buscar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="clave.resx">
       <DependentUpon>clave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cliente.resx">
+      <DependentUpon>cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eliminar.resx">
+      <DependentUpon>eliminar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eliminar_cliente.resx">
+      <DependentUpon>eliminar_cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="enter_cobrar.resx">
+      <DependentUpon>enter_cobrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="entradas.resx">
+      <DependentUpon>entradas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="estado de cuenta.resx">
+      <DependentUpon>estado de cuenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="liquidar.resx">
+      <DependentUpon>liquidar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="menu.resx">
       <DependentUpon>menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modificar.resx">
+      <DependentUpon>modificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modificar_cliente.resx">
+      <DependentUpon>modificar_cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="productos.resx">
+      <DependentUpon>productos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -98,6 +221,9 @@
     </Compile>
     <EmbeddedResource Include="Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Salidas.resx">
+      <DependentUpon>Salidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ventas.resx">
       <DependentUpon>ventas.cs</DependentUpon>
