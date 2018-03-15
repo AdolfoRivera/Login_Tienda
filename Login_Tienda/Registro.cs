@@ -17,6 +17,7 @@ namespace Login_Tienda
         SqlCommand cmd;
         public Registro()
         {
+            cnn = new SqlConnection("Data Source=DARCK;Initial Catalog=Tienda;Integrated Security=True");
             InitializeComponent();
         }
         public void ins_Usuario(String Nombre, String Apellido, int Telefono, String Contraseña)
@@ -81,8 +82,21 @@ namespace Login_Tienda
         {
             try
             {
-                int telefono = Convert.ToInt32(textBox_telefono.Text);
-                ins_Usuario(textBox1_nombre.Text, textBox_apellido.Text, telefono, textBox_contraseña.Text);
+                string cadsql = "select * from Usuarios where Nombre ='" + textBox1_nombre.Text + "'";
+                SqlCommand comando = new SqlCommand(cadsql, cnn);
+                cnn.Open();
+                SqlDataReader leer1 = comando.ExecuteReader();
+
+                if (leer1.Read() == true)
+                {
+                    MessageBox.Show("El Registro ya exciste");
+                }
+                else
+                {
+                    int telefono = Convert.ToInt32(textBox_telefono.Text);
+                    ins_Usuario(textBox1_nombre.Text, textBox_apellido.Text, telefono, textBox_contraseña.Text);
+                }
+                cnn.Close();
             }
             catch (Exception ex)
             {
@@ -150,8 +164,21 @@ namespace Login_Tienda
             {
                 try
                 {
-                    int telefono = Convert.ToInt32(textBox_telefono.Text);
-                    ins_Usuario(textBox1_nombre.Text, textBox_apellido.Text, telefono, textBox_contraseña.Text);
+                    string cadsql = "select * from Usuarios where Nombre ='" + textBox1_nombre.Text + "'";
+                    SqlCommand comando = new SqlCommand(cadsql, cnn);
+                    cnn.Open();
+                    SqlDataReader leer1 = comando.ExecuteReader();
+
+                    if (leer1.Read() == true)
+                    {
+                        MessageBox.Show("El Registro ya exciste");
+                    }
+                    else
+                    {
+                        int telefono = Convert.ToInt32(textBox_telefono.Text);
+                        ins_Usuario(textBox1_nombre.Text, textBox_apellido.Text, telefono, textBox_contraseña.Text);
+                    }
+                    cnn.Close();
                 }
                 catch (Exception ex)
                 {

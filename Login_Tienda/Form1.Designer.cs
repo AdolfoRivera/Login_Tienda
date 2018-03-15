@@ -93,17 +93,21 @@
             // 
             // textBox_usuario
             // 
-            this.textBox_usuario.Location = new System.Drawing.Point(150, 65);
+            this.textBox_usuario.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_usuario.Location = new System.Drawing.Point(161, 60);
             this.textBox_usuario.Name = "textBox_usuario";
-            this.textBox_usuario.Size = new System.Drawing.Size(210, 20);
+            this.textBox_usuario.Size = new System.Drawing.Size(177, 26);
             this.textBox_usuario.TabIndex = 5;
+            this.textBox_usuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_contraseña
             // 
+            this.textBox_contraseña.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_contraseña.Location = new System.Drawing.Point(191, 110);
             this.textBox_contraseña.Name = "textBox_contraseña";
-            this.textBox_contraseña.Size = new System.Drawing.Size(169, 20);
+            this.textBox_contraseña.Size = new System.Drawing.Size(169, 23);
             this.textBox_contraseña.TabIndex = 6;
+            this.textBox_contraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_contraseña.UseSystemPasswordChar = true;
             this.textBox_contraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_contraseña_KeyPress);
             // 

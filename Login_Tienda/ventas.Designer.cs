@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,18 +39,18 @@
             this.button_salidas = new System.Windows.Forms.Button();
             this.button5_borrar = new System.Windows.Forms.Button();
             this.listView_venta = new System.Windows.Forms.ListView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button_hacer_venta = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label_TOTAL = new System.Windows.Forms.Label();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button_hacer_venta = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label_TOTAL = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -116,6 +117,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "ENTER- Agregar producto";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button_buscar
             // 
@@ -171,12 +173,49 @@
             this.columnHeader5,
             this.columnHeader6});
             this.listView_venta.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView_venta.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem2});
             this.listView_venta.Location = new System.Drawing.Point(2, 126);
             this.listView_venta.Name = "listView_venta";
             this.listView_venta.Size = new System.Drawing.Size(1357, 328);
             this.listView_venta.TabIndex = 9;
             this.listView_venta.UseCompatibleStateImageBehavior = false;
             this.listView_venta.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Codigo_de_barras";
+            this.columnHeader1.Width = 171;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Descripcion_del_producto";
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader2.Width = 363;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Precio_venta";
+            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader3.Width = 117;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Cantidad";
+            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader4.Width = 122;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Importe";
+            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader5.Width = 113;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Excistencia";
+            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader6.Width = 133;
             // 
             // label4
             // 
@@ -243,41 +282,7 @@
             this.label_TOTAL.Size = new System.Drawing.Size(133, 55);
             this.label_TOTAL.TabIndex = 15;
             this.label_TOTAL.Text = "00.00";
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Codigo_de_barras";
-            this.columnHeader1.Width = 171;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Descripcion_del_producto";
-            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader2.Width = 363;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Precio_venta";
-            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader3.Width = 117;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Cantidad";
-            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader4.Width = 122;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Importe";
-            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader5.Width = 113;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Excistencia";
-            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader6.Width = 133;
+            this.label_TOTAL.Click += new System.EventHandler(this.label_TOTAL_Click);
             // 
             // label8
             // 

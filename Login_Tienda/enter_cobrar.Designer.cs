@@ -172,6 +172,7 @@
             this.button_cobrar.TabIndex = 12;
             this.button_cobrar.Text = "Cobrar";
             this.button_cobrar.UseVisualStyleBackColor = true;
+            this.button_cobrar.Click += new System.EventHandler(this.button_cobrar_Click);
             // 
             // button_cobrar_e_imprimir_ticket
             // 

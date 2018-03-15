@@ -91,34 +91,38 @@
             // 
             // textBox1_nombre
             // 
+            this.textBox1_nombre.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1_nombre.Location = new System.Drawing.Point(123, 35);
             this.textBox1_nombre.Name = "textBox1_nombre";
-            this.textBox1_nombre.Size = new System.Drawing.Size(168, 20);
+            this.textBox1_nombre.Size = new System.Drawing.Size(168, 26);
             this.textBox1_nombre.TabIndex = 4;
             this.textBox1_nombre.TextChanged += new System.EventHandler(this.textBox1_nombre_TextChanged);
             this.textBox1_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_nombre_KeyPress);
             // 
             // textBox_apellido
             // 
+            this.textBox_apellido.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_apellido.Location = new System.Drawing.Point(435, 35);
             this.textBox_apellido.Name = "textBox_apellido";
-            this.textBox_apellido.Size = new System.Drawing.Size(171, 20);
+            this.textBox_apellido.Size = new System.Drawing.Size(171, 26);
             this.textBox_apellido.TabIndex = 5;
             this.textBox_apellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_apellido_KeyPress);
             // 
             // textBox_telefono
             // 
+            this.textBox_telefono.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_telefono.Location = new System.Drawing.Point(134, 86);
             this.textBox_telefono.Name = "textBox_telefono";
-            this.textBox_telefono.Size = new System.Drawing.Size(157, 20);
+            this.textBox_telefono.Size = new System.Drawing.Size(157, 26);
             this.textBox_telefono.TabIndex = 6;
             this.textBox_telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_telefono_KeyPress);
             // 
             // textBox_contraseña
             // 
+            this.textBox_contraseña.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_contraseña.Location = new System.Drawing.Point(435, 86);
             this.textBox_contraseña.Name = "textBox_contraseña";
-            this.textBox_contraseña.Size = new System.Drawing.Size(171, 20);
+            this.textBox_contraseña.Size = new System.Drawing.Size(171, 26);
             this.textBox_contraseña.TabIndex = 7;
             this.textBox_contraseña.UseSystemPasswordChar = true;
             this.textBox_contraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_contraseña_KeyPress);

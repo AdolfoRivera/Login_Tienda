@@ -177,6 +177,9 @@
             // 
             // panel_contenedor
             // 
+            this.panel_contenedor.BackColor = System.Drawing.Color.White;
+            this.panel_contenedor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel_contenedor.BackgroundImage")));
+            this.panel_contenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel_contenedor.Location = new System.Drawing.Point(-2, 118);
             this.panel_contenedor.Name = "panel_contenedor";
             this.panel_contenedor.Size = new System.Drawing.Size(1362, 596);
@@ -235,7 +238,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1364, 43);
             this.Name = "menu";

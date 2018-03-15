@@ -16,5 +16,10 @@ namespace Login_Tienda
         {
             InitializeComponent();
         }
+
+        private void button_cobrar_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

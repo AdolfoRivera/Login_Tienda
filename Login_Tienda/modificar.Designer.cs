@@ -50,6 +50,7 @@
             this.textBox_codigo_de_barras_modificar.Name = "textBox_codigo_de_barras_modificar";
             this.textBox_codigo_de_barras_modificar.Size = new System.Drawing.Size(256, 20);
             this.textBox_codigo_de_barras_modificar.TabIndex = 1;
+            this.textBox_codigo_de_barras_modificar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox_codigo_de_barras_modificar_KeyUp);
             // 
             // button_aceptar_modificacion
             // 
@@ -60,6 +61,7 @@
             this.button_aceptar_modificacion.TabIndex = 2;
             this.button_aceptar_modificacion.Text = "Aceptar";
             this.button_aceptar_modificacion.UseVisualStyleBackColor = true;
+            this.button_aceptar_modificacion.Click += new System.EventHandler(this.button_aceptar_modificacion_Click);
             // 
             // button_cancelar_modificacion
             // 
@@ -90,8 +92,8 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox_codigo_de_barras_modificar;
         private System.Windows.Forms.Button button_aceptar_modificacion;
         private System.Windows.Forms.Button button_cancelar_modificacion;
+        public System.Windows.Forms.TextBox textBox_codigo_de_barras_modificar;
     }
 }
