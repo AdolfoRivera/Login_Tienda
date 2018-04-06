@@ -124,5 +124,64 @@ namespace Login_Tienda
         {
             agregar_clientes(new cliente());
         }
+
+        private void venta2_Click(object sender, EventArgs e)
+        {
+            prueba_de_venta obj = new prueba_de_venta();
+            obj.ShowDialog();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void button_minimizar_Click(object sender, EventArgs e)
+        {   //Minimizar
+              this.WindowState = FormWindowState.Minimized;
+
+                /*    //Maximizar
+                    this.WindowState = FormWindowState.Maximized;
+                    //Restaurar
+                    this.WindowState = FormWindowState.Normal;
+                    //Cerrar formulario activo
+                    this.Close();
+                    //Salir completamente de la aplicación
+                    Application.Exit();  */
+
+            }
+
+            private void menu_Resize(object sender, EventArgs e)
+        {
+            //Si el estado actual de la ventana es "minimizado"...
+         /*   if (this.WindowState == FormWindowState.Minimized)
+            {
+                //Ocultamos el formulario
+                this.Visible = false;
+                //Hacemos visible el icono de la bandeja del sistema
+                notifyIcon1.Visible = true;
+            }*/
+            if (WindowState == FormWindowState.Minimized)
+            {
+                this.Hide();
+               
+                notifyIcon1.Visible = true;
+                notifyIcon1.BalloonTipText = "Minimizado al area de notificaciones";//BalloonTiptext = "Minimizando a area de notificaciones";
+                notifyIcon1.BalloonTipTitle = "Minimizado";
+                notifyIcon1.BalloonTipIcon = ToolTipIcon.Info;
+                notifyIcon1.ShowBalloonTip(5000);
+                
+            }
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            //Hacemos visible el formulario
+            this.Show();
+            this.WindowState = FormWindowState.Maximized;
+            //Ocultamos el icono de la bandeja de sistema
+            notifyIcon1.Visible = false;
+        }
+
     }
 }

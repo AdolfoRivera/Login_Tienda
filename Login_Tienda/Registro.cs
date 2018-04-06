@@ -13,28 +13,30 @@ namespace Login_Tienda
 
     public partial class Registro : Form
     {
+
         SqlConnection cnn;
         SqlCommand cmd;
         public Registro()
         {
             cnn = new SqlConnection("Data Source=DARCK;Initial Catalog=Tienda;Integrated Security=True");
             InitializeComponent();
+            
         }
         public void ins_Usuario(String Nombre, String Apellido, int Telefono, String Contraseña)
         {
-            if (textBox1_nombre.Text.Equals("") == true)
+            if (textBox1_nombre.Text.Equals(" ") == true)
             {
                 MessageBox.Show("Campos Bacios");
             }
-            else if (textBox_apellido.Text.Equals("") == true)
+            else if (textBox_apellido.Text.Equals(" ") == true)
             {
                 MessageBox.Show("Campos Bacios");
             }
-            else if (textBox_telefono.Text.Equals("") == true)
+            else if (textBox_telefono.Text.Equals(" ") == true)
             {
                 MessageBox.Show("Campos Bacios");
             }
-            else if (textBox_contraseña.Text.Equals("") == true)
+            else if (textBox_contraseña.Text.Equals(" ") == true)
             {
                 MessageBox.Show("Campos Bacios");
             }
@@ -61,7 +63,7 @@ namespace Login_Tienda
                     cnn.Open();
                     cmd.ExecuteNonQuery();
                     cnn.Close();
-                    MessageBox.Show("Usuario Agregado Correctamente");
+                    MessageBox.Show("Usuario Agregado Correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
                 catch (Exception er)
@@ -89,9 +91,14 @@ namespace Login_Tienda
 
                 if (leer1.Read() == true)
                 {
-                    MessageBox.Show("El Registro ya exciste");
+                    MessageBox.Show("El Registro ya exciste", "Duplicado", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 }
-                else
+                //else if (textBox1_nombre.Text != " "||textBox_apellido.Text!=" "||textBox_telefono.Text!=" "||textBox_contraseña.Text!=" ")
+                else if (textBox1_nombre.Text.Trim() == "" || textBox_apellido.Text.Trim() == "" || textBox_telefono.Text.Trim() == "" || textBox_contraseña.Text.Trim() == "")
+
+                {
+                    MessageBox.Show("No Se Permiten Usuarios En Blanco", "Llenar Registro", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                }else
                 {
                     int telefono = Convert.ToInt32(textBox_telefono.Text);
                     ins_Usuario(textBox1_nombre.Text, textBox_apellido.Text, telefono, textBox_contraseña.Text);
@@ -106,6 +113,7 @@ namespace Login_Tienda
         }
         public static void sololNumeros(KeyPressEventArgs pe)
         {
+           
             if (char.IsDigit(pe.KeyChar))
             {
                 pe.Handled = false;
@@ -142,10 +150,15 @@ namespace Login_Tienda
         {
 
         }
-
-        private void textBox1_nombre_KeyPress(object sender, KeyPressEventArgs e)
+     
+    private void textBox1_nombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             sololLetras(e);
+         
+           /* if (e.KeyChar == Convert.ToChar(Keys.Space))
+            {
+                MessageBox.Show("No se permiten espacios");
+            }*/
         }
 
         private void textBox_apellido_KeyPress(object sender, KeyPressEventArgs e)
@@ -158,12 +171,15 @@ namespace Login_Tienda
             sololNumeros(e);
         }
         //Ejecutar Con EL Boton Enter
+        
         private void textBox_contraseña_KeyPress(object sender, KeyPressEventArgs e)
         {
+            
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
                 try
                 {
+
                     string cadsql = "select * from Usuarios where Nombre ='" + textBox1_nombre.Text + "'";
                     SqlCommand comando = new SqlCommand(cadsql, cnn);
                     cnn.Open();
@@ -171,9 +187,15 @@ namespace Login_Tienda
 
                     if (leer1.Read() == true)
                     {
-                        MessageBox.Show("El Registro ya exciste");
+                        MessageBox.Show("El Registro ya exciste", "Duplicado", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                      
                     }
-                    else
+                    // else if (textBox1_nombre.Text != " " || textBox_apellido.Text != " " || textBox_telefono.Text != " " || textBox_contraseña.Text != " ")
+                    else if (textBox1_nombre.Text.Trim()=="" || textBox_apellido.Text.Trim()=="" || textBox_telefono.Text.Trim()=="" || textBox_contraseña.Text.Trim()=="")
+                    {
+                         
+                        MessageBox.Show("No Se Permiten Usuarios En Blanco", "LLenar Registro", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                    }else
                     {
                         int telefono = Convert.ToInt32(textBox_telefono.Text);
                         ins_Usuario(textBox1_nombre.Text, textBox_apellido.Text, telefono, textBox_contraseña.Text);
@@ -193,6 +215,35 @@ namespace Login_Tienda
             Form1 obj = new Form1();
             obj.Visible = true;
             Visible = false;
+        }
+        //Codigo Para Mover Ventana
+        Point DragCursor;
+        Point DragForm;
+        bool Dragging;
+        private void Registro_MouseUp(object sender, MouseEventArgs e)
+        {
+            Dragging = false;
+        }
+
+        private void Registro_MouseDown(object sender, MouseEventArgs e)
+        {
+            Dragging = true;
+            DragCursor = Cursor.Position;
+            DragForm = this.Location;
+        }
+
+        private void Registro_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (Dragging == true)
+            {
+                Point dif = Point.Subtract(Cursor.Position, new Size(DragCursor));
+                this.Location = Point.Add(DragForm, new Size(dif));
+            }
+        }
+
+        private void textBox1_nombre_Validating(object sender, CancelEventArgs e)
+        {
+            
         }
     }
 }

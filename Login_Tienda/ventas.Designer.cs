@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,15 +39,15 @@
             this.button_salidas = new System.Windows.Forms.Button();
             this.button5_borrar = new System.Windows.Forms.Button();
             this.listView_venta = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader_precio = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader_codigo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader_descripcion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader_presentacion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader_importe = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader_existencia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label_num_prod_en_venta = new System.Windows.Forms.Label();
             this.button_hacer_venta = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label_TOTAL = new System.Windows.Forms.Label();
@@ -58,10 +58,21 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.label_total_abajo = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.button_ventas_y_devoluciones = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label_subtotal = new System.Windows.Forms.Label();
+            this.label_iva = new System.Windows.Forms.Label();
+            this.label_total2 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.button_borrar_seleccionado = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -102,16 +113,22 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_codigo_de_varrras.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_codigo_de_varrras.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.textBox_codigo_de_varrras.Location = new System.Drawing.Point(158, 30);
-            this.textBox_codigo_de_varrras.Multiline = true;
             this.textBox_codigo_de_varrras.Name = "textBox_codigo_de_varrras";
-            this.textBox_codigo_de_varrras.Size = new System.Drawing.Size(238, 23);
+            this.textBox_codigo_de_varrras.Size = new System.Drawing.Size(297, 23);
             this.textBox_codigo_de_varrras.TabIndex = 3;
+            this.textBox_codigo_de_varrras.Text = "Codigo de barras";
+            this.textBox_codigo_de_varrras.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_codigo_de_varrras.Enter += new System.EventHandler(this.textBox_codigo_de_varrras_Enter);
+            this.textBox_codigo_de_varrras.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_codigo_de_varrras_KeyPress);
+            this.textBox_codigo_de_varrras.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox_codigo_de_varrras_KeyUp);
+            this.textBox_codigo_de_varrras.Leave += new System.EventHandler(this.textBox_codigo_de_varrras_Leave);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(402, 25);
+            this.button1.Location = new System.Drawing.Point(461, 25);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(262, 32);
             this.button1.TabIndex = 4;
@@ -155,67 +172,70 @@
             // button5_borrar
             // 
             this.button5_borrar.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5_borrar.Location = new System.Drawing.Point(288, 87);
+            this.button5_borrar.Location = new System.Drawing.Point(448, 87);
             this.button5_borrar.Name = "button5_borrar";
-            this.button5_borrar.Size = new System.Drawing.Size(89, 33);
+            this.button5_borrar.Size = new System.Drawing.Size(119, 33);
             this.button5_borrar.TabIndex = 8;
-            this.button5_borrar.Text = "Borrar";
+            this.button5_borrar.Text = "Borrar Todo";
             this.button5_borrar.UseVisualStyleBackColor = true;
+            this.button5_borrar.Click += new System.EventHandler(this.button5_borrar_Click);
             // 
             // listView_venta
             // 
             this.listView_venta.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listView_venta.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6});
+            this.columnHeader_precio,
+            this.columnHeader_codigo,
+            this.columnHeader_descripcion,
+            this.columnHeader_presentacion,
+            this.columnHeader_importe,
+            this.columnHeader_existencia});
             this.listView_venta.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView_venta.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
+            listViewItem1});
             this.listView_venta.Location = new System.Drawing.Point(2, 126);
             this.listView_venta.Name = "listView_venta";
-            this.listView_venta.Size = new System.Drawing.Size(1357, 328);
+            this.listView_venta.Size = new System.Drawing.Size(1019, 328);
             this.listView_venta.TabIndex = 9;
             this.listView_venta.UseCompatibleStateImageBehavior = false;
             this.listView_venta.View = System.Windows.Forms.View.Details;
+            this.listView_venta.SelectedIndexChanged += new System.EventHandler(this.listView_venta_SelectedIndexChanged_1);
+            this.listView_venta.KeyUp += new System.Windows.Forms.KeyEventHandler(this.listView_venta_KeyUp);
             // 
-            // columnHeader1
+            // columnHeader_precio
             // 
-            this.columnHeader1.Text = "Codigo_de_barras";
-            this.columnHeader1.Width = 171;
+            this.columnHeader_precio.Text = "Precio";
+            this.columnHeader_precio.Width = 150;
             // 
-            // columnHeader2
+            // columnHeader_codigo
             // 
-            this.columnHeader2.Text = "Descripcion_del_producto";
-            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader2.Width = 363;
+            this.columnHeader_codigo.Text = "Codigo";
+            this.columnHeader_codigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader_codigo.Width = 297;
             // 
-            // columnHeader3
+            // columnHeader_descripcion
             // 
-            this.columnHeader3.Text = "Precio_venta";
-            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader3.Width = 117;
+            this.columnHeader_descripcion.Text = "Descripcion";
+            this.columnHeader_descripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader_descripcion.Width = 117;
             // 
-            // columnHeader4
+            // columnHeader_presentacion
             // 
-            this.columnHeader4.Text = "Cantidad";
-            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader4.Width = 122;
+            this.columnHeader_presentacion.Text = "Presentacon";
+            this.columnHeader_presentacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader_presentacion.Width = 122;
             // 
-            // columnHeader5
+            // columnHeader_importe
             // 
-            this.columnHeader5.Text = "Importe";
-            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader5.Width = 113;
+            this.columnHeader_importe.Text = "Importe";
+            this.columnHeader_importe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader_importe.Width = 111;
             // 
-            // columnHeader6
+            // columnHeader_existencia
             // 
-            this.columnHeader6.Text = "Excistencia";
-            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader6.Width = 133;
+            this.columnHeader_existencia.Text = "Excistencia";
+            this.columnHeader_existencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader_existencia.Width = 223;
             // 
             // label4
             // 
@@ -239,16 +259,16 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Productos en venta actual";
             // 
-            // label6
+            // label_num_prod_en_venta
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label6.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 465);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(18, 22);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "?";
+            this.label_num_prod_en_venta.AutoSize = true;
+            this.label_num_prod_en_venta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label_num_prod_en_venta.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_num_prod_en_venta.Location = new System.Drawing.Point(12, 465);
+            this.label_num_prod_en_venta.Name = "label_num_prod_en_venta";
+            this.label_num_prod_en_venta.Size = new System.Drawing.Size(20, 22);
+            this.label_num_prod_en_venta.TabIndex = 12;
+            this.label_num_prod_en_venta.Text = "0";
             // 
             // button_hacer_venta
             // 
@@ -360,16 +380,16 @@
             this.label14.TabIndex = 22;
             this.label14.Text = "$";
             // 
-            // label15
+            // label_total_abajo
             // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label15.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(24, 552);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(46, 22);
-            this.label15.TabIndex = 23;
-            this.label15.Text = "0.00";
+            this.label_total_abajo.AutoSize = true;
+            this.label_total_abajo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.label_total_abajo.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_total_abajo.Location = new System.Drawing.Point(24, 552);
+            this.label_total_abajo.Name = "label_total_abajo";
+            this.label_total_abajo.Size = new System.Drawing.Size(46, 22);
+            this.label_total_abajo.TabIndex = 23;
+            this.label_total_abajo.Text = "0.00";
             // 
             // label16
             // 
@@ -403,16 +423,150 @@
             this.button_ventas_y_devoluciones.Text = "Ventas del dia y devoluciones";
             this.button_ventas_y_devoluciones.UseVisualStyleBackColor = true;
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label18.Font = new System.Drawing.Font("Calisto MT", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(1027, 87);
+            this.label18.MinimumSize = new System.Drawing.Size(330, 355);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(330, 355);
+            this.label18.TabIndex = 27;
+            this.label18.Text = "Venta";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label19.Font = new System.Drawing.Font("Calisto MT", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(1040, 161);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(131, 37);
+            this.label19.TabIndex = 28;
+            this.label19.Text = "Subtotal";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label20.Font = new System.Drawing.Font("Calisto MT", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(1040, 251);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(61, 37);
+            this.label20.TabIndex = 29;
+            this.label20.Text = "Iva";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label21.Font = new System.Drawing.Font("Calisto MT", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(1040, 336);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(90, 37);
+            this.label21.TabIndex = 30;
+            this.label21.Text = "Total";
+            // 
+            // label_subtotal
+            // 
+            this.label_subtotal.AutoSize = true;
+            this.label_subtotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label_subtotal.Font = new System.Drawing.Font("Calisto MT", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_subtotal.Location = new System.Drawing.Point(1232, 161);
+            this.label_subtotal.Name = "label_subtotal";
+            this.label_subtotal.Size = new System.Drawing.Size(74, 37);
+            this.label_subtotal.TabIndex = 31;
+            this.label_subtotal.Text = "0.00";
+            // 
+            // label_iva
+            // 
+            this.label_iva.AutoSize = true;
+            this.label_iva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label_iva.Font = new System.Drawing.Font("Calisto MT", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_iva.Location = new System.Drawing.Point(1232, 251);
+            this.label_iva.Name = "label_iva";
+            this.label_iva.Size = new System.Drawing.Size(74, 37);
+            this.label_iva.TabIndex = 32;
+            this.label_iva.Text = "0.00";
+            // 
+            // label_total2
+            // 
+            this.label_total2.AutoSize = true;
+            this.label_total2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label_total2.Font = new System.Drawing.Font("Calisto MT", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_total2.Location = new System.Drawing.Point(1232, 336);
+            this.label_total2.Name = "label_total2";
+            this.label_total2.Size = new System.Drawing.Size(74, 37);
+            this.label_total2.TabIndex = 33;
+            this.label_total2.Text = "0.00";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label6.Font = new System.Drawing.Font("Calisto MT", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(1194, 161);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(32, 37);
+            this.label6.TabIndex = 34;
+            this.label6.Text = "$";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label22.Font = new System.Drawing.Font("Calisto MT", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(1194, 251);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(32, 37);
+            this.label22.TabIndex = 35;
+            this.label22.Text = "$";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label23.Font = new System.Drawing.Font("Calisto MT", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(1194, 336);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(32, 37);
+            this.label23.TabIndex = 36;
+            this.label23.Text = "$";
+            // 
+            // button_borrar_seleccionado
+            // 
+            this.button_borrar_seleccionado.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_borrar_seleccionado.Location = new System.Drawing.Point(288, 87);
+            this.button_borrar_seleccionado.Name = "button_borrar_seleccionado";
+            this.button_borrar_seleccionado.Size = new System.Drawing.Size(154, 33);
+            this.button_borrar_seleccionado.TabIndex = 37;
+            this.button_borrar_seleccionado.Text = "Borrar Seleccionado";
+            this.button_borrar_seleccionado.UseVisualStyleBackColor = true;
+            this.button_borrar_seleccionado.Click += new System.EventHandler(this.button_borrar_seleccionado_Click);
+            // 
             // ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1362, 596);
+            this.Controls.Add(this.button_borrar_seleccionado);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label_total2);
+            this.Controls.Add(this.label_iva);
+            this.Controls.Add(this.label_subtotal);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.label18);
             this.Controls.Add(this.button_ventas_y_devoluciones);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label_total_abajo);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
@@ -423,7 +577,7 @@
             this.Controls.Add(this.label_TOTAL);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button_hacer_venta);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label_num_prod_en_venta);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.listView_venta);
@@ -449,25 +603,21 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox_codigo_de_varrras;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button_buscar;
         private System.Windows.Forms.Button button_entradas;
         private System.Windows.Forms.Button button_salidas;
         private System.Windows.Forms.Button button5_borrar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label_num_prod_en_venta;
         private System.Windows.Forms.Button button_hacer_venta;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label_TOTAL;
-        private System.Windows.Forms.ListView listView_venta;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader_precio;
+        private System.Windows.Forms.ColumnHeader columnHeader_codigo;
+        private System.Windows.Forms.ColumnHeader columnHeader_descripcion;
+        private System.Windows.Forms.ColumnHeader columnHeader_presentacion;
+        private System.Windows.Forms.ColumnHeader columnHeader_importe;
+        private System.Windows.Forms.ColumnHeader columnHeader_existencia;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
@@ -475,9 +625,24 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button button_ventas_y_devoluciones;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        public System.Windows.Forms.Label label_TOTAL;
+        private System.Windows.Forms.Button button_borrar_seleccionado;
+        public System.Windows.Forms.TextBox textBox_codigo_de_varrras;
+        public System.Windows.Forms.Button button_buscar;
+        public System.Windows.Forms.Label label_total_abajo;
+        public System.Windows.Forms.Label label_subtotal;
+        public System.Windows.Forms.Label label_iva;
+        public System.Windows.Forms.Label label_total2;
+        public System.Windows.Forms.ListView listView_venta;
     }
 }

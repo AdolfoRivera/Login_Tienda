@@ -263,6 +263,7 @@ namespace Login_Tienda
                 ins_Abarrotes(textBox_codigo_de_barras.Text, textBox_descrpcion.Text, textBox_presentacion.Text, costo, venta, textBox_cantidad.Text, dateTimePicker_fecha.Text, textBox_en_excistencia.Text);
             }*/
         }
+        
         private void textBox_codigo_de_barras_KeyUp(object sender, KeyEventArgs e)
         {
             try
@@ -273,7 +274,7 @@ namespace Login_Tienda
                 SqlDataReader leer = comando.ExecuteReader();
                 if (leer.Read() == true)
                 {
-                    
+                    comboBox_categorias.Text = leer["Categoria"].ToString();
                     textBox_codigo_de_barras.Text = leer["Codigo"].ToString();
                     textBox_descrpcion.Text = leer["Descripcion"].ToString();
                     textBox_costo.Text = leer["costo"].ToString();
@@ -287,6 +288,7 @@ namespace Login_Tienda
                 {
                     //-->Es lo mismo que 
                     //-->textBox_codigo_de_barras.clear();
+                    comboBox_categorias.Text = "";
                     textBox_codigo_de_barras.Text = "";
                     textBox_descrpcion.Text = "";
                     textBox_costo.Text = "";

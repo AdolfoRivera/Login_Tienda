@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_buscar = new System.Windows.Forms.TextBox();
             this.button_aceptar = new System.Windows.Forms.Button();
             this.button_cancelar = new System.Windows.Forms.Button();
             this.datos = new System.Windows.Forms.DataGridView();
@@ -61,17 +61,17 @@
             this.label2.Size = new System.Drawing.Size(610, 20);
             this.label2.TabIndex = 1;
             // 
-            // textBox1
+            // textBox_buscar
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBox_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(42, 61);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(524, 28);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
+            this.textBox_buscar.Location = new System.Drawing.Point(42, 61);
+            this.textBox_buscar.Name = "textBox_buscar";
+            this.textBox_buscar.Size = new System.Drawing.Size(524, 20);
+            this.textBox_buscar.TabIndex = 2;
+            this.textBox_buscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_buscar.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox_buscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
             // 
             // button_aceptar
             // 
@@ -83,6 +83,7 @@
             this.button_aceptar.TabIndex = 4;
             this.button_aceptar.Text = "Aceptar";
             this.button_aceptar.UseVisualStyleBackColor = true;
+            this.button_aceptar.Click += new System.EventHandler(this.button_aceptar_Click);
             // 
             // button_cancelar
             // 
@@ -116,7 +117,7 @@
             this.Controls.Add(this.datos);
             this.Controls.Add(this.button_cancelar);
             this.Controls.Add(this.button_aceptar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox_buscar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "buscar";
@@ -131,9 +132,9 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button_aceptar;
         private System.Windows.Forms.Button button_cancelar;
-        private System.Windows.Forms.DataGridView datos;
+        public System.Windows.Forms.TextBox textBox_buscar;
+        public System.Windows.Forms.Button button_aceptar;
+        public System.Windows.Forms.DataGridView datos;
     }
 }

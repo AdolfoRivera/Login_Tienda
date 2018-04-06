@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(menu));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label_usuario = new System.Windows.Forms.Label();
             this.button_ventas = new System.Windows.Forms.Button();
             this.button_clientes = new System.Windows.Forms.Button();
             this.button_productos = new System.Windows.Forms.Button();
@@ -45,6 +46,9 @@
             this.button_salir = new System.Windows.Forms.Button();
             this.button_regersar_2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.venta2 = new System.Windows.Forms.Button();
+            this.button_minimizar = new System.Windows.Forms.Button();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,16 +95,17 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Le atiende:";
             // 
-            // label5
+            // label_usuario
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.AliceBlue;
-            this.label5.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(1158, 13);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 20);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "?????";
+            this.label_usuario.AutoSize = true;
+            this.label_usuario.BackColor = System.Drawing.Color.AliceBlue;
+            this.label_usuario.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_usuario.Location = new System.Drawing.Point(1158, 13);
+            this.label_usuario.Name = "label_usuario";
+            this.label_usuario.Size = new System.Drawing.Size(44, 20);
+            this.label_usuario.TabIndex = 9;
+            this.label_usuario.Text = "?????";
+            this.label_usuario.Click += new System.EventHandler(this.label5_Click);
             // 
             // button_ventas
             // 
@@ -216,12 +221,41 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
+            // venta2
+            // 
+            this.venta2.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.venta2.Location = new System.Drawing.Point(629, 77);
+            this.venta2.Name = "venta2";
+            this.venta2.Size = new System.Drawing.Size(97, 35);
+            this.venta2.TabIndex = 40;
+            this.venta2.Text = "Ventas 2";
+            this.venta2.UseVisualStyleBackColor = true;
+            this.venta2.Click += new System.EventHandler(this.venta2_Click);
+            // 
+            // button_minimizar
+            // 
+            this.button_minimizar.Location = new System.Drawing.Point(1221, 78);
+            this.button_minimizar.Name = "button_minimizar";
+            this.button_minimizar.Size = new System.Drawing.Size(75, 23);
+            this.button_minimizar.TabIndex = 41;
+            this.button_minimizar.Text = "Minimizar";
+            this.button_minimizar.UseVisualStyleBackColor = true;
+            this.button_minimizar.Click += new System.EventHandler(this.button_minimizar_Click);
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "Abarrotes El Abra";
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            // 
             // menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1357, 711);
+            this.ClientSize = new System.Drawing.Size(1364, 711);
+            this.Controls.Add(this.button_minimizar);
+            this.Controls.Add(this.venta2);
             this.Controls.Add(this.panel_contenedor);
             this.Controls.Add(this.button_administrador);
             this.Controls.Add(this.button_salir);
@@ -231,7 +265,7 @@
             this.Controls.Add(this.button_productos);
             this.Controls.Add(this.button_clientes);
             this.Controls.Add(this.button_ventas);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label_usuario);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button_regersar_2);
             this.Controls.Add(this.label3);
@@ -245,6 +279,7 @@
             this.TransparencyKey = System.Drawing.Color.DarkGray;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.menu_Load);
+            this.Resize += new System.EventHandler(this.menu_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -258,7 +293,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button_regersar_2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button_ventas;
         private System.Windows.Forms.Button button_clientes;
         private System.Windows.Forms.Button button_productos;
@@ -268,5 +302,9 @@
         private System.Windows.Forms.Button button_salir;
         private System.Windows.Forms.Button button_administrador;
         private System.Windows.Forms.Panel panel_contenedor;
+        private System.Windows.Forms.Button venta2;
+        public System.Windows.Forms.Label label_usuario;
+        private System.Windows.Forms.Button button_minimizar;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }

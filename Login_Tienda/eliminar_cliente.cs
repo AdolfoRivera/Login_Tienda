@@ -16,5 +16,10 @@ namespace Login_Tienda
         {
             InitializeComponent();
         }
+
+        private void BTN_AGREGAR_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

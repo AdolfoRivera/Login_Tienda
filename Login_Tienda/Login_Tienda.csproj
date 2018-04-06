@@ -155,6 +155,16 @@
     <Compile Include="Salidas.Designer.cs">
       <DependentUpon>Salidas.cs</DependentUpon>
     </Compile>
+    <Compile Include="TiendaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TiendaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TiendaDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TiendaDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ventas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +247,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="TiendaDataSet.xsc">
+      <DependentUpon>TiendaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TiendaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TiendaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TiendaDataSet.xss">
+      <DependentUpon>TiendaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TiendaDataSet1.xsc">
+      <DependentUpon>TiendaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TiendaDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TiendaDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TiendaDataSet1.xss">
+      <DependentUpon>TiendaDataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

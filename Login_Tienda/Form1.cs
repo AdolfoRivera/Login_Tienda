@@ -20,7 +20,7 @@ namespace Login_Tienda
         {
             InitializeComponent();             //=./ vorrar DARCK
              cnn = new SqlConnection("Data Source=DARCK;Initial Catalog=Tienda;Integrated Security=True");
-
+            
         }
 
         private void button_rejistrarse_Click(object sender, EventArgs e)
@@ -52,6 +52,8 @@ namespace Login_Tienda
         private void button_aseptar_Click(object sender, EventArgs e)
         {
             Validacion();
+            
+            
         }
 
         private void textBox_contraseña_KeyPress(object sender, KeyPressEventArgs e)
@@ -87,20 +89,25 @@ namespace Login_Tienda
             SqlCommand cmd = cnn.CreateCommand();
             cmd.CommandText = "select Nombre,Contraseña from Usuarios where Nombre ='" + textBox_usuario.Text + "'and Contraseña ='" + textBox_contraseña.Text + "' ";
             cmd.Connection = cnn;
-            cnn.Open();
+            cnn.Open(); 
 
             dr = cmd.ExecuteReader();
             if (dr.Read())
             {
-                MessageBox.Show("Bienvenido: " + textBox_usuario.Text);//,"contraseña",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Bienvenido: " + textBox_usuario.Text,"Correcto",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 menu obj = new menu();
-
+                //Mostrar Usuario Rejistrado-----
+                obj.label_usuario.Text = textBox_usuario.Text;
+                //-----
                 obj.Visible = true;
                 Visible = false;
+               
             }
             else
             {
-                MessageBox.Show("Datos Incorrectos");
+               // MessageBox.Show("Datos Incorrectos");
+                MessageBox.Show("Datos Incorrectos", "Error",
+                  MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
             dr.Close();
             cnn.Close();
@@ -138,9 +145,27 @@ namespace Login_Tienda
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-                Validacion();
+                Validacion(); 
             }
 
+        }
+        //Evento para poner marca de agua a USUARIO
+        private void textBox_usuario_Enter(object sender, EventArgs e)
+        {
+            if (textBox_usuario.Text=="Nombre")
+            {
+                textBox_usuario.Text = "";
+                textBox_usuario.ForeColor = Color.Black;
+            }
+        }
+        //Evento para poner marca de agua a USUARIO
+        private void textBox_usuario_Leave(object sender, EventArgs e)
+        {
+            if (textBox_usuario.Text == "")
+            {
+                textBox_usuario.Text = "Nombre";
+                textBox_usuario.ForeColor = Color.Silver;
+            }
         }
     }
 }
