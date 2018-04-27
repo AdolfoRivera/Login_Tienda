@@ -20,7 +20,7 @@ namespace Login_Tienda
         SqlConnection cnn;
         SqlCommand cmd = new SqlCommand();
         SqlDataReader dr;
-        public modificar()
+          public modificar()
         {
             InitializeComponent();
             cnn = new SqlConnection("Data Source=DARCK;Initial Catalog=Tienda;Integrated Security=True");

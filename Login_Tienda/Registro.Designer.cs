@@ -130,11 +130,12 @@
             this.textBox_contraseña.TabIndex = 7;
             this.textBox_contraseña.UseSystemPasswordChar = true;
             this.textBox_contraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_contraseña_KeyPress);
+            this.textBox_contraseña.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox_contraseña_KeyUp);
             // 
             // button_aseptar
             // 
             this.button_aseptar.BackColor = System.Drawing.Color.Silver;
-            this.button_aseptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_aseptar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_aseptar.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_aseptar.Location = new System.Drawing.Point(125, 125);
             this.button_aseptar.Name = "button_aseptar";
@@ -147,7 +148,7 @@
             // button_canselar
             // 
             this.button_canselar.BackColor = System.Drawing.Color.Silver;
-            this.button_canselar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_canselar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_canselar.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_canselar.Location = new System.Drawing.Point(401, 125);
             this.button_canselar.Name = "button_canselar";
@@ -160,7 +161,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(0, 0);
             this.label5.MinimumSize = new System.Drawing.Size(620, 10);
             this.label5.Name = "label5";
@@ -170,7 +171,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(0, 163);
             this.label6.MinimumSize = new System.Drawing.Size(20, 10);
             this.label6.Name = "label6";
@@ -180,7 +181,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(591, 163);
             this.label7.MinimumSize = new System.Drawing.Size(20, 10);
             this.label7.Name = "label7";
@@ -191,7 +192,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Blue;
+            this.BackColor = System.Drawing.Color.Navy;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(610, 176);
             this.Controls.Add(this.label7);

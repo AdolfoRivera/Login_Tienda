@@ -49,6 +49,9 @@
             this.venta2 = new System.Windows.Forms.Button();
             this.button_minimizar = new System.Windows.Forms.Button();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.label_h = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label_hora_actual = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,10 +91,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.AliceBlue;
-            this.label4.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1064, 13);
+            this.label4.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(1068, 13);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 20);
+            this.label4.Size = new System.Drawing.Size(108, 22);
             this.label4.TabIndex = 8;
             this.label4.Text = "Le atiende:";
             // 
@@ -99,16 +102,17 @@
             // 
             this.label_usuario.AutoSize = true;
             this.label_usuario.BackColor = System.Drawing.Color.AliceBlue;
-            this.label_usuario.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_usuario.Location = new System.Drawing.Point(1158, 13);
+            this.label_usuario.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_usuario.Location = new System.Drawing.Point(1182, 13);
             this.label_usuario.Name = "label_usuario";
-            this.label_usuario.Size = new System.Drawing.Size(44, 20);
+            this.label_usuario.Size = new System.Drawing.Size(50, 22);
             this.label_usuario.TabIndex = 9;
             this.label_usuario.Text = "?????";
             this.label_usuario.Click += new System.EventHandler(this.label5_Click);
             // 
             // button_ventas
             // 
+            this.button_ventas.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_ventas.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_ventas.Location = new System.Drawing.Point(4, 77);
             this.button_ventas.Name = "button_ventas";
@@ -120,6 +124,7 @@
             // 
             // button_clientes
             // 
+            this.button_clientes.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_clientes.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_clientes.Location = new System.Drawing.Point(211, 77);
             this.button_clientes.Name = "button_clientes";
@@ -131,6 +136,7 @@
             // 
             // button_productos
             // 
+            this.button_productos.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_productos.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_productos.Location = new System.Drawing.Point(107, 77);
             this.button_productos.Name = "button_productos";
@@ -142,6 +148,7 @@
             // 
             // button4_inventario
             // 
+            this.button4_inventario.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button4_inventario.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4_inventario.Location = new System.Drawing.Point(314, 77);
             this.button4_inventario.Name = "button4_inventario";
@@ -172,6 +179,7 @@
             // 
             // button_administrador
             // 
+            this.button_administrador.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_administrador.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_administrador.Location = new System.Drawing.Point(1189, 43);
             this.button_administrador.Name = "button_administrador";
@@ -179,6 +187,7 @@
             this.button_administrador.TabIndex = 17;
             this.button_administrador.Text = "Administrador";
             this.button_administrador.UseVisualStyleBackColor = true;
+            this.button_administrador.Click += new System.EventHandler(this.button_administrador_Click);
             // 
             // panel_contenedor
             // 
@@ -234,6 +243,7 @@
             // 
             // button_minimizar
             // 
+            this.button_minimizar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_minimizar.Location = new System.Drawing.Point(1221, 78);
             this.button_minimizar.Name = "button_minimizar";
             this.button_minimizar.Size = new System.Drawing.Size(75, 23);
@@ -248,12 +258,40 @@
             this.notifyIcon1.Text = "Abarrotes El Abra";
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
+            // label_h
+            // 
+            this.label_h.AutoSize = true;
+            this.label_h.BackColor = System.Drawing.Color.AliceBlue;
+            this.label_h.Font = new System.Drawing.Font("Calisto MT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_h.Location = new System.Drawing.Point(430, 22);
+            this.label_h.Name = "label_h";
+            this.label_h.Size = new System.Drawing.Size(160, 28);
+            this.label_h.TabIndex = 42;
+            this.label_h.Text = "Fecha y hora:";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label_hora_actual
+            // 
+            this.label_hora_actual.AutoSize = true;
+            this.label_hora_actual.BackColor = System.Drawing.Color.AliceBlue;
+            this.label_hora_actual.Font = new System.Drawing.Font("Calisto MT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_hora_actual.Location = new System.Drawing.Point(588, 22);
+            this.label_hora_actual.Name = "label_hora_actual";
+            this.label_hora_actual.Size = new System.Drawing.Size(68, 28);
+            this.label_hora_actual.TabIndex = 43;
+            this.label_hora_actual.Text = "Hora";
+            // 
             // menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1364, 711);
+            this.Controls.Add(this.label_hora_actual);
+            this.Controls.Add(this.label_h);
             this.Controls.Add(this.button_minimizar);
             this.Controls.Add(this.venta2);
             this.Controls.Add(this.panel_contenedor);
@@ -301,10 +339,13 @@
         private System.Windows.Forms.Button button6_corte;
         private System.Windows.Forms.Button button_salir;
         private System.Windows.Forms.Button button_administrador;
-        private System.Windows.Forms.Panel panel_contenedor;
         private System.Windows.Forms.Button venta2;
         public System.Windows.Forms.Label label_usuario;
         private System.Windows.Forms.Button button_minimizar;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        public System.Windows.Forms.Panel panel_contenedor;
+        private System.Windows.Forms.Label label_h;
+        private System.Windows.Forms.Timer timer1;
+        public System.Windows.Forms.Label label_hora_actual;
     }
 }

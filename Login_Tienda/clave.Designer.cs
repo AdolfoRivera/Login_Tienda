@@ -48,6 +48,7 @@
             // 
             // button_enter
             // 
+            this.button_enter.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_enter.Font = new System.Drawing.Font("Calisto MT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_enter.Location = new System.Drawing.Point(281, 71);
             this.button_enter.Name = "button_enter";
@@ -64,7 +65,9 @@
             this.textBox2.Size = new System.Drawing.Size(205, 20);
             this.textBox2.TabIndex = 3;
             this.textBox2.UseSystemPasswordChar = true;
+            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
+            this.textBox2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyUp);
             // 
             // label2
             // 

@@ -71,7 +71,9 @@
             this.textBox_buscar.TabIndex = 2;
             this.textBox_buscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_buscar.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox_buscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_buscar_KeyPress);
             this.textBox_buscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyUp);
+            this.textBox_buscar.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_buscar_Validating);
             // 
             // button_aceptar
             // 

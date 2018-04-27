@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Diagnostics;
+using System.Data.SqlClient;
 namespace Login_Tienda
 {
     public partial class menu : Form
     {
+        SqlConnection con = Conexion.ObtenerConexion();
         public menu()
         {
             InitializeComponent();
+            timer1.Enabled = true;
         }
 
        /* private void button_regresar_Click(object sender, EventArgs e)
@@ -33,12 +36,6 @@ namespace Login_Tienda
             Visible = false;
             //
             //prueba de cambio
-
-
-
-
-
-
        
         }
 
@@ -111,7 +108,25 @@ namespace Login_Tienda
 
 
         }
+        private void abrirfromulario_administrador(object F_ADM)
+        {//pregunta si hay algo en el contenedor
+            if (this.panel_contenedor.Controls.Count > 0)
+                this.panel_contenedor.Controls.RemoveAt(0);
+            //creacion de formulario
+            Administrador fh = F_ADM as Administrador;
+            //instruccion que le indica que no es un form superior si no inferior
+            fh.TopLevel = false;
+            //para que se acuple a todo el panel contenedor
+            fh.Dock = DockStyle.Fill;
+            //lo agregamos al panel
+            this.panel_contenedor.Controls.Add(fh);
+            //estableser u¡instancia como contenedor de datos de panel
+            this.panel_contenedor.Tag = fh;
+            //se muestra
+            fh.Show();
 
+
+        }
 
 
 
@@ -119,6 +134,7 @@ namespace Login_Tienda
         {
             agregar_productos(new productos());
         }
+
 
         private void button_clientes_Click(object sender, EventArgs e)
         {
@@ -183,5 +199,15 @@ namespace Login_Tienda
             notifyIcon1.Visible = false;
         }
 
+        private void button_administrador_Click(object sender, EventArgs e)
+        {
+            abrirfromulario_administrador(new Administrador());
+        }
+       
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label_hora_actual.Text = DateTime.Now.ToString();
+        }
+       
+        }
     }
-}

@@ -14,15 +14,16 @@ namespace Login_Tienda
     public partial class Registro : Form
     {
 
-        SqlConnection cnn;
+       // SqlConnection cnn;
         SqlCommand cmd;
+        SqlConnection con = Conexion.ObtenerConexion();
         public Registro()
         {
-            cnn = new SqlConnection("Data Source=DARCK;Initial Catalog=Tienda;Integrated Security=True");
+            //cnn = new SqlConnection("Data Source=DARCK;Initial Catalog=Tienda;Integrated Security=True");
             InitializeComponent();
             
         }
-        public void ins_Usuario(String Nombre, String Apellido, int Telefono, String Contraseña)
+        public void ins_Usuario(String Nombre, String Apellido, String Telefono, String Contraseña)
         {
             if (textBox1_nombre.Text.Equals(" ") == true)
             {
@@ -42,8 +43,9 @@ namespace Login_Tienda
             }
             else
             {
-                cnn = new SqlConnection("Data Source=DARCK;Initial Catalog=Tienda;Integrated Security=True");
-                SqlCommand cmd = cnn.CreateCommand();
+                //  cnn = new SqlConnection("Data Source=DARCK;Initial Catalog=Tienda;Integrated Security=True");
+                con = Conexion.ObtenerConexion();
+                SqlCommand cmd = con.CreateCommand();
 
                 cmd.CommandText = "Incertar_Usuarios";
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -60,9 +62,9 @@ namespace Login_Tienda
 
                 try
                 {
-                    cnn.Open();
+                    con.Open();
                     cmd.ExecuteNonQuery();
-                    cnn.Close();
+                    con.Close();
                     MessageBox.Show("Usuario Agregado Correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
@@ -85,8 +87,8 @@ namespace Login_Tienda
             try
             {
                 string cadsql = "select * from Usuarios where Nombre ='" + textBox1_nombre.Text + "'";
-                SqlCommand comando = new SqlCommand(cadsql, cnn);
-                cnn.Open();
+                SqlCommand comando = new SqlCommand(cadsql, con);
+                con.Open();
                 SqlDataReader leer1 = comando.ExecuteReader();
 
                 if (leer1.Read() == true)
@@ -100,10 +102,10 @@ namespace Login_Tienda
                     MessageBox.Show("No Se Permiten Usuarios En Blanco", "Llenar Registro", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 }else
                 {
-                    int telefono = Convert.ToInt32(textBox_telefono.Text);
-                    ins_Usuario(textBox1_nombre.Text, textBox_apellido.Text, telefono, textBox_contraseña.Text);
+                    //int telefono = Convert.ToInt32(textBox_telefono.Text);
+                    ins_Usuario(textBox1_nombre.Text, textBox_apellido.Text, textBox_telefono.Text, textBox_contraseña.Text);
                 }
-                cnn.Close();
+                con.Close();
             }
             catch (Exception ex)
             {
@@ -181,8 +183,8 @@ namespace Login_Tienda
                 {
 
                     string cadsql = "select * from Usuarios where Nombre ='" + textBox1_nombre.Text + "'";
-                    SqlCommand comando = new SqlCommand(cadsql, cnn);
-                    cnn.Open();
+                    SqlCommand comando = new SqlCommand(cadsql, con);
+                    con.Open();
                     SqlDataReader leer1 = comando.ExecuteReader();
 
                     if (leer1.Read() == true)
@@ -197,10 +199,10 @@ namespace Login_Tienda
                         MessageBox.Show("No Se Permiten Usuarios En Blanco", "LLenar Registro", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                     }else
                     {
-                        int telefono = Convert.ToInt32(textBox_telefono.Text);
-                        ins_Usuario(textBox1_nombre.Text, textBox_apellido.Text, telefono, textBox_contraseña.Text);
+                       // int telefono = Convert.ToInt32(textBox_telefono.Text);
+                        ins_Usuario(textBox1_nombre.Text, textBox_apellido.Text, textBox_telefono.Text, textBox_contraseña.Text);
                     }
-                    cnn.Close();
+                    con.Close();
                 }
                 catch (Exception ex)
                 {
@@ -244,6 +246,22 @@ namespace Login_Tienda
         private void textBox1_nombre_Validating(object sender, CancelEventArgs e)
         {
             
+        }
+
+        private void textBox_contraseña_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (textBox_contraseña.Text == "'")
+                {
+                    MessageBox.Show("NO (')");
+                    textBox_contraseña.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

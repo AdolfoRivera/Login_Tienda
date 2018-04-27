@@ -12,29 +12,38 @@ namespace Login_Tienda
 {
     public partial class buscar : Form
     {
-        SqlConnection cnn;
+        //SqlConnection con;
         SqlCommand cmd = new SqlCommand();
         ventas ven = new ventas();
+        SqlConnection con = Conexion.ObtenerConexion();
         public buscar()
         {
             InitializeComponent();
-            cnn = new SqlConnection("Data Source=DARCK;Initial Catalog=Tienda;Integrated Security=True");
-           
+           // cnn = new SqlConnection("Data Source=DARCK;Initial Catalog=Tienda;Integrated Security=True");
+
         }
 
         private void textBox1_KeyUp(object sender, KeyEventArgs e)
         {
-            cnn.Open();
-            cmd = cnn.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from Productos where Codigo ='" + textBox_buscar.Text + "'or Descripcion='"+textBox_buscar.Text+"'";
-            cmd.ExecuteNonQuery();
+            try
+            {
+                con.Open();
+                cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select * from Productos where Codigo like'%" + textBox_buscar.Text + "%'or Descripcion like'%" +textBox_buscar.Text + "%'";// + "'";
+               // cmd.CommandText = "select * from Productos where Codigo ='" + textBox_buscar.Text + "'or Descripcion='" + textBox_buscar.Text + "'";
+                cmd.ExecuteNonQuery();
 
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            datos.DataSource = dt;
-            cnn.Close();
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                datos.DataSource = dt;
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void dataGridView1_KeyUp(object sender, KeyEventArgs e)
@@ -42,9 +51,10 @@ namespace Login_Tienda
 
         }
         //Operacion alternar colores de listview
-        
+
         public void Alternarcolor()
         {
+            
             for (int i = 0; i <= ven.listView_venta.Items.Count - 1; i++)
             {
                 if (ven.listView_venta.Items[i].Index % 2 == 0)
@@ -61,9 +71,11 @@ namespace Login_Tienda
         {
             try
             {
-                string cadsql = "select * from Productos where Codigo ='" + textBox_buscar.Text + "'";
-                SqlCommand comando = new SqlCommand(cadsql, cnn);
-                cnn.Open();
+                string cadsql = "select * from Productos where Codigo like'%" + textBox_buscar.Text + "%'or Descripcion like'%" + textBox_buscar.Text + "%'";// + "'";
+
+               // string cadsql = "select * from Productos where Codigo ='" + textBox_buscar.Text + "'";
+                SqlCommand comando = new SqlCommand(cadsql, con);
+                con.Open();
                 SqlDataReader leer = comando.ExecuteReader();
                 if (leer.Read() == false)
                 {
@@ -119,7 +131,7 @@ namespace Login_Tienda
                     Alternarcolor();
 
                 }
-                cnn.Close();
+                con.Close();
             }
             catch (Exception ex)
             {
@@ -136,29 +148,74 @@ namespace Login_Tienda
 
         private void button_aceptar_Click(object sender, EventArgs e)
         {
-                    // ventas ob = new ventas();
+            // ventas ob = new ventas();
             try {
-                if (textBox_buscar.Text!="") {
-                    //if (textBox_buscar.TextLength!=0) {
-
-                    validacion_buscar();
-                    MessageBox.Show("Producto Agregado");
+                string cadsql2 = "select * from Productos where Codigo ='" + textBox_buscar.Text+ "'or Descripcion='" + textBox_buscar.Text + "'"; //"'";
+                SqlCommand comando = new SqlCommand(cadsql2, con);
+                con.Open();
+                SqlDataReader leer = comando.ExecuteReader();
+                if (leer.Read() == false)
+                {
+                    MessageBox.Show("Producto No Encontrado");
+                    textBox_buscar.Clear();
                 }
                 else
                 {
-                    MessageBox.Show("No Hay Nada En Escrito");
-                }
+                    //MessageBox.Show("Producto agragado");
+                    //validacion();
+                    this.Close();
+                        }
+                /* if (textBox_buscar.Text.Trim() == "") {
+                     //if (textBox_buscar.TextLength!=0) {
+                     MessageBox.Show("Producto no encontrado");
+                     //validacion_buscar();
+                     //MessageBox.Show("Producto Agregado");
+                 }
+                 else
+                 {
+                    // ven.validacion();
+
+                     this.Close();
+                 }*/
+                con.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            }
-       
-        
+
+
+        } 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+        
+        private void textBox_buscar_Validating(object sender, CancelEventArgs e)
+        {
+            
+        }
+        //Eventos de validacion de validacion de solo numeros
+        public static void sololNumeros(KeyPressEventArgs pe)
+        {
+
+            if (char.IsDigit(pe.KeyChar))
+            {
+                pe.Handled = false;
+            }
+            else if (char.IsControl(pe.KeyChar))
+            {
+                pe.Handled = false;
+            }
+            else
+            {
+                pe.Handled = true;
+            }
+        }
+
+        private void textBox_buscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           //sololNumeros(e);
         }
     }
 }

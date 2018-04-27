@@ -11,6 +11,21 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,8 +47,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,11 +73,23 @@
     <Compile Include="Abonar.Designer.cs">
       <DependentUpon>Abonar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Administrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador.Designer.cs">
+      <DependentUpon>Administrador.cs</DependentUpon>
+    </Compile>
     <Compile Include="agregar_cliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="agregar_cliente.Designer.cs">
       <DependentUpon>agregar_cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bitacoras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bitacoras.Designer.cs">
+      <DependentUpon>Bitacoras.cs</DependentUpon>
     </Compile>
     <Compile Include="buscar.cs">
       <SubType>Form</SubType>
@@ -75,6 +109,7 @@
     <Compile Include="cliente.Designer.cs">
       <DependentUpon>cliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Conexion.cs" />
     <Compile Include="eliminar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,12 +140,19 @@
     <Compile Include="estado de cuenta.Designer.cs">
       <DependentUpon>estado de cuenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fecha_de_reporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fecha_de_reporte.Designer.cs">
+      <DependentUpon>Fecha_de_reporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generar_Reporte.cs" />
     <Compile Include="liquidar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +177,13 @@
     <Compile Include="modificar_cliente.Designer.cs">
       <DependentUpon>modificar_cliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Plantilla_Reporte.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Plantilla_Reporte.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="productos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +197,12 @@
     </Compile>
     <Compile Include="Registro.Designer.cs">
       <DependentUpon>Registro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reposrte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reposrte.Designer.cs">
+      <DependentUpon>Reposrte.cs</DependentUpon>
     </Compile>
     <Compile Include="Salidas.cs">
       <SubType>Form</SubType>
@@ -174,8 +229,14 @@
     <EmbeddedResource Include="Abonar.resx">
       <DependentUpon>Abonar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Administrador.resx">
+      <DependentUpon>Administrador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="agregar_cliente.resx">
       <DependentUpon>agregar_cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bitacoras.resx">
+      <DependentUpon>Bitacoras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="buscar.resx">
       <DependentUpon>buscar.cs</DependentUpon>
@@ -201,6 +262,9 @@
     <EmbeddedResource Include="estado de cuenta.resx">
       <DependentUpon>estado de cuenta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Fecha_de_reporte.resx">
+      <DependentUpon>Fecha_de_reporte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +279,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="modificar_cliente.resx">
       <DependentUpon>modificar_cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plantilla_Reporte.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Plantilla_Reporte.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="productos.resx">
       <DependentUpon>productos.cs</DependentUpon>
@@ -231,6 +300,9 @@
     </Compile>
     <EmbeddedResource Include="Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reposrte.resx">
+      <DependentUpon>Reposrte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Salidas.resx">
       <DependentUpon>Salidas.cs</DependentUpon>
@@ -271,13 +343,30 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CAJA.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\punto.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

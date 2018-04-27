@@ -12,15 +12,16 @@ namespace Login_Tienda
 {
     public partial class Form1 : Form
     {
-        SqlConnection cnn;
+        //SqlConnection cnn;
+       // SqlConnection con;
         SqlCommand cmd = new SqlCommand();
         SqlDataReader dr;
-        
+         SqlConnection con = Conexion.ObtenerConexion();
         public Form1()
         {
             InitializeComponent();             //=./ vorrar DARCK
-             cnn = new SqlConnection("Data Source=DARCK;Initial Catalog=Tienda;Integrated Security=True");
-            
+            // cnn = new SqlConnection("Data Source=DARCK;Initial Catalog=Tienda;Integrated Security=True");
+           
         }
 
         private void button_rejistrarse_Click(object sender, EventArgs e)
@@ -53,7 +54,6 @@ namespace Login_Tienda
         {
             Validacion();
             
-            
         }
 
         private void textBox_contraseña_KeyPress(object sender, KeyPressEventArgs e)
@@ -85,33 +85,38 @@ namespace Login_Tienda
 
         public void Validacion()
         {
-            
-            SqlCommand cmd = cnn.CreateCommand();
-            cmd.CommandText = "select Nombre,Contraseña from Usuarios where Nombre ='" + textBox_usuario.Text + "'and Contraseña ='" + textBox_contraseña.Text + "' ";
-            cmd.Connection = cnn;
-            cnn.Open(); 
-
-            dr = cmd.ExecuteReader();
-            if (dr.Read())
+            try
             {
-                MessageBox.Show("Bienvenido: " + textBox_usuario.Text,"Correcto",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                menu obj = new menu();
-                //Mostrar Usuario Rejistrado-----
-                obj.label_usuario.Text = textBox_usuario.Text;
-                //-----
-                obj.Visible = true;
-                Visible = false;
-               
-            }
-            else
-            {
-               // MessageBox.Show("Datos Incorrectos");
-                MessageBox.Show("Datos Incorrectos", "Error",
-                  MessageBoxButtons.OK, MessageBoxIcon.Hand);
-            }
-            dr.Close();
-            cnn.Close();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandText = "select Nombre,Contraseña from Usuarios where Nombre ='" + textBox_usuario.Text + "'and Contraseña ='" + textBox_contraseña.Text + "' ";
+                cmd.Connection = con;
+                con.Open();
 
+                dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    MessageBox.Show("Bienvenido: " + textBox_usuario.Text, "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    menu obj = new menu();
+                    //Mostrar Usuario Rejistrado-----
+                    obj.label_usuario.Text = textBox_usuario.Text;
+                    //-----
+                    obj.Visible = true;
+                    Visible = false;
+
+                }
+                else
+                {
+                    // MessageBox.Show("Datos Incorrectos");
+                    MessageBox.Show("Datos Incorrectos", "Error",
+                      MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         //Codigo Para Mover Ventana
         Point DragCursor;
@@ -165,6 +170,80 @@ namespace Login_Tienda
             {
                 textBox_usuario.Text = "Nombre";
                 textBox_usuario.ForeColor = Color.Silver;
+            }
+        }
+       // public bool IsBalloon { get; set;}
+        private void textBox_usuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            sololLetras(e);
+
+            /*
+            if (char.IsNumber(e.KeyChar) || char.IsControl(e.KeyChar)
+                || e.KeyChar == ',' || e.KeyChar == '.' || e.KeyChar == '-')
+            {
+                e.Handled = false;
+            }
+            else
+            {
+               // ToolTip.IsBalloon = true;
+                toolTip1.IsBalloon = true;
+                toolTip1.Show("No se permiten caracteres locos",textBox_usuario,3000);
+                e.Handled = true;
+            }*/
+        }
+
+        private void textBox_usuario_KeyUp(object sender, KeyEventArgs e)
+        {
+            //if (e.KeyChar == ',' || e.KeyChar == '.' || e.KeyChar == '-' || e.KeyChar == '_' || e.KeyChar == ';' || e.KeyChar == ':' || e.KeyChar == '´' || e.KeyChar == 'ç' || e.KeyChar == '{' || e.KeyChar == '}' || e.KeyChar == '[' || e.KeyChar == ']' || e.KeyChar == '`' || e.KeyChar == '+' || e.KeyChar == '¡' || e.KeyChar == '¿' || e.KeyChar == '?' || e.KeyChar == '=' || e.KeyChar == ')' || e.KeyChar == '(' || e.KeyChar == '/' || e.KeyChar == '&' || e.KeyChar == '%' || e.KeyChar == '$' || e.KeyChar == '·' || e.KeyChar == '"' || e.KeyChar == '!' || e.KeyChar == 'ª' || e.KeyChar == 'º' || e.KeyChar == '<' || e.KeyChar == '>')
+            try
+            {
+                if (textBox_usuario.Text == "'")
+                {
+                    MessageBox.Show("NO (')");
+                    textBox_usuario.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void textBox_contraseña_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (textBox_contraseña.Text == "'")
+                {
+                    MessageBox.Show("NO (')");
+                    textBox_contraseña.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+        //metodo para poner solo letras
+        public static void sololLetras(KeyPressEventArgs pe)
+        {
+            if (char.IsLetter(pe.KeyChar))
+            {
+                pe.Handled = false;
+            }
+            else if (char.IsControl(pe.KeyChar))
+            {
+                pe.Handled = false;
+            }
+            else if (char.IsSeparator(pe.KeyChar))
+            {
+                pe.Handled = false;
+            }
+            else
+            {
+                pe.Handled = true;
             }
         }
     }

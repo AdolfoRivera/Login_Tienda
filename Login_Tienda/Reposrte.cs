@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Login_Tienda
 {
-    public partial class agregar_cliente : Form
+    public partial class VisorReporte : Form
     {
-        public agregar_cliente()
+        public VisorReporte()
         {
             InitializeComponent();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -58,19 +58,20 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Blue;
             this.label2.Location = new System.Drawing.Point(1, -2);
-            this.label2.MinimumSize = new System.Drawing.Size(1340, 30);
+            this.label2.MinimumSize = new System.Drawing.Size(1400, 30);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1340, 30);
+            this.label2.Size = new System.Drawing.Size(1400, 30);
             this.label2.TabIndex = 1;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Blue;
             this.label3.Location = new System.Drawing.Point(1, 52);
-            this.label3.MinimumSize = new System.Drawing.Size(1340, 10);
+            this.label3.MinimumSize = new System.Drawing.Size(1400, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1340, 13);
+            this.label3.Size = new System.Drawing.Size(1400, 13);
             this.label3.TabIndex = 2;
             // 
             // label4
@@ -166,7 +167,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
-            this.ClientSize = new System.Drawing.Size(1338, 369);
+            this.ClientSize = new System.Drawing.Size(1362, 369);
             this.Controls.Add(this.button_cancelar);
             this.Controls.Add(this.button_aceptar);
             this.Controls.Add(this.textBox_limite_agregar_cliente);

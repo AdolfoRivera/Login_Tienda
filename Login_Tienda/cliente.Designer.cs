@@ -55,9 +55,9 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.label1.Location = new System.Drawing.Point(1, 2);
-            this.label1.MinimumSize = new System.Drawing.Size(1360, 30);
+            this.label1.MinimumSize = new System.Drawing.Size(1400, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1360, 30);
+            this.label1.Size = new System.Drawing.Size(1400, 30);
             this.label1.TabIndex = 1;
             // 
             // label2
@@ -110,9 +110,9 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.label3.Location = new System.Drawing.Point(1, 113);
-            this.label3.MinimumSize = new System.Drawing.Size(1360, 30);
+            this.label3.MinimumSize = new System.Drawing.Size(1400, 30);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1360, 30);
+            this.label3.Size = new System.Drawing.Size(1400, 30);
             this.label3.TabIndex = 6;
             // 
             // panel_contenedor_cleintes
@@ -120,7 +120,7 @@
             this.panel_contenedor_cleintes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel_contenedor_cleintes.Location = new System.Drawing.Point(-3, 137);
             this.panel_contenedor_cleintes.Name = "panel_contenedor_cleintes";
-            this.panel_contenedor_cleintes.Size = new System.Drawing.Size(1365, 408);
+            this.panel_contenedor_cleintes.Size = new System.Drawing.Size(1392, 408);
             this.panel_contenedor_cleintes.TabIndex = 7;
             // 
             // label4
@@ -128,9 +128,9 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.label4.Location = new System.Drawing.Point(1, 531);
-            this.label4.MinimumSize = new System.Drawing.Size(1360, 30);
+            this.label4.MinimumSize = new System.Drawing.Size(1400, 30);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1360, 30);
+            this.label4.Size = new System.Drawing.Size(1400, 30);
             this.label4.TabIndex = 7;
             // 
             // cliente
@@ -138,7 +138,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(1360, 557);
+            this.ClientSize = new System.Drawing.Size(1378, 557);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel_contenedor_cleintes);
             this.Controls.Add(this.label3);

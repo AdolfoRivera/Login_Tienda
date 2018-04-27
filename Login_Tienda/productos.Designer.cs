@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -57,7 +58,11 @@
             this.textBox_presentacion = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.textBox_buscar = new System.Windows.Forms.TextBox();
+            this.ep1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label14 = new System.Windows.Forms.Label();
+            this.dateTimePicker1_caducidad = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.datos_data)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -130,7 +135,11 @@
             this.textBox_codigo_de_barras.Name = "textBox_codigo_de_barras";
             this.textBox_codigo_de_barras.Size = new System.Drawing.Size(227, 26);
             this.textBox_codigo_de_barras.TabIndex = 6;
+            this.textBox_codigo_de_barras.TextChanged += new System.EventHandler(this.textBox_codigo_de_barras_TextChanged);
+            this.textBox_codigo_de_barras.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_codigo_de_barras_KeyDown);
+            this.textBox_codigo_de_barras.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_codigo_de_barras_KeyPress);
             this.textBox_codigo_de_barras.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox_codigo_de_barras_KeyUp);
+            this.textBox_codigo_de_barras.Validated += new System.EventHandler(this.textBox_codigo_de_barras_Validated);
             // 
             // textBox_descrpcion
             // 
@@ -141,6 +150,9 @@
             this.textBox_descrpcion.Name = "textBox_descrpcion";
             this.textBox_descrpcion.Size = new System.Drawing.Size(236, 26);
             this.textBox_descrpcion.TabIndex = 7;
+            this.textBox_descrpcion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_descrpcion_KeyDown);
+            this.textBox_descrpcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_descrpcion_KeyPress);
+            this.textBox_descrpcion.Validated += new System.EventHandler(this.textBox_descrpcion_Validated);
             // 
             // textBox_costo
             // 
@@ -151,6 +163,10 @@
             this.textBox_costo.Name = "textBox_costo";
             this.textBox_costo.Size = new System.Drawing.Size(92, 26);
             this.textBox_costo.TabIndex = 8;
+            this.textBox_costo.TextChanged += new System.EventHandler(this.textBox_costo_TextChanged);
+            this.textBox_costo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_costo_KeyDown);
+            this.textBox_costo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_costo_KeyPress);
+            this.textBox_costo.Validated += new System.EventHandler(this.textBox_costo_Validated);
             // 
             // textBox_cantidad
             // 
@@ -161,10 +177,15 @@
             this.textBox_cantidad.Name = "textBox_cantidad";
             this.textBox_cantidad.Size = new System.Drawing.Size(105, 26);
             this.textBox_cantidad.TabIndex = 9;
+            this.textBox_cantidad.TextChanged += new System.EventHandler(this.textBox_cantidad_TextChanged);
+            this.textBox_cantidad.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_cantidad_KeyDown);
+            this.textBox_cantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_cantidad_KeyPress);
+            this.textBox_cantidad.Validated += new System.EventHandler(this.textBox_cantidad_Validated);
             // 
             // textBox_en_excistencia
             // 
             this.textBox_en_excistencia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox_en_excistencia.Enabled = false;
             this.textBox_en_excistencia.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_en_excistencia.ForeColor = System.Drawing.Color.Black;
             this.textBox_en_excistencia.Location = new System.Drawing.Point(125, 375);
@@ -172,9 +193,11 @@
             this.textBox_en_excistencia.Size = new System.Drawing.Size(71, 26);
             this.textBox_en_excistencia.TabIndex = 10;
             this.textBox_en_excistencia.TextChanged += new System.EventHandler(this.textBox_en_excistencia_TextChanged);
+            this.textBox_en_excistencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_en_excistencia_KeyPress);
             // 
             // button_aceptar
             // 
+            this.button_aceptar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_aceptar.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_aceptar.Location = new System.Drawing.Point(5, 485);
             this.button_aceptar.Name = "button_aceptar";
@@ -183,9 +206,11 @@
             this.button_aceptar.Text = "Aceptar";
             this.button_aceptar.UseVisualStyleBackColor = true;
             this.button_aceptar.Click += new System.EventHandler(this.button_aceptar_Click);
+            this.button_aceptar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.button_aceptar_KeyUp);
             // 
             // button1
             // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button1.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(456, 485);
             this.button1.Name = "button1";
@@ -200,9 +225,9 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Blue;
             this.label7.Location = new System.Drawing.Point(-4, -2);
-            this.label7.MinimumSize = new System.Drawing.Size(1370, 40);
+            this.label7.MinimumSize = new System.Drawing.Size(1400, 40);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(1370, 40);
+            this.label7.Size = new System.Drawing.Size(1400, 40);
             this.label7.TabIndex = 13;
             // 
             // datos_data
@@ -218,9 +243,9 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Blue;
             this.label8.Location = new System.Drawing.Point(-4, 528);
-            this.label8.MinimumSize = new System.Drawing.Size(1370, 70);
+            this.label8.MinimumSize = new System.Drawing.Size(1400, 70);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(1370, 70);
+            this.label8.Size = new System.Drawing.Size(1400, 70);
             this.label8.TabIndex = 15;
             // 
             // comboBox_categorias
@@ -237,6 +262,7 @@
             this.comboBox_categorias.Name = "comboBox_categorias";
             this.comboBox_categorias.Size = new System.Drawing.Size(173, 25);
             this.comboBox_categorias.TabIndex = 16;
+            this.comboBox_categorias.SelectedIndexChanged += new System.EventHandler(this.comboBox_categorias_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -250,6 +276,7 @@
             // 
             // button_modificar
             // 
+            this.button_modificar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_modificar.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_modificar.Location = new System.Drawing.Point(5, 41);
             this.button_modificar.Name = "button_modificar";
@@ -261,6 +288,7 @@
             // 
             // button_eliminar
             // 
+            this.button_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_eliminar.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_eliminar.Location = new System.Drawing.Point(160, 41);
             this.button_eliminar.Name = "button_eliminar";
@@ -272,6 +300,7 @@
             // 
             // button_mostrar_datos
             // 
+            this.button_mostrar_datos.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_mostrar_datos.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_mostrar_datos.Location = new System.Drawing.Point(456, 41);
             this.button_mostrar_datos.Name = "button_mostrar_datos";
@@ -300,6 +329,10 @@
             this.textBox_venta.Name = "textBox_venta";
             this.textBox_venta.Size = new System.Drawing.Size(92, 26);
             this.textBox_venta.TabIndex = 22;
+            this.textBox_venta.TextChanged += new System.EventHandler(this.textBox_venta_TextChanged);
+            this.textBox_venta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_venta_KeyDown);
+            this.textBox_venta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_venta_KeyPress);
+            this.textBox_venta.Validated += new System.EventHandler(this.textBox_venta_Validated);
             // 
             // label11
             // 
@@ -307,17 +340,20 @@
             this.label11.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(17, 444);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(84, 20);
+            this.label11.Size = new System.Drawing.Size(51, 20);
             this.label11.TabIndex = 23;
-            this.label11.Text = "Caducidad";
+            this.label11.Text = "Fecha";
             // 
             // dateTimePicker_fecha
             // 
+            this.dateTimePicker_fecha.CustomFormat = "dd-MM-yyyy";
             this.dateTimePicker_fecha.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker_fecha.Location = new System.Drawing.Point(119, 443);
+            this.dateTimePicker_fecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker_fecha.Location = new System.Drawing.Point(80, 439);
             this.dateTimePicker_fecha.Name = "dateTimePicker_fecha";
-            this.dateTimePicker_fecha.Size = new System.Drawing.Size(313, 26);
+            this.dateTimePicker_fecha.Size = new System.Drawing.Size(116, 26);
             this.dateTimePicker_fecha.TabIndex = 24;
+            this.dateTimePicker_fecha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dateTimePicker_fecha_KeyDown);
             // 
             // label12
             // 
@@ -338,12 +374,16 @@
             this.textBox_presentacion.Name = "textBox_presentacion";
             this.textBox_presentacion.Size = new System.Drawing.Size(102, 26);
             this.textBox_presentacion.TabIndex = 26;
+            this.textBox_presentacion.TextChanged += new System.EventHandler(this.textBox_presentacion_TextChanged);
+            this.textBox_presentacion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_presentacion_KeyDown);
+            this.textBox_presentacion.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox_presentacion_KeyUp);
+            this.textBox_presentacion.Validated += new System.EventHandler(this.textBox_presentacion_Validated);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(747, 51);
+            this.label13.Location = new System.Drawing.Point(1028, 56);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(57, 20);
             this.label13.TabIndex = 27;
@@ -351,7 +391,7 @@
             // 
             // textBox_buscar
             // 
-            this.textBox_buscar.Location = new System.Drawing.Point(823, 51);
+            this.textBox_buscar.Location = new System.Drawing.Point(1091, 58);
             this.textBox_buscar.Name = "textBox_buscar";
             this.textBox_buscar.Size = new System.Drawing.Size(214, 20);
             this.textBox_buscar.TabIndex = 28;
@@ -359,12 +399,40 @@
             this.textBox_buscar.TextChanged += new System.EventHandler(this.textBox_buscar_TextChanged);
             this.textBox_buscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox_buscar_KeyUp);
             // 
+            // ep1
+            // 
+            this.ep1.ContainerControl = this;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(250, 445);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(84, 20);
+            this.label14.TabIndex = 29;
+            this.label14.Text = "Caducidad";
+            // 
+            // dateTimePicker1_caducidad
+            // 
+            this.dateTimePicker1_caducidad.CalendarFont = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1_caducidad.CustomFormat = "dd-MM-yyyy";
+            this.dateTimePicker1_caducidad.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1_caducidad.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1_caducidad.Location = new System.Drawing.Point(340, 439);
+            this.dateTimePicker1_caducidad.Name = "dateTimePicker1_caducidad";
+            this.dateTimePicker1_caducidad.Size = new System.Drawing.Size(115, 26);
+            this.dateTimePicker1_caducidad.TabIndex = 30;
+            this.dateTimePicker1_caducidad.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dateTimePicker1_caducidad_KeyDown);
+            // 
             // productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(1362, 596);
+            this.ClientSize = new System.Drawing.Size(1378, 596);
+            this.Controls.Add(this.dateTimePicker1_caducidad);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.textBox_buscar);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.textBox_presentacion);
@@ -399,6 +467,7 @@
             this.Text = "productos";
             this.Load += new System.EventHandler(this.productos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.datos_data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ep1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -435,5 +504,8 @@
         public System.Windows.Forms.TextBox textBox_codigo_de_barras;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox_buscar;
+        private System.Windows.Forms.ErrorProvider ep1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1_caducidad;
+        private System.Windows.Forms.Label label14;
     }
 }

@@ -12,11 +12,11 @@ namespace Login_Tienda
 {
     public partial class prueba_de_venta : Form
     {
-        SqlConnection cnn;
+        SqlConnection con=Conexion.ObtenerConexion();
         public prueba_de_venta()
         {
             InitializeComponent();
-            SqlConnection cnn;
+           // SqlConnection cnn;
         }
 
         private void eliminar_Load(object sender, EventArgs e)
@@ -62,8 +62,9 @@ namespace Login_Tienda
 
 
 
-                SqlConnection cnx2 = new SqlConnection("Data Source=DARCK;Initial Catalog=Tienda;Integrated Security=True");
-                SqlCommand cmd2 = new SqlCommand("suaryrestaeproductos", cnx2);
+                // SqlConnection cnx2 = new SqlConnection("Data Source=DARCK;Initial Catalog=Tienda;Integrated Security=True");
+                                                                       //cnx2
+                SqlCommand cmd2 = new SqlCommand("suaryrestaeproductos", con);
                 cmd2.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd2.Parameters.Add(new SqlParameter("@Bandera", 2));
                 cmd2.Parameters.Add(new SqlParameter("@Descripcion", ""));
@@ -74,9 +75,11 @@ namespace Login_Tienda
                 cmd2.Parameters.Add(new SqlParameter("@Cantidad", ""));
               //  cmd2.Parameters.Add(new SqlParameter("@Existencia", txtexistencia.Text));
                 cmd2.Parameters.Add(new SqlParameter("@Codigo", txtcodigo.Text));
-                cnx2.Open();
+              //cnx2
+                con.Open();
                 cmd2.ExecuteNonQuery();
-                cnx2.Close();
+              //cnx2
+                con.Close();
 
 
 
@@ -229,8 +232,8 @@ namespace Login_Tienda
             try
             {
                 string cadsql = "select * from Productos where Codigo ='" + txtcodigo.Text + "'";
-                SqlCommand comando = new SqlCommand(cadsql, cnn);
-                cnn.Open();
+                SqlCommand comando = new SqlCommand(cadsql, con);
+                con.Open();
                 SqlDataReader leer = comando.ExecuteReader();
                 if (leer.Read() == true)
                 {
@@ -258,7 +261,7 @@ namespace Login_Tienda
                     textBox_presentacion.Text = "";
                     textBox_presentacion.Text = string.Empty;*/
                 }
-                cnn.Close();
+                con.Close();
             }
             catch (Exception ex)
             {

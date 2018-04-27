@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,8 +59,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label_total_abajo = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.label_pago_con = new System.Windows.Forms.Label();
+            this.label_cambio = new System.Windows.Forms.Label();
             this.button_ventas_y_devoluciones = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -82,9 +82,9 @@
             this.label1.Font = new System.Drawing.Font("Algerian", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(-1, 60);
-            this.label1.MinimumSize = new System.Drawing.Size(1360, 20);
+            this.label1.MinimumSize = new System.Drawing.Size(1400, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1360, 24);
+            this.label1.Size = new System.Drawing.Size(1400, 24);
             this.label1.TabIndex = 0;
             // 
             // label2
@@ -92,9 +92,9 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Blue;
             this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.MinimumSize = new System.Drawing.Size(1360, 20);
+            this.label2.MinimumSize = new System.Drawing.Size(1400, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1360, 20);
+            this.label2.Size = new System.Drawing.Size(1400, 20);
             this.label2.TabIndex = 1;
             // 
             // label3
@@ -116,7 +116,7 @@
             this.textBox_codigo_de_varrras.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.textBox_codigo_de_varrras.Location = new System.Drawing.Point(158, 30);
             this.textBox_codigo_de_varrras.Name = "textBox_codigo_de_varrras";
-            this.textBox_codigo_de_varrras.Size = new System.Drawing.Size(297, 23);
+            this.textBox_codigo_de_varrras.Size = new System.Drawing.Size(305, 23);
             this.textBox_codigo_de_varrras.TabIndex = 3;
             this.textBox_codigo_de_varrras.Text = "Codigo de barras";
             this.textBox_codigo_de_varrras.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -127,6 +127,7 @@
             // 
             // button1
             // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button1.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(461, 25);
             this.button1.Name = "button1";
@@ -138,6 +139,7 @@
             // 
             // button_buscar
             // 
+            this.button_buscar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_buscar.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_buscar.Location = new System.Drawing.Point(3, 87);
             this.button_buscar.Name = "button_buscar";
@@ -149,6 +151,7 @@
             // 
             // button_entradas
             // 
+            this.button_entradas.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_entradas.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_entradas.Location = new System.Drawing.Point(98, 87);
             this.button_entradas.Name = "button_entradas";
@@ -160,6 +163,7 @@
             // 
             // button_salidas
             // 
+            this.button_salidas.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_salidas.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_salidas.Location = new System.Drawing.Point(193, 87);
             this.button_salidas.Name = "button_salidas";
@@ -171,6 +175,7 @@
             // 
             // button5_borrar
             // 
+            this.button5_borrar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button5_borrar.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5_borrar.Location = new System.Drawing.Point(448, 87);
             this.button5_borrar.Name = "button5_borrar";
@@ -192,10 +197,10 @@
             this.columnHeader_existencia});
             this.listView_venta.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView_venta.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem2});
             this.listView_venta.Location = new System.Drawing.Point(2, 126);
             this.listView_venta.Name = "listView_venta";
-            this.listView_venta.Size = new System.Drawing.Size(1019, 328);
+            this.listView_venta.Size = new System.Drawing.Size(1042, 328);
             this.listView_venta.TabIndex = 9;
             this.listView_venta.UseCompatibleStateImageBehavior = false;
             this.listView_venta.View = System.Windows.Forms.View.Details;
@@ -235,7 +240,7 @@
             // 
             this.columnHeader_existencia.Text = "Excistencia";
             this.columnHeader_existencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader_existencia.Width = 223;
+            this.columnHeader_existencia.Width = 246;
             // 
             // label4
             // 
@@ -243,9 +248,9 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label4.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(-1, 446);
-            this.label4.MinimumSize = new System.Drawing.Size(1360, 70);
+            this.label4.MinimumSize = new System.Drawing.Size(1400, 70);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1360, 70);
+            this.label4.Size = new System.Drawing.Size(1400, 70);
             this.label4.TabIndex = 10;
             // 
             // label5
@@ -272,14 +277,16 @@
             // 
             // button_hacer_venta
             // 
+            this.button_hacer_venta.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_hacer_venta.Font = new System.Drawing.Font("Calisto MT", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_hacer_venta.Location = new System.Drawing.Point(979, 453);
+            this.button_hacer_venta.Location = new System.Drawing.Point(938, 453);
             this.button_hacer_venta.Name = "button_hacer_venta";
-            this.button_hacer_venta.Size = new System.Drawing.Size(156, 59);
+            this.button_hacer_venta.Size = new System.Drawing.Size(197, 59);
             this.button_hacer_venta.TabIndex = 13;
-            this.button_hacer_venta.Text = "ENTER";
+            this.button_hacer_venta.Text = "SPACE";
             this.button_hacer_venta.UseVisualStyleBackColor = true;
             this.button_hacer_venta.Click += new System.EventHandler(this.button_hacer_venta_Click);
+            this.button_hacer_venta.KeyUp += new System.Windows.Forms.KeyEventHandler(this.button_hacer_venta_KeyUp);
             // 
             // label7
             // 
@@ -297,11 +304,11 @@
             this.label_TOTAL.AutoSize = true;
             this.label_TOTAL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label_TOTAL.Font = new System.Drawing.Font("Calisto MT", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_TOTAL.Location = new System.Drawing.Point(1206, 457);
+            this.label_TOTAL.Location = new System.Drawing.Point(1191, 457);
             this.label_TOTAL.Name = "label_TOTAL";
-            this.label_TOTAL.Size = new System.Drawing.Size(133, 55);
+            this.label_TOTAL.Size = new System.Drawing.Size(109, 55);
             this.label_TOTAL.TabIndex = 15;
-            this.label_TOTAL.Text = "00.00";
+            this.label_TOTAL.Text = "0,00";
             this.label_TOTAL.Click += new System.EventHandler(this.label_TOTAL_Click);
             // 
             // label8
@@ -309,9 +316,9 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.label8.Location = new System.Drawing.Point(4, 520);
-            this.label8.MinimumSize = new System.Drawing.Size(1360, 75);
+            this.label8.MinimumSize = new System.Drawing.Size(1400, 75);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(1360, 75);
+            this.label8.Size = new System.Drawing.Size(1400, 75);
             this.label8.TabIndex = 16;
             // 
             // label9
@@ -391,30 +398,31 @@
             this.label_total_abajo.TabIndex = 23;
             this.label_total_abajo.Text = "0.00";
             // 
-            // label16
+            // label_pago_con
             // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label16.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(132, 552);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(46, 22);
-            this.label16.TabIndex = 24;
-            this.label16.Text = "0.00";
+            this.label_pago_con.AutoSize = true;
+            this.label_pago_con.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.label_pago_con.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_pago_con.Location = new System.Drawing.Point(132, 552);
+            this.label_pago_con.Name = "label_pago_con";
+            this.label_pago_con.Size = new System.Drawing.Size(46, 22);
+            this.label_pago_con.TabIndex = 24;
+            this.label_pago_con.Text = "0.00";
             // 
-            // label17
+            // label_cambio
             // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label17.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(243, 552);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(46, 22);
-            this.label17.TabIndex = 25;
-            this.label17.Text = "0.00";
+            this.label_cambio.AutoSize = true;
+            this.label_cambio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.label_cambio.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_cambio.Location = new System.Drawing.Point(243, 552);
+            this.label_cambio.Name = "label_cambio";
+            this.label_cambio.Size = new System.Drawing.Size(46, 22);
+            this.label_cambio.TabIndex = 25;
+            this.label_cambio.Text = "0.00";
             // 
             // button_ventas_y_devoluciones
             // 
+            this.button_ventas_y_devoluciones.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_ventas_y_devoluciones.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_ventas_y_devoluciones.Location = new System.Drawing.Point(1019, 528);
             this.button_ventas_y_devoluciones.Name = "button_ventas_y_devoluciones";
@@ -428,7 +436,7 @@
             this.label18.AutoSize = true;
             this.label18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label18.Font = new System.Drawing.Font("Calisto MT", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(1027, 87);
+            this.label18.Location = new System.Drawing.Point(1050, 91);
             this.label18.MinimumSize = new System.Drawing.Size(330, 355);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(330, 355);
@@ -441,7 +449,7 @@
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label19.Font = new System.Drawing.Font("Calisto MT", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(1040, 161);
+            this.label19.Location = new System.Drawing.Point(1063, 165);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(131, 37);
             this.label19.TabIndex = 28;
@@ -452,7 +460,7 @@
             this.label20.AutoSize = true;
             this.label20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label20.Font = new System.Drawing.Font("Calisto MT", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(1040, 251);
+            this.label20.Location = new System.Drawing.Point(1063, 255);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(61, 37);
             this.label20.TabIndex = 29;
@@ -463,7 +471,7 @@
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label21.Font = new System.Drawing.Font("Calisto MT", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(1040, 336);
+            this.label21.Location = new System.Drawing.Point(1063, 340);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(90, 37);
             this.label21.TabIndex = 30;
@@ -474,40 +482,40 @@
             this.label_subtotal.AutoSize = true;
             this.label_subtotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label_subtotal.Font = new System.Drawing.Font("Calisto MT", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_subtotal.Location = new System.Drawing.Point(1232, 161);
+            this.label_subtotal.Location = new System.Drawing.Point(1255, 165);
             this.label_subtotal.Name = "label_subtotal";
             this.label_subtotal.Size = new System.Drawing.Size(74, 37);
             this.label_subtotal.TabIndex = 31;
-            this.label_subtotal.Text = "0.00";
+            this.label_subtotal.Text = "0,00";
             // 
             // label_iva
             // 
             this.label_iva.AutoSize = true;
             this.label_iva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label_iva.Font = new System.Drawing.Font("Calisto MT", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_iva.Location = new System.Drawing.Point(1232, 251);
+            this.label_iva.Location = new System.Drawing.Point(1255, 255);
             this.label_iva.Name = "label_iva";
             this.label_iva.Size = new System.Drawing.Size(74, 37);
             this.label_iva.TabIndex = 32;
-            this.label_iva.Text = "0.00";
+            this.label_iva.Text = "0,00";
             // 
             // label_total2
             // 
             this.label_total2.AutoSize = true;
             this.label_total2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label_total2.Font = new System.Drawing.Font("Calisto MT", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_total2.Location = new System.Drawing.Point(1232, 336);
+            this.label_total2.Location = new System.Drawing.Point(1255, 340);
             this.label_total2.Name = "label_total2";
             this.label_total2.Size = new System.Drawing.Size(74, 37);
             this.label_total2.TabIndex = 33;
-            this.label_total2.Text = "0.00";
+            this.label_total2.Text = "0,00";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label6.Font = new System.Drawing.Font("Calisto MT", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(1194, 161);
+            this.label6.Location = new System.Drawing.Point(1217, 165);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(32, 37);
             this.label6.TabIndex = 34;
@@ -518,7 +526,7 @@
             this.label22.AutoSize = true;
             this.label22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label22.Font = new System.Drawing.Font("Calisto MT", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(1194, 251);
+            this.label22.Location = new System.Drawing.Point(1217, 255);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(32, 37);
             this.label22.TabIndex = 35;
@@ -529,7 +537,7 @@
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.label23.Font = new System.Drawing.Font("Calisto MT", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(1194, 336);
+            this.label23.Location = new System.Drawing.Point(1217, 340);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(32, 37);
             this.label23.TabIndex = 36;
@@ -537,6 +545,7 @@
             // 
             // button_borrar_seleccionado
             // 
+            this.button_borrar_seleccionado.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_borrar_seleccionado.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_borrar_seleccionado.Location = new System.Drawing.Point(288, 87);
             this.button_borrar_seleccionado.Name = "button_borrar_seleccionado";
@@ -551,7 +560,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1362, 596);
+            this.ClientSize = new System.Drawing.Size(1370, 596);
             this.Controls.Add(this.button_borrar_seleccionado);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.label22);
@@ -564,8 +573,8 @@
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.button_ventas_y_devoluciones);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label_cambio);
+            this.Controls.Add(this.label_pago_con);
             this.Controls.Add(this.label_total_abajo);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
@@ -591,8 +600,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "ventas";
             this.Text = "ventas";
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ventas_KeyUp);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -607,10 +618,8 @@
         private System.Windows.Forms.Button button_entradas;
         private System.Windows.Forms.Button button_salidas;
         private System.Windows.Forms.Button button5_borrar;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label_num_prod_en_venta;
-        private System.Windows.Forms.Button button_hacer_venta;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ColumnHeader columnHeader_precio;
         private System.Windows.Forms.ColumnHeader columnHeader_codigo;
@@ -625,10 +634,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button button_ventas_y_devoluciones;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
@@ -644,5 +650,10 @@
         public System.Windows.Forms.Label label_iva;
         public System.Windows.Forms.Label label_total2;
         public System.Windows.Forms.ListView listView_venta;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Button button_hacer_venta;
+        public System.Windows.Forms.Label label_pago_con;
+        public System.Windows.Forms.Label label_cambio;
+        public System.Windows.Forms.Label label18;
     }
 }

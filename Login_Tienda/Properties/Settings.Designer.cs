@@ -30,6 +30,7 @@ namespace Login_Tienda.Properties {
         public string TiendaConnectionString {
             get {
                 return ((string)(this["TiendaConnectionString"]));
+                
             }
         }
     }
