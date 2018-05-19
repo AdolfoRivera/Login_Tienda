@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(productos));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -70,7 +71,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calisto MT", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(131, 92);
+            this.label1.Location = new System.Drawing.Point(101, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(364, 36);
             this.label1.TabIndex = 0;
@@ -232,6 +233,8 @@
             // 
             // datos_data
             // 
+            this.datos_data.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.datos_data.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.datos_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datos_data.Location = new System.Drawing.Point(611, 82);
             this.datos_data.Name = "datos_data";
@@ -278,7 +281,7 @@
             // 
             this.button_modificar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_modificar.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_modificar.Location = new System.Drawing.Point(5, 41);
+            this.button_modificar.Location = new System.Drawing.Point(7, 82);
             this.button_modificar.Name = "button_modificar";
             this.button_modificar.Size = new System.Drawing.Size(149, 40);
             this.button_modificar.TabIndex = 18;
@@ -290,7 +293,7 @@
             // 
             this.button_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_eliminar.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_eliminar.Location = new System.Drawing.Point(160, 41);
+            this.button_eliminar.Location = new System.Drawing.Point(162, 82);
             this.button_eliminar.Name = "button_eliminar";
             this.button_eliminar.Size = new System.Drawing.Size(149, 40);
             this.button_eliminar.TabIndex = 19;
@@ -302,7 +305,7 @@
             // 
             this.button_mostrar_datos.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_mostrar_datos.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_mostrar_datos.Location = new System.Drawing.Point(456, 41);
+            this.button_mostrar_datos.Location = new System.Drawing.Point(611, 41);
             this.button_mostrar_datos.Name = "button_mostrar_datos";
             this.button_mostrar_datos.Size = new System.Drawing.Size(149, 40);
             this.button_mostrar_datos.TabIndex = 20;
@@ -429,8 +432,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(1378, 596);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ClientSize = new System.Drawing.Size(1370, 596);
             this.Controls.Add(this.dateTimePicker1_caducidad);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.textBox_buscar);
@@ -463,6 +466,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "productos";
             this.Text = "productos";
             this.Load += new System.EventHandler(this.productos_Load);

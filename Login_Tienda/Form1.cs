@@ -52,7 +52,9 @@ namespace Login_Tienda
 
         private void button_aseptar_Click(object sender, EventArgs e)
         {
+            
             Validacion();
+           
             
         }
 
@@ -60,8 +62,11 @@ namespace Login_Tienda
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-                Validacion();
+             
+                    Validacion();
+                
             }
+
             //Codogo Por SI No Funciona El Metodo Anterior
 
             /* if (checkBox_mostrar_contraseña.Checked == true)
@@ -83,6 +88,7 @@ namespace Login_Tienda
         }
         //Validar Usuario En la Base De Datos
 
+        public static string nombre = "";
         public void Validacion()
         {
             try
@@ -90,19 +96,29 @@ namespace Login_Tienda
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandText = "select Nombre,Contraseña from Usuarios where Nombre ='" + textBox_usuario.Text + "'and Contraseña ='" + textBox_contraseña.Text + "' ";
                 cmd.Connection = con;
+                
                 con.Open();
 
                 dr = cmd.ExecuteReader();
+            
                 if (dr.Read())
                 {
+                    //metodo de varra de progreso
+                    pruebabarra();
+                    //---------------
                     MessageBox.Show("Bienvenido: " + textBox_usuario.Text, "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     menu obj = new menu();
+                    
                     //Mostrar Usuario Rejistrado-----
+                
                     obj.label_usuario.Text = textBox_usuario.Text;
-                    //-----
-                    obj.Visible = true;
-                    Visible = false;
-
+                    //obtiene nombre de usuario
+                    nombre = dr[0].ToString();
+                   
+                        //-----
+                        obj.Visible = true;
+                        Visible = false;
+                    
                 }
                 else
                 {
@@ -197,7 +213,7 @@ namespace Login_Tienda
             //if (e.KeyChar == ',' || e.KeyChar == '.' || e.KeyChar == '-' || e.KeyChar == '_' || e.KeyChar == ';' || e.KeyChar == ':' || e.KeyChar == '´' || e.KeyChar == 'ç' || e.KeyChar == '{' || e.KeyChar == '}' || e.KeyChar == '[' || e.KeyChar == ']' || e.KeyChar == '`' || e.KeyChar == '+' || e.KeyChar == '¡' || e.KeyChar == '¿' || e.KeyChar == '?' || e.KeyChar == '=' || e.KeyChar == ')' || e.KeyChar == '(' || e.KeyChar == '/' || e.KeyChar == '&' || e.KeyChar == '%' || e.KeyChar == '$' || e.KeyChar == '·' || e.KeyChar == '"' || e.KeyChar == '!' || e.KeyChar == 'ª' || e.KeyChar == 'º' || e.KeyChar == '<' || e.KeyChar == '>')
             try
             {
-                if (textBox_usuario.Text == "'")
+                if (textBox_usuario.Text.Trim() == "'")
                 {
                     MessageBox.Show("NO (')");
                     textBox_usuario.Clear();
@@ -212,18 +228,19 @@ namespace Login_Tienda
 
         private void textBox_contraseña_KeyUp(object sender, KeyEventArgs e)
         {
-            try
-            {
-                if (textBox_contraseña.Text == "'")
-                {
-                    MessageBox.Show("NO (')");
-                    textBox_contraseña.Clear();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+           try
+              {
+                  if (textBox_contraseña.Text.Trim() == "'")
+                  {
+                      MessageBox.Show("NO (')");
+                      textBox_contraseña.Clear();
+
+                  }
+              }
+              catch (Exception ex)
+              {
+                  MessageBox.Show(ex.Message);
+              }
 
         }
         //metodo para poner solo letras
@@ -246,5 +263,46 @@ namespace Login_Tienda
                 pe.Handled = true;
             }
         }
+        //evento barra de progreso
+        private void Form1_Load(object sender, EventArgs e)
+        {
+           
+//            lb_porciento.Parent = pictureBox1;
+  //          lb_porciento.BackColor = Color.Transparent;
+
+        }
+        //metodo para la barra de progreso
+        public void pruebabarra()
+        {
+            progressBar1.Increment(100);
+            lb_porciento.Text = progressBar1.Value.ToString() + "%";
+            if (progressBar1.Value==progressBar1.Maximum)
+            {
+                timer1.Stop();
+               // this.Hide();
+                // menu men = new menu();
+                 //men.Show();
+                
+            }
+        }
+
+        private void button_preuba_Click(object sender, EventArgs e)
+        {
+             
+        }
+        //evento barra de progreso
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+           // pruebabarra(); 
+        }
+            //evento barra de progreso
+
+            private void progressBar1_Click(object sender, EventArgs e)
+        {
+            //ProgressBar pb = new ProgressBar();
+        }
+
+        
     }
 }

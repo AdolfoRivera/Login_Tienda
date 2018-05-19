@@ -15,6 +15,8 @@ namespace Login_Tienda
     {
         SqlCommand cmd;
         SqlConnection con = Conexion.ObtenerConexion();
+        ventas ve = new ventas();
+        menu me1 = new menu();
         public enter_cobrar()
         {
             InitializeComponent();
@@ -24,8 +26,9 @@ namespace Login_Tienda
         //Boton Cobrar
         private void button_cobrar_Click(object sender, EventArgs e)
         {
+            
             try { 
-            ventas obj_ven = new ventas();
+           
                 //L_C es la variable label_cambio parceada para tomar los valores
             double L_C;
             L_C = double.Parse(label_cambio_pago.Text);
@@ -45,8 +48,12 @@ namespace Login_Tienda
                      MessageBox.Show("Gracias por su compra");*/
                     //Cerrar formulario activo
 
-                    /*float total = Convert.ToInt32(ve.label_TOTAL.Text);
-                    ins_venta(me.label_usuario.Text,me.label_hora_actual.Text, total); */
+                  /*  float total2 = float.Parse(textBox_total_cobrar.Text );
+                   float total = Convert.ToInt32(textBox_total_cobrar.Text); */   
+                   ins_venta(textBox_nombre_cobrear.Text,textBox_fecha_cobrar.Text,textBox_total_cobrar.Text);
+                        
+                    
+                    //ins_venta(me1.textBox_USUARIO.Text, textBox_fecha_cobrar .Text, total);
                     this.Close();
                    
                 }
@@ -64,6 +71,9 @@ namespace Login_Tienda
             //EVENTO PARA PONER EL CURSOR EN EL TEXBOX
             this.ActiveControl = textBox_pago;
             textBox_pago.Focus();
+            textBox_nombre_cobrear.Text = Form1.nombre;
+
+            //------
 
         }
        
@@ -75,13 +85,13 @@ namespace Login_Tienda
                 {
                    // MessageBox.Show("Ponga Dinero");
                 }
-                else { 
-            
-                double total_a_pagar = Convert.ToDouble(label_total_a_pagar.Text), pago = Convert.ToDouble(textBox_pago.Text), cambio = 0;
-                cambio = total_a_pagar - pago;
+                else {
+                  
+                    Double total_a_pagar = Convert.ToDouble(label_total_a_pagar.Text), pago = Convert.ToDouble(textBox_pago.Text), cambio = 0;
+                         cambio = total_a_pagar - pago;
                      if (cambio>=0)
                      {
-                        label_cambio_pago.Text = "0,00";
+                        label_cambio_pago.Text = "0.00";
                     }
                      else if(cambio<=0)
                      {
@@ -147,24 +157,27 @@ namespace Login_Tienda
                 textBox_pago.Focus();
             }
         }
-        menu me = new menu();
-        ventas ve = new ventas();
+      
+       
 
-        public void ins_venta(String Nombre, String fecha, float total)
+        public void ins_venta(String Nombre, String fecha, String total)
         {
-            if (me.label_usuario.Text.Equals(" ") == true)
+        
+
+            if (textBox_nombre_cobrear.Text.Equals(" ") == true)
             {
-                MessageBox.Show("Campos Bacios");
+                MessageBox.Show("Campos vacios");
             }
-            else if (ve.label_TOTAL.Text.Equals(" ") == true)
+            else if (textBox_fecha_cobrar.Text.Equals(" ") == true)
             {
-                MessageBox.Show("Campos Bacios");
+                MessageBox.Show("Campos vacios");
             }
-            else if (me.label_hora_actual.Text.Equals(" ") == true)
+            else if (textBox_total_cobrar.Text.Equals(" ") == true)
             {
-                MessageBox.Show("Campos Bacios");
+                MessageBox.Show("Campos vacios");
             }
-            else { 
+            else
+            {
                 //  cnn = new SqlConnection("Data Source=DARCK;Initial Catalog=Tienda;Integrated Security=True");
                 con = Conexion.ObtenerConexion();
                 SqlCommand cmd = con.CreateCommand();
@@ -172,14 +185,14 @@ namespace Login_Tienda
                 cmd.CommandText = "ins_venta";
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@Nombre", me.label_hora_actual.Text);
-                cmd.Parameters.AddWithValue("@fecha", ve.label_TOTAL.Text);
-                cmd.Parameters.AddWithValue("@total", me.label_hora_actual.Text);
-                
-                /*me.label_usuario.Clear();
-                ve.label_TOTAL.Clear();
-                me.label_hora_actual.Clear();*/
-               
+                cmd.Parameters.AddWithValue("@Nombre", Nombre);
+                cmd.Parameters.AddWithValue("@fecha", fecha);
+                cmd.Parameters.AddWithValue("@total", total);
+                /*
+                cmd.Parameters.AddWithValue("@Nombre", textBox_nombre_cobrear.Text);
+                cmd.Parameters.AddWithValue("@fecha", textBox_fecha_cobrar.Text);
+                cmd.Parameters.AddWithValue("@total", textBox_total_cobrar.Text);
+                */
                 try
                 {
                     con.Open();
@@ -195,6 +208,21 @@ namespace Login_Tienda
                 }
 
             }
+        
+        }
+
+       
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
+                enter_cobrar.ActiveForm.Close();
+            
+            
+        }
+
+        private void label_total_a_pagar_Click(object sender, EventArgs e)
+        {
 
         }
     }

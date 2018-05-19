@@ -539,6 +539,9 @@ namespace Login_Tienda
                 SqlDataAdapter sqldatos = new SqlDataAdapter("select * from Productos", con);
                 sqldatos.Fill(datos);
                 dataGridView_productos.DataSource = datos;
+                //--COLOR
+                dataGridView_productos.RowsDefaultCellStyle.BackColor = Color.AliceBlue;
+                dataGridView_productos.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
                 con.Close();
             }
             catch (Exception ex)
@@ -557,6 +560,9 @@ namespace Login_Tienda
                 SqlDataAdapter sqldatos = new SqlDataAdapter("select * from Usuarios", con);
                 sqldatos.Fill(datos);
                 dataGridView_usuarios.DataSource = datos;
+                //--COLOR
+                dataGridView_usuarios.RowsDefaultCellStyle.BackColor = Color.AliceBlue;
+                dataGridView_usuarios.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
                 con.Close();
             }
             catch (Exception ex)

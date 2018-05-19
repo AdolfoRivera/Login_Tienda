@@ -18,7 +18,12 @@ namespace Login_Tienda
         SqlConnection con = Conexion.ObtenerConexion();
         public ventas()
         {
+
             InitializeComponent();
+            //HORA
+           // label_hora_venta.Text = DateTime.Now.ToString("dd-MM-yyyy");
+            textBox_hora_actual.Text = DateTime.Now.ToString("yyyy-MM-dd");
+
             //cnn = new SqlConnection("Data Source=DARCK;Initial Catalog=Tienda;Integrated Security=True");
         }
 
@@ -26,9 +31,12 @@ namespace Login_Tienda
         {
             try
             {
+
                 buscar obj_b = new buscar();
                 obj_b.ShowDialog();
-                string cadsql2 = "select * from Productos where Codigo like'%" + obj_b.textBox_buscar.Text + "%'or Descripcion like'%" + obj_b.textBox_buscar.Text + "%'";// + "'";
+                string cadsql2 = "select * from Productos where Codigo ='" + obj_b.textBox_buscar.Text + "'or Descripcion='" +obj_b.textBox_buscar.Text + "'"; //"'";
+
+                //string cadsql2 = "select * from Productos where Codigo like'%" + obj_b.textBox_buscar.Text + "%'or Descripcion like'%" + obj_b.textBox_buscar.Text + "%'";// + "'";
                 SqlCommand comando = new SqlCommand(cadsql2, con);
                 con.Open();
                 SqlDataReader leer = comando.ExecuteReader();
@@ -77,13 +85,19 @@ namespace Login_Tienda
                     label_total2.Text = suma2.ToString();
                     label_total_abajo.Text = suma2.ToString();
                     //_--------------------------
-                    label_TOTAL.Text = suma2.ToString();
+                    label_TOTAL.Text = suma2.ToString();//.Replace(",", ".");
+                   // textBox_total.Text = suma2.ToString().Replace(",", ".");
+
                     //Operacion alternar color
-                    ListViewItem color = new ListViewItem(obj_b.textBox_buscar.Text);
-                    listView_venta.Items.Add(color);
-                    Alternarcolor();
+                    // ListViewItem color = new ListViewItem(obj_b.textBox_buscar.Text);
+                    //listView_venta.Items.Add(color);
+                    //Alternarcolor();
                     //operacion sumar numero de productos en venta
-                    label_num_prod_en_venta.Text = listView_venta.Items.Count.ToString();
+                    string TP = listView_venta.Items.Count.ToString();
+                    //label_num_prod_en_venta.Text = listView_venta.Items.Count.ToString();
+                    int TP2 = Convert.ToInt32(TP);
+                    int TP3 = TP2 - 1;
+                    label_num_prod_en_venta.Text = TP3.ToString();
 
                 }
                 con.Close();
@@ -100,15 +114,16 @@ namespace Login_Tienda
                 }*/
             }
             catch (Exception ex)
-               {
+            {
                 MessageBox.Show(ex.Message);
             }
-        
 
-    }
+
+        }
 
         private void button_entradas_Click(object sender, EventArgs e)
         {
+
             entradas obj = new entradas();
             obj.ShowDialog();
         }
@@ -121,9 +136,7 @@ namespace Login_Tienda
 
         private void button_hacer_venta_Click(object sender, EventArgs e)
         {
-            /*enter_cobrar obj = new enter_cobrar();
-            obj.ShowDialog();*/
-
+        
 
             try
             {
@@ -137,10 +150,21 @@ namespace Login_Tienda
                 {
                     enter_cobrar obj = new enter_cobrar();
                     obj.label_total_a_pagar.Text = label_TOTAL.Text;
+                    //-----prueba
+                    //obj.textBox_nombre_cobrear.Text = textBox_nombre.Text;
+
+                    obj.textBox_fecha_cobrar.Text = textBox_hora_actual.Text;
+                    obj.textBox_total_cobrar.Text = label_TOTAL.Text;
+                  //  obj.textBox_total_cobrar.Text = textBox_total.Text;
+
+                    //obj.textBox_codigo_cobrar.Text = textBox_codigo_de_varrras.Text;
+               
+
                     //Ocultar anterior  this.Hide();
                     obj.ShowDialog();
                     double L_C;
                     L_C = double.Parse(obj.label_cambio_pago.Text);
+
 
                     if (L_C <= 0)
                     {
@@ -154,16 +178,20 @@ namespace Login_Tienda
                         label_iva.Text = "0,00";
                         label_total2.Text = "0,00";
                         label_TOTAL.Text = "0,00";
+                        label_num_prod_en_venta.Text = "0";
+                       // textBox_total.Text = "0";
                         //label_total_abajo.Text = "0.00";
                         label_total_abajo.Text = obj.label_total_a_pagar.Text;
                         label_pago_con.Text = obj.textBox_pago.Text;// .Text = suma2.ToString();
                         label_cambio.Text = obj.label_cambio_pago.Text;
 
-                          menu me = new menu();
-                          enter_cobrar ec = new enter_cobrar();
-                          float total = Convert.ToInt32(label_TOTAL.Text);
-                          ins_venta(me.label_usuario.Text,me.label_hora_actual.Text, total); 
-                        MessageBox.Show("Gracias por su compra");
+                        //--------INS VENTA----------------
+                        menu me = new menu();
+                       
+                        // float total = Convert.ToInt32(label_TOTAL.Text);
+                         //ins_venta(textBox_nombre.Text,textBox_hora_actual.Text,total);
+                       
+//                        MessageBox.Show("Gracias por su compra");
 
                     }
                 }
@@ -172,21 +200,23 @@ namespace Login_Tienda
             {
                 MessageBox.Show(ex.Message);
             }
-            }
-        menu me = new menu();
-        public void ins_venta(String Nombre, String fecha, float total)
+        }
+
+      /*  public void ins_venta(String Nombre, String fecha, float total)
         {
-            if (me.label_usuario.Text.Equals(" ") == true)
+            menu me = new menu();
+
+            if (me.label_usuario.Text.Equals("") == true)
             {
-                MessageBox.Show("Campos Bacios");
+                MessageBox.Show("Campos vacios");
             }
-            else if (label_TOTAL.Text.Equals(" ") == true)
+            else if (textBox_hora_actual.Text.Equals("") == true)
             {
-                MessageBox.Show("Campos Bacios");
+                MessageBox.Show("Campos vacios");
             }
-            else if (me.label_hora_actual.Text.Equals(" ") == true)
+            else if (textBox_total.Text.Equals("") == true)
             {
-                MessageBox.Show("Campos Bacios");
+                MessageBox.Show("Campos vacios");
             }
             else
             {
@@ -197,13 +227,11 @@ namespace Login_Tienda
                 cmd.CommandText = "ins_venta";
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@Nombre", me.label_hora_actual.Text);
-                cmd.Parameters.AddWithValue("@fecha", label_TOTAL.Text);
-                cmd.Parameters.AddWithValue("@total", me.label_hora_actual.Text);
+           
+                cmd.Parameters.AddWithValue("@Nombre", textBox_nombre.Text);
+                cmd.Parameters.AddWithValue("@fecha", textBox_hora_actual.Text);
+                cmd.Parameters.AddWithValue("@total", textBox_total.Text);
 
-                /*me.label_usuario.Clear();
-                ve.label_TOTAL.Clear();
-                me.label_hora_actual.Clear();*/
 
                 try
                 {
@@ -220,16 +248,26 @@ namespace Login_Tienda
                 }
 
             }
-        }
-            private void button1_Click(object sender, EventArgs e)
+        }*/
+        private void button1_Click(object sender, EventArgs e)
         {
-            validacion();
+            try
+            {
+                int c = Convert.ToInt32(textBox_cantidad.Text);
+                dis_Stock(textBox_codigo_de_varrras.Text, c);
+                validacion();
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         //Operacion alternar colores de listview
         public void Alternarcolor()
         {
-            for (int i=0;i<=listView_venta.Items.Count-1;i++)
-           
+            for (int i = 0; i <= listView_venta.Items.Count - 1; i++)
+
             {                                  //%2 ==0
                 if (listView_venta.Items[i].Index % 2 == 0)
                 {
@@ -238,12 +276,15 @@ namespace Login_Tienda
                 else
                 {
                     listView_venta.Items[i].BackColor = Color.LightGreen;
-               }
+                }
             }
         }
-        public void validacion() {
+        public void validacion()
+        {
             try
             {
+              
+
                 string cadsql = "select * from Productos where Codigo ='" + textBox_codigo_de_varrras.Text + "'";
                 SqlCommand comando = new SqlCommand(cadsql, con);
                 con.Open();
@@ -253,7 +294,9 @@ namespace Login_Tienda
                     MessageBox.Show("Producto No Encontrado");
                     textBox_codigo_de_varrras.Clear();
                 }
-                else { 
+                else
+                {
+                    
 
                     ListViewItem lista = new ListViewItem(leer["venta"].ToString());
                     lista.SubItems.Add(leer["Codigo"].ToString());
@@ -262,10 +305,12 @@ namespace Login_Tienda
                     lista.SubItems.Add(leer[4].ToString());
                     lista.SubItems.Add(leer["venta"].ToString());
                     lista.SubItems.Add(leer["Cantidad"].ToString());
+                    
                     listView_venta.Items.Add(lista);
 
                     textBox_codigo_de_varrras.Clear();
-                
+                   
+                    
 
                     //if (listView_venta.SubItems.Count == 4)
 
@@ -277,31 +322,38 @@ namespace Login_Tienda
                         {
                             suma += Convert.ToInt32(listView_venta.Items[i].SubItems[0].Text);
                         }
-                        }
-                        //Operacion subtotal
-                        //  label_TOTAL.Text = suma.ToString();
-                        label_subtotal.Text = suma.ToString();
-                        //Operacion iva
-                        double subtotal = double.Parse(label_subtotal.Text);
-                        double iva;
-                        iva = (subtotal * 16 / 100);
-                        label_iva.Text = iva.ToString();
-                        //Operacion total con iva
-                        double suma2;
-                        double numtxtsubtotal = double.Parse(label_subtotal.Text);
-                        double numtxtiva = double.Parse(label_iva.Text);
-                        suma2 = (numtxtsubtotal + numtxtiva);
-                        label_total2.Text = suma2.ToString();
-                        label_total_abajo.Text = suma2.ToString();
+                    }
+                    //Operacion subtotal
+                    //  label_TOTAL.Text = suma.ToString();
+                    label_subtotal.Text = suma.ToString();
+                    //Operacion iva
+                    double subtotal = double.Parse(label_subtotal.Text);
+                    double iva;
+                    iva = (subtotal * 16 / 100);
+                    label_iva.Text = iva.ToString();
+                    //Operacion total con iva
+                    double suma2;
+                    double numtxtsubtotal = double.Parse(label_subtotal.Text);
+                    double numtxtiva = double.Parse(label_iva.Text);
+                    suma2 = (numtxtsubtotal + numtxtiva);
+                    label_total2.Text = suma2.ToString();
+                    label_total_abajo.Text = suma2.ToString();
                     //_--------------------------
-                        label_TOTAL.Text = suma2.ToString();
-                        //Operacion alternar color
-                        ListViewItem color = new ListViewItem(textBox_codigo_de_varrras.Text);
-                        listView_venta.Items.Add(color);
-                        Alternarcolor();
+                    label_TOTAL.Text = suma2.ToString();//.Replace(",", ".");
+                  //  textBox_total.Text = suma2.ToString().Replace(",", ".");
+
+                    //Operacion alternar color
+                   // ListViewItem color = new ListViewItem(textBox_codigo_de_varrras.Text);
+                   // listView_venta.Items.Add(color);
+                   // Alternarcolor();
 
                     //operacion sumar numero de productos en venta
-                    label_num_prod_en_venta.Text = listView_venta.Items.Count.ToString();
+                    //label_num_prod_en_venta.Text = listView_venta.Items.Count.ToString();
+                    string TP = listView_venta.Items.Count.ToString();
+                    
+                    int TP2 = Convert.ToInt32(TP);
+                    int TP3 = TP2 - 1;
+                    label_num_prod_en_venta.Text = TP3.ToString();
 
                 }
                 con.Close();
@@ -317,7 +369,7 @@ namespace Login_Tienda
         }
         private void label_TOTAL_Click(object sender, EventArgs e)
         {
-            
+
             //item.SubItems[2]) hace referencia a la 3 columna, ten en cuenta que empiezan en 0.
         }
 
@@ -328,7 +380,7 @@ namespace Login_Tienda
 
         private void listView_venta_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-        
+
         }
 
         private void textBox_codigo_de_varrras_KeyUp(object sender, KeyEventArgs e)
@@ -364,23 +416,33 @@ namespace Login_Tienda
         }
         private void textBox_codigo_de_varrras_KeyPress(object sender, KeyPressEventArgs e)
         {
-            sololNumeros(e);   
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            try
             {
-                validacion();
+                sololNumeros(e);
+                if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                {
+                    int c = Convert.ToInt32(textBox_cantidad.Text);
+                    dis_Stock(textBox_codigo_de_varrras.Text, c);
+                    validacion();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
         //Boton Borrar Todo
         private void button5_borrar_Click(object sender, EventArgs e)
         {
             listView_venta.Items.Clear();
-            label_subtotal.Text = "0.00";
-            label_iva.Text = "0.00";
-            label_total2.Text = "0.00";
-            label_TOTAL.Text = "0.00";
-            label_total_abajo.Text = "0.00";
+            label_subtotal.Text = "0,00";
+            label_iva.Text = "0,00";
+            label_total2.Text = "0,00";
+            label_TOTAL.Text = "0,00";
+           // textBox_total.Text = "0,00";
+            label_total_abajo.Text = "0,00";
             label_num_prod_en_venta.Text = "0";
-            
+
         }
 
         private void button_borrar_seleccionado_Click(object sender, EventArgs e)
@@ -414,19 +476,61 @@ namespace Login_Tienda
                 label_total2.Text = suma2.ToString();
 
                 label_TOTAL.Text = suma2.ToString();
+               // textBox_total.Text = suma2.ToString();
                 label_total_abajo.Text = suma2.ToString();
 
                 //operacion sumar numero de productos en venta
-                label_num_prod_en_venta.Text = listView_venta.Items.Count.ToString();
+                //label_num_prod_en_venta.Text = listView_venta.Items.Count.ToString();
+                string TP = listView_venta.Items.Count.ToString();
+               
+                int TP2 = Convert.ToInt32(TP);
+                int TP3 = TP2 - 1;
+                label_num_prod_en_venta.Text = TP3.ToString();
             }
         }
         private void listView_venta_KeyUp(object sender, KeyEventArgs e)
-        {       
+        {
+            //int c = Convert.ToInt32(textBox_cantidad.Text);
+            //dis_Stock(textBox_codigo_de_varrras.Text, c);
+            
         }
+
+        public void dis_Stock(String Codigo, int cantidad)
+        {
+        
+            SqlCommand cmd = con.CreateCommand();
+
+            cmd.CommandText = "dis_Stock";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Codigo", textBox_codigo_de_varrras.Text);
+
+          // textBox_codigo_de_varrras.Clear();
+
+            SqlParameter p1 = new SqlParameter();
+            p1.ParameterName = "@Cantidad";
+            p1.SqlDbType = SqlDbType.Int;
+            p1.Value = cantidad;
+            cmd.Parameters.Add(p1);
+
+            try
+            {
+                con.Open();
+
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
+        }
+
         //Evento para poner marca de agua
+    
         private void textBox_codigo_de_varrras_Enter(object sender, EventArgs e)
         {
-            if (textBox_codigo_de_varrras.Text=="Codigo de barras")
+            if (textBox_codigo_de_varrras.Text == "Codigo de barras")
             {
                 textBox_codigo_de_varrras.Text = "";
                 textBox_codigo_de_varrras.ForeColor = Color.Black;
@@ -444,16 +548,19 @@ namespace Login_Tienda
 
         private void button_hacer_venta_KeyUp(object sender, KeyEventArgs e)
         {
-           
+
         }
 
         private void ventas_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Space)    
-            {
+            
 
+            if (e.KeyCode == Keys.Space)
+            {
+           
                 try
                 {
+
                     if (label_TOTAL.Text == "0,00" || label_TOTAL.Text == "0")
                     {
 
@@ -462,8 +569,16 @@ namespace Login_Tienda
 
                     else
                     {
+                         
+
                         enter_cobrar obj = new enter_cobrar();
                         obj.label_total_a_pagar.Text = label_TOTAL.Text;
+                        //-----prueba
+                        //obj.textBox_nombre_cobrear.Text = textBox_nombre.Text;
+                        obj.textBox_fecha_cobrar.Text = textBox_hora_actual.Text;
+                        //obj.textBox_total_cobrar.Text = textBox_total.Text;
+                        obj.textBox_total_cobrar.Text = label_TOTAL.Text;
+                        // obj.textBox_codigo_cobrar.Text = textBox_codigo_de_varrras.Text;
                         //Ocultar anterior  this.Hide();
                         obj.ShowDialog();
                         double L_C;
@@ -477,15 +592,23 @@ namespace Login_Tienda
                         {
 
                             listView_venta.Items.Clear();
-                            label_subtotal.Text = "0.00";
-                            label_iva.Text = "0.00";
-                            label_total2.Text = "0.00";
-                            label_TOTAL.Text = "0.00";
+                            label_subtotal.Text = "0,00";
+                            label_iva.Text = "0,00";
+                            label_total2.Text = "0,00";
+                            label_TOTAL.Text = "0,00";
+                            label_num_prod_en_venta.Text = "0";
+                           // textBox_total.Text = "0";
                             //label_total_abajo.Text = "0.00";
                             label_total_abajo.Text = obj.label_total_a_pagar.Text;
                             label_pago_con.Text = obj.textBox_pago.Text;// .Text = suma2.ToString();
                             label_cambio.Text = obj.label_cambio_pago.Text;
-                            MessageBox.Show("Gracias por su compra");
+                            
+                            /*menu me = new menu();
+                            enter_cobrar ec = new enter_cobrar();
+                            float total = Convert.ToInt32(label_TOTAL.Text);
+                            ins_venta(me.label_usuario.Text, me.label_hora_actual.Text, total);*/
+
+                          //  MessageBox.Show("Gracias por su compra");
 
                         }
                     }
@@ -496,6 +619,20 @@ namespace Login_Tienda
                 }
             }
         }
+       
+        private void ventas_Load(object sender, EventArgs e)
+        {
+            //--COLOR
+          //  int i=0;
+           
+           //  listView_venta.Items[i].BackColor = Color.LightBlue;
+            listView_venta.BackColor = Color.AliceBlue;
+            /*Form1 f = new Form1();
+            menu me1 = new menu();
+            string userr = f.textBox_usuario.Text;
+            label_user.Text = userr;*/
+            //label_user.Text = me1.label_usuario.Text;
+
+        }
     }
 }
-

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Administrador));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -156,7 +157,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calisto MT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(2, 145);
+            this.label6.Location = new System.Drawing.Point(2, 144);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(138, 28);
@@ -165,11 +166,13 @@
             // 
             // dataGridView_usuarios
             // 
+            this.dataGridView_usuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView_usuarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView_usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_usuarios.Location = new System.Drawing.Point(396, 24);
-            this.dataGridView_usuarios.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView_usuarios.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView_usuarios.Name = "dataGridView_usuarios";
-            this.dataGridView_usuarios.Size = new System.Drawing.Size(470, 192);
+            this.dataGridView_usuarios.Size = new System.Drawing.Size(470, 193);
             this.dataGridView_usuarios.TabIndex = 6;
             // 
             // label7
@@ -191,7 +194,7 @@
             this.button_agregar_usuario.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_agregar_usuario.ForeColor = System.Drawing.Color.Black;
             this.button_agregar_usuario.Location = new System.Drawing.Point(4, 186);
-            this.button_agregar_usuario.Margin = new System.Windows.Forms.Padding(2);
+            this.button_agregar_usuario.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button_agregar_usuario.Name = "button_agregar_usuario";
             this.button_agregar_usuario.Size = new System.Drawing.Size(75, 29);
             this.button_agregar_usuario.TabIndex = 8;
@@ -206,7 +209,7 @@
             this.button_actualizar_usuario.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_actualizar_usuario.ForeColor = System.Drawing.Color.Black;
             this.button_actualizar_usuario.Location = new System.Drawing.Point(104, 186);
-            this.button_actualizar_usuario.Margin = new System.Windows.Forms.Padding(2);
+            this.button_actualizar_usuario.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button_actualizar_usuario.Name = "button_actualizar_usuario";
             this.button_actualizar_usuario.Size = new System.Drawing.Size(85, 29);
             this.button_actualizar_usuario.TabIndex = 9;
@@ -221,7 +224,7 @@
             this.button_borrar_usuario.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_borrar_usuario.ForeColor = System.Drawing.Color.Black;
             this.button_borrar_usuario.Location = new System.Drawing.Point(215, 186);
-            this.button_borrar_usuario.Margin = new System.Windows.Forms.Padding(2);
+            this.button_borrar_usuario.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button_borrar_usuario.Name = "button_borrar_usuario";
             this.button_borrar_usuario.Size = new System.Drawing.Size(84, 29);
             this.button_borrar_usuario.TabIndex = 10;
@@ -233,8 +236,8 @@
             // textBox_contraseña
             // 
             this.textBox_contraseña.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_contraseña.Location = new System.Drawing.Point(145, 145);
-            this.textBox_contraseña.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_contraseña.Location = new System.Drawing.Point(145, 144);
+            this.textBox_contraseña.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textBox_contraseña.Name = "textBox_contraseña";
             this.textBox_contraseña.Size = new System.Drawing.Size(154, 26);
             this.textBox_contraseña.TabIndex = 11;
@@ -243,7 +246,7 @@
             // 
             this.textBox_telefono.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_telefono.Location = new System.Drawing.Point(145, 108);
-            this.textBox_telefono.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_telefono.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textBox_telefono.Name = "textBox_telefono";
             this.textBox_telefono.Size = new System.Drawing.Size(154, 26);
             this.textBox_telefono.TabIndex = 12;
@@ -252,7 +255,7 @@
             // 
             this.textBox_apellido.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_apellido.Location = new System.Drawing.Point(145, 68);
-            this.textBox_apellido.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_apellido.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textBox_apellido.Name = "textBox_apellido";
             this.textBox_apellido.Size = new System.Drawing.Size(154, 26);
             this.textBox_apellido.TabIndex = 13;
@@ -261,7 +264,7 @@
             // 
             this.textBox_nombre.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_nombre.Location = new System.Drawing.Point(145, 27);
-            this.textBox_nombre.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_nombre.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textBox_nombre.Name = "textBox_nombre";
             this.textBox_nombre.Size = new System.Drawing.Size(154, 26);
             this.textBox_nombre.TabIndex = 14;
@@ -272,7 +275,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Calisto MT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(-4, 259);
+            this.label8.Location = new System.Drawing.Point(-4, 258);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(121, 28);
@@ -284,7 +287,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Calisto MT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(-1, 302);
+            this.label9.Location = new System.Drawing.Point(-1, 301);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(90, 28);
@@ -331,7 +334,7 @@
             // 
             this.textBox_codigo.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_codigo.Location = new System.Drawing.Point(92, 304);
-            this.textBox_codigo.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_codigo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textBox_codigo.Name = "textBox_codigo";
             this.textBox_codigo.Size = new System.Drawing.Size(162, 26);
             this.textBox_codigo.TabIndex = 25;
@@ -340,17 +343,17 @@
             // textBox_descripcion
             // 
             this.textBox_descripcion.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_descripcion.Location = new System.Drawing.Point(137, 346);
-            this.textBox_descripcion.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_descripcion.Location = new System.Drawing.Point(138, 346);
+            this.textBox_descripcion.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textBox_descripcion.Name = "textBox_descripcion";
-            this.textBox_descripcion.Size = new System.Drawing.Size(131, 26);
+            this.textBox_descripcion.Size = new System.Drawing.Size(132, 26);
             this.textBox_descripcion.TabIndex = 26;
             // 
             // textBox_costo
             // 
             this.textBox_costo.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_costo.Location = new System.Drawing.Point(78, 391);
-            this.textBox_costo.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_costo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textBox_costo.Name = "textBox_costo";
             this.textBox_costo.Size = new System.Drawing.Size(102, 26);
             this.textBox_costo.TabIndex = 27;
@@ -359,7 +362,7 @@
             // 
             this.textBox_venta.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_venta.Location = new System.Drawing.Point(78, 436);
-            this.textBox_venta.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_venta.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textBox_venta.Name = "textBox_venta";
             this.textBox_venta.Size = new System.Drawing.Size(102, 26);
             this.textBox_venta.TabIndex = 28;
@@ -375,18 +378,20 @@
             "Higiene y Salud",
             "Refrescos y Jugos"});
             this.comboBox_categoria.Location = new System.Drawing.Point(121, 262);
-            this.comboBox_categoria.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox_categoria.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.comboBox_categoria.Name = "comboBox_categoria";
             this.comboBox_categoria.Size = new System.Drawing.Size(169, 28);
             this.comboBox_categoria.TabIndex = 33;
             // 
             // dataGridView_productos
             // 
+            this.dataGridView_productos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView_productos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView_productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_productos.Location = new System.Drawing.Point(534, 262);
-            this.dataGridView_productos.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView_productos.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView_productos.Name = "dataGridView_productos";
-            this.dataGridView_productos.Size = new System.Drawing.Size(833, 269);
+            this.dataGridView_productos.Size = new System.Drawing.Size(832, 269);
             this.dataGridView_productos.TabIndex = 34;
             // 
             // button_borrar_procuctos
@@ -395,9 +400,9 @@
             this.button_borrar_procuctos.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_borrar_procuctos.ForeColor = System.Drawing.Color.Black;
             this.button_borrar_procuctos.Location = new System.Drawing.Point(276, 505);
-            this.button_borrar_procuctos.Margin = new System.Windows.Forms.Padding(2);
+            this.button_borrar_procuctos.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button_borrar_procuctos.Name = "button_borrar_procuctos";
-            this.button_borrar_procuctos.Size = new System.Drawing.Size(99, 26);
+            this.button_borrar_procuctos.Size = new System.Drawing.Size(99, 27);
             this.button_borrar_procuctos.TabIndex = 37;
             this.button_borrar_procuctos.Text = "Borrar";
             this.button_borrar_procuctos.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -410,9 +415,9 @@
             this.button_actualizar_productos.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_actualizar_productos.ForeColor = System.Drawing.Color.Black;
             this.button_actualizar_productos.Location = new System.Drawing.Point(145, 505);
-            this.button_actualizar_productos.Margin = new System.Windows.Forms.Padding(2);
+            this.button_actualizar_productos.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button_actualizar_productos.Name = "button_actualizar_productos";
-            this.button_actualizar_productos.Size = new System.Drawing.Size(92, 26);
+            this.button_actualizar_productos.Size = new System.Drawing.Size(92, 27);
             this.button_actualizar_productos.TabIndex = 36;
             this.button_actualizar_productos.Text = "Actualizar";
             this.button_actualizar_productos.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -425,9 +430,9 @@
             this.button_agregar_productos.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_agregar_productos.ForeColor = System.Drawing.Color.Black;
             this.button_agregar_productos.Location = new System.Drawing.Point(19, 505);
-            this.button_agregar_productos.Margin = new System.Windows.Forms.Padding(2);
+            this.button_agregar_productos.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button_agregar_productos.Name = "button_agregar_productos";
-            this.button_agregar_productos.Size = new System.Drawing.Size(105, 26);
+            this.button_agregar_productos.Size = new System.Drawing.Size(105, 27);
             this.button_agregar_productos.TabIndex = 35;
             this.button_agregar_productos.Text = "Agregar";
             this.button_agregar_productos.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -450,7 +455,7 @@
             // 
             this.textBox_pin.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_pin.Location = new System.Drawing.Point(1229, 66);
-            this.textBox_pin.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_pin.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textBox_pin.Name = "textBox_pin";
             this.textBox_pin.Size = new System.Drawing.Size(96, 26);
             this.textBox_pin.TabIndex = 39;
@@ -461,9 +466,9 @@
             this.button_actualizar.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_actualizar.ForeColor = System.Drawing.Color.Black;
             this.button_actualizar.Location = new System.Drawing.Point(1188, 148);
-            this.button_actualizar.Margin = new System.Windows.Forms.Padding(2);
+            this.button_actualizar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button_actualizar.Name = "button_actualizar";
-            this.button_actualizar.Size = new System.Drawing.Size(137, 30);
+            this.button_actualizar.Size = new System.Drawing.Size(138, 30);
             this.button_actualizar.TabIndex = 40;
             this.button_actualizar.Text = "Actualizar";
             this.button_actualizar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -474,8 +479,8 @@
             // 
             this.textBox_excistencia.Enabled = false;
             this.textBox_excistencia.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_excistencia.Location = new System.Drawing.Point(444, 349);
-            this.textBox_excistencia.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_excistencia.Location = new System.Drawing.Point(444, 350);
+            this.textBox_excistencia.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textBox_excistencia.Name = "textBox_excistencia";
             this.textBox_excistencia.Size = new System.Drawing.Size(86, 26);
             this.textBox_excistencia.TabIndex = 46;
@@ -484,7 +489,7 @@
             // 
             this.textBox_presentacion.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_presentacion.Location = new System.Drawing.Point(444, 299);
-            this.textBox_presentacion.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_presentacion.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textBox_presentacion.Name = "textBox_presentacion";
             this.textBox_presentacion.Size = new System.Drawing.Size(86, 26);
             this.textBox_presentacion.TabIndex = 45;
@@ -492,8 +497,8 @@
             // textBox_cantidad
             // 
             this.textBox_cantidad.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_cantidad.Location = new System.Drawing.Point(444, 259);
-            this.textBox_cantidad.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_cantidad.Location = new System.Drawing.Point(444, 258);
+            this.textBox_cantidad.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textBox_cantidad.Name = "textBox_cantidad";
             this.textBox_cantidad.Size = new System.Drawing.Size(86, 26);
             this.textBox_cantidad.TabIndex = 44;
@@ -503,7 +508,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Calisto MT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(357, 347);
+            this.label14.Location = new System.Drawing.Point(358, 347);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(71, 28);
@@ -552,7 +557,7 @@
             this.dateTimePicker_fecha.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_fecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker_fecha.Location = new System.Drawing.Point(396, 404);
-            this.dateTimePicker_fecha.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker_fecha.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dateTimePicker_fecha.Name = "dateTimePicker_fecha";
             this.dateTimePicker_fecha.Size = new System.Drawing.Size(134, 26);
             this.dateTimePicker_fecha.TabIndex = 48;
@@ -563,7 +568,7 @@
             this.button8.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.Black;
             this.button8.Location = new System.Drawing.Point(909, 76);
-            this.button8.Margin = new System.Windows.Forms.Padding(2);
+            this.button8.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(180, 41);
             this.button8.TabIndex = 49;
@@ -587,7 +592,7 @@
             // 
             this.textBox_nueva_clave.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_nueva_clave.Location = new System.Drawing.Point(1229, 108);
-            this.textBox_nueva_clave.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_nueva_clave.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textBox_nueva_clave.Name = "textBox_nueva_clave";
             this.textBox_nueva_clave.Size = new System.Drawing.Size(96, 26);
             this.textBox_nueva_clave.TabIndex = 52;
@@ -622,7 +627,7 @@
             this.dateTimePicker_caducidad.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_caducidad.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker_caducidad.Location = new System.Drawing.Point(396, 440);
-            this.dateTimePicker_caducidad.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker_caducidad.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dateTimePicker_caducidad.Name = "dateTimePicker_caducidad";
             this.dateTimePicker_caducidad.Size = new System.Drawing.Size(134, 26);
             this.dateTimePicker_caducidad.TabIndex = 56;
@@ -632,7 +637,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Calisto MT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.Black;
-            this.label21.Location = new System.Drawing.Point(247, 440);
+            this.label21.Location = new System.Drawing.Point(248, 440);
             this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(128, 28);
@@ -645,9 +650,9 @@
             this.button_mostrar_productos.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_mostrar_productos.ForeColor = System.Drawing.Color.Black;
             this.button_mostrar_productos.Location = new System.Drawing.Point(444, 505);
-            this.button_mostrar_productos.Margin = new System.Windows.Forms.Padding(2);
+            this.button_mostrar_productos.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button_mostrar_productos.Name = "button_mostrar_productos";
-            this.button_mostrar_productos.Size = new System.Drawing.Size(86, 26);
+            this.button_mostrar_productos.Size = new System.Drawing.Size(86, 27);
             this.button_mostrar_productos.TabIndex = 57;
             this.button_mostrar_productos.Text = "Mostrar";
             this.button_mostrar_productos.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -660,7 +665,7 @@
             this.button_mostrar_usuarios.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_mostrar_usuarios.ForeColor = System.Drawing.Color.Black;
             this.button_mostrar_usuarios.Location = new System.Drawing.Point(320, 27);
-            this.button_mostrar_usuarios.Margin = new System.Windows.Forms.Padding(2);
+            this.button_mostrar_usuarios.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button_mostrar_usuarios.Name = "button_mostrar_usuarios";
             this.button_mostrar_usuarios.Size = new System.Drawing.Size(72, 27);
             this.button_mostrar_usuarios.TabIndex = 58;
@@ -674,6 +679,7 @@
             this.label22.AutoSize = true;
             this.label22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.label22.Location = new System.Drawing.Point(884, 212);
+            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.MinimumSize = new System.Drawing.Size(230, 19);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(230, 19);
@@ -684,6 +690,7 @@
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.label23.Location = new System.Drawing.Point(884, 22);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label23.MinimumSize = new System.Drawing.Size(230, 24);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(230, 24);
@@ -694,6 +701,7 @@
             this.label24.AutoSize = true;
             this.label24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.label24.Location = new System.Drawing.Point(884, 24);
+            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.MinimumSize = new System.Drawing.Size(20, 190);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(20, 190);
@@ -704,6 +712,7 @@
             this.label25.AutoSize = true;
             this.label25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.label25.Location = new System.Drawing.Point(1094, 24);
+            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label25.MinimumSize = new System.Drawing.Size(20, 190);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(20, 190);
@@ -724,7 +733,8 @@
             // button_generar_bitacora
             // 
             this.button_generar_bitacora.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_generar_bitacora.Location = new System.Drawing.Point(910, 154);
+            this.button_generar_bitacora.Location = new System.Drawing.Point(910, 155);
+            this.button_generar_bitacora.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button_generar_bitacora.Name = "button_generar_bitacora";
             this.button_generar_bitacora.Size = new System.Drawing.Size(181, 38);
             this.button_generar_bitacora.TabIndex = 64;
@@ -736,7 +746,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1354, 566);
             this.Controls.Add(this.button_generar_bitacora);
             this.Controls.Add(this.label26);
@@ -796,7 +806,8 @@
             this.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.MinimumSize = new System.Drawing.Size(744, 366);
             this.Name = "Administrador";
             this.Load += new System.EventHandler(this.Administrador_Load);

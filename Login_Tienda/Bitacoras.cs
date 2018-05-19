@@ -21,20 +21,19 @@ namespace Login_Tienda
 
         private void Bitacoras_Load(object sender, EventArgs e)
         {
-
+            //--COLOR
+            dataGridView1.RowsDefaultCellStyle.BackColor = Color.AliceBlue;
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
         }
 
         private void textBox1_KeyUp(object sender, KeyEventArgs e)
         {
             try
             {
-
                 if (textBox_bucar_usuario.Text == "'")
                 {
                     MessageBox.Show("NO (')");
                     textBox_bucar_usuario.Clear();
-                   
-
                 }
                 else if (textBox_bucar_usuario.Text=="")
                 {

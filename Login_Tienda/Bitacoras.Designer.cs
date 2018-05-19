@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bitacoras));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_bucar_usuario = new System.Windows.Forms.TextBox();
@@ -42,6 +43,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(2, 89);
             this.dataGridView1.Name = "dataGridView1";
@@ -68,7 +71,7 @@
             // 
             // dateTimePicker_fecha
             // 
-            this.dateTimePicker_fecha.CustomFormat = "dd-MM-yyyy";
+            this.dateTimePicker_fecha.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker_fecha.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_fecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker_fecha.Location = new System.Drawing.Point(69, 19);
@@ -142,6 +145,7 @@
             this.Controls.Add(this.textBox_bucar_usuario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Bitacoras";
             this.Text = "Bitacoras";
             this.Load += new System.EventHandler(this.Bitacoras_Load);

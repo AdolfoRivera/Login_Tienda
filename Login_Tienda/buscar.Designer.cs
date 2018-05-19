@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(buscar));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_buscar = new System.Windows.Forms.TextBox();
@@ -103,11 +104,15 @@
             this.datos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.datos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.datos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.datos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datos.Location = new System.Drawing.Point(4, 95);
             this.datos.Name = "datos";
             this.datos.Size = new System.Drawing.Size(607, 269);
             this.datos.TabIndex = 6;
+            this.datos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datos_CellContentDoubleClick);
+            this.datos.DoubleClick += new System.EventHandler(this.datos_DoubleClick);
             this.datos.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyUp);
             // 
             // buscar
@@ -122,8 +127,10 @@
             this.Controls.Add(this.textBox_buscar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "buscar";
             this.Text = "buscar";
+            this.Load += new System.EventHandler(this.buscar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.datos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

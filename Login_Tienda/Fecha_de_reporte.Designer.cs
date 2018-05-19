@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Fecha_de_reporte));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button_genrar_reporte = new System.Windows.Forms.Button();
@@ -56,7 +57,7 @@
             // 
             this.button_genrar_reporte.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_genrar_reporte.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_genrar_reporte.Location = new System.Drawing.Point(231, 14);
+            this.button_genrar_reporte.Location = new System.Drawing.Point(198, 11);
             this.button_genrar_reporte.Name = "button_genrar_reporte";
             this.button_genrar_reporte.Size = new System.Drawing.Size(96, 27);
             this.button_genrar_reporte.TabIndex = 3;
@@ -66,23 +67,24 @@
             // 
             // dateTimePicker_fecha_reporte
             // 
-            this.dateTimePicker_fecha_reporte.CustomFormat = "dd-MM-yyyy";
+            this.dateTimePicker_fecha_reporte.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker_fecha_reporte.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker_fecha_reporte.Location = new System.Drawing.Point(76, 12);
             this.dateTimePicker_fecha_reporte.Name = "dateTimePicker_fecha_reporte";
-            this.dateTimePicker_fecha_reporte.Size = new System.Drawing.Size(137, 26);
+            this.dateTimePicker_fecha_reporte.Size = new System.Drawing.Size(103, 26);
             this.dateTimePicker_fecha_reporte.TabIndex = 4;
             // 
             // Fecha_de_reporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(336, 48);
+            this.ClientSize = new System.Drawing.Size(301, 48);
             this.Controls.Add(this.dateTimePicker_fecha_reporte);
             this.Controls.Add(this.button_genrar_reporte);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

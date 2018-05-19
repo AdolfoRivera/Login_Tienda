@@ -38,11 +38,16 @@
             this.textBox_contraseña = new System.Windows.Forms.TextBox();
             this.checkBox_mostrar_contraseña = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button_rejistrarse = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.button_rejistrarse = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lb_porciento = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -139,7 +144,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Gray;
+            this.label3.BackColor = System.Drawing.Color.DarkGray;
             this.label3.Font = new System.Drawing.Font("Calisto MT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.MinimumSize = new System.Drawing.Size(493, 30);
@@ -148,6 +153,36 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Abarrotes El Abra";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.DarkGray;
+            this.label4.Location = new System.Drawing.Point(1, 30);
+            this.label4.MinimumSize = new System.Drawing.Size(10, 190);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(10, 190);
+            this.label4.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.DarkGray;
+            this.label5.Location = new System.Drawing.Point(1, 215);
+            this.label5.MinimumSize = new System.Drawing.Size(495, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(495, 13);
+            this.label5.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.DarkGray;
+            this.label6.Location = new System.Drawing.Point(483, 30);
+            this.label6.MinimumSize = new System.Drawing.Size(10, 190);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(10, 190);
+            this.label6.TabIndex = 11;
             // 
             // button_rejistrarse
             // 
@@ -162,35 +197,38 @@
             this.button_rejistrarse.UseVisualStyleBackColor = false;
             this.button_rejistrarse.Click += new System.EventHandler(this.button_rejistrarse_Click);
             // 
-            // label4
+            // progressBar1
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(1, 30);
-            this.label4.MinimumSize = new System.Drawing.Size(10, 170);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(10, 170);
-            this.label4.TabIndex = 9;
+            this.progressBar1.Location = new System.Drawing.Point(12, 179);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(471, 10);
+            this.progressBar1.TabIndex = 12;
+            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
             // 
-            // label5
+            // timer1
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(2, 187);
-            this.label5.MinimumSize = new System.Drawing.Size(495, 10);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(495, 13);
-            this.label5.TabIndex = 10;
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 60;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label6
+            // pictureBox1
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Gray;
-            this.label6.Location = new System.Drawing.Point(483, 30);
-            this.label6.MinimumSize = new System.Drawing.Size(10, 160);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(10, 160);
-            this.label6.TabIndex = 11;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Location = new System.Drawing.Point(191, 190);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 25);
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lb_porciento
+            // 
+            this.lb_porciento.AutoSize = true;
+            this.lb_porciento.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_porciento.Location = new System.Drawing.Point(228, 190);
+            this.lb_porciento.Name = "lb_porciento";
+            this.lb_porciento.Size = new System.Drawing.Size(27, 20);
+            this.lb_porciento.TabIndex = 15;
+            this.lb_porciento.Text = "...";
             // 
             // Form1
             // 
@@ -198,7 +236,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(494, 200);
+            this.ClientSize = new System.Drawing.Size(493, 227);
+            this.Controls.Add(this.lb_porciento);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -216,9 +257,11 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,7 +273,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button_aseptar;
         private System.Windows.Forms.Button button_salir;
-        private System.Windows.Forms.TextBox textBox_usuario;
         private System.Windows.Forms.TextBox textBox_contraseña;
         private System.Windows.Forms.CheckBox checkBox_mostrar_contraseña;
         private System.Windows.Forms.Label label3;
@@ -239,6 +281,11 @@
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.Button button_rejistrarse;
         private System.Windows.Forms.ToolTip toolTip1;
+        public System.Windows.Forms.TextBox textBox_usuario;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lb_porciento;
     }
 }
 

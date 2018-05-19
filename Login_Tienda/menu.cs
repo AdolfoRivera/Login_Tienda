@@ -18,7 +18,8 @@ namespace Login_Tienda
         {
             InitializeComponent();
             timer1.Enabled = true;
-        }
+            
+    }
 
        /* private void button_regresar_Click(object sender, EventArgs e)
         {
@@ -41,6 +42,7 @@ namespace Login_Tienda
 
         private void menu_Load(object sender, EventArgs e)
         {
+           
 
         }
 
@@ -48,10 +50,18 @@ namespace Login_Tienda
         {
             /*ventas obj = new ventas();
             obj.ShowDialog();*/
+
             abrirfromulario_ventas(new ventas());
+         
+
+
+
         }
         private void abrirfromulario_ventas(object F_ventas)
-        {//pregunta si hay algo en el contenedor
+
+        {
+            
+            //pregunta si hay algo en el contenedor
             if (this.panel_contenedor.Controls.Count > 0)
                 this.panel_contenedor.Controls.RemoveAt(0);
             //creacion de formulario
@@ -66,7 +76,7 @@ namespace Login_Tienda
             this.panel_contenedor.Tag = fh;
             //se muestra
             fh.Show();
-
+         
 
         }
         private void agregar_productos(object F_producto)
@@ -143,8 +153,7 @@ namespace Login_Tienda
 
         private void venta2_Click(object sender, EventArgs e)
         {
-            prueba_de_venta obj = new prueba_de_venta();
-            obj.ShowDialog();
+         
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -208,6 +217,21 @@ namespace Login_Tienda
         {
             label_hora_actual.Text = DateTime.Now.ToString();
         }
-       
+
+        private void button_ventas_VisibleChanged(object sender, EventArgs e)
+        {
+            
         }
+
+        private void button_ventas_TextChanged(object sender, EventArgs e)
+        {
+           
+            
+        }
+
+        private void button_salir_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
     }

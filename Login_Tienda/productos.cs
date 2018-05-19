@@ -363,6 +363,10 @@ namespace Login_Tienda
                 SqlDataAdapter sqldatos = new SqlDataAdapter("select * from Productos", con);
                 sqldatos.Fill(datos);
                 datos_data.DataSource = datos;
+                //--COLOR
+                datos_data.RowsDefaultCellStyle.BackColor = Color.AliceBlue;
+                datos_data.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
+
                 con.Close();
             }
             catch (Exception ex)

@@ -110,12 +110,6 @@
       <DependentUpon>cliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Conexion.cs" />
-    <Compile Include="eliminar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="eliminar.Designer.cs">
-      <DependentUpon>eliminar.cs</DependentUpon>
-    </Compile>
     <Compile Include="eliminar_cliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,9 +240,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="cliente.resx">
       <DependentUpon>cliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="eliminar.resx">
-      <DependentUpon>eliminar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="eliminar_cliente.resx">
       <DependentUpon>eliminar_cliente.cs</DependentUpon>
