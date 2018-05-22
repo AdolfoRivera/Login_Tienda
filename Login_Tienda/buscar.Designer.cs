@@ -109,6 +109,7 @@
             this.datos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datos.Location = new System.Drawing.Point(4, 95);
             this.datos.Name = "datos";
+            this.datos.ReadOnly = true;
             this.datos.Size = new System.Drawing.Size(607, 269);
             this.datos.TabIndex = 6;
             this.datos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datos_CellContentDoubleClick);

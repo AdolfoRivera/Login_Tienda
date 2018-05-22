@@ -238,6 +238,7 @@
             this.datos_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datos_data.Location = new System.Drawing.Point(611, 82);
             this.datos_data.Name = "datos_data";
+            this.datos_data.ReadOnly = true;
             this.datos_data.Size = new System.Drawing.Size(755, 443);
             this.datos_data.TabIndex = 14;
             // 
@@ -283,7 +284,7 @@
             this.button_modificar.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_modificar.Location = new System.Drawing.Point(7, 82);
             this.button_modificar.Name = "button_modificar";
-            this.button_modificar.Size = new System.Drawing.Size(149, 40);
+            this.button_modificar.Size = new System.Drawing.Size(149, 32);
             this.button_modificar.TabIndex = 18;
             this.button_modificar.Text = "Modificar";
             this.button_modificar.UseVisualStyleBackColor = true;
@@ -295,7 +296,7 @@
             this.button_eliminar.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_eliminar.Location = new System.Drawing.Point(162, 82);
             this.button_eliminar.Name = "button_eliminar";
-            this.button_eliminar.Size = new System.Drawing.Size(149, 40);
+            this.button_eliminar.Size = new System.Drawing.Size(149, 32);
             this.button_eliminar.TabIndex = 19;
             this.button_eliminar.Text = "Eliminar";
             this.button_eliminar.UseVisualStyleBackColor = true;
@@ -305,9 +306,9 @@
             // 
             this.button_mostrar_datos.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_mostrar_datos.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_mostrar_datos.Location = new System.Drawing.Point(611, 41);
+            this.button_mostrar_datos.Location = new System.Drawing.Point(611, 56);
             this.button_mostrar_datos.Name = "button_mostrar_datos";
-            this.button_mostrar_datos.Size = new System.Drawing.Size(149, 40);
+            this.button_mostrar_datos.Size = new System.Drawing.Size(149, 25);
             this.button_mostrar_datos.TabIndex = 20;
             this.button_mostrar_datos.Text = "Mostrar";
             this.button_mostrar_datos.UseVisualStyleBackColor = true;

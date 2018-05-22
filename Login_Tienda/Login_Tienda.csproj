@@ -103,6 +103,12 @@
     <Compile Include="clave.Designer.cs">
       <DependentUpon>clave.cs</DependentUpon>
     </Compile>
+    <Compile Include="clave_adm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clave_adm.Designer.cs">
+      <DependentUpon>clave_adm.cs</DependentUpon>
+    </Compile>
     <Compile Include="cliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="clave.resx">
       <DependentUpon>clave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clave_adm.resx">
+      <DependentUpon>clave_adm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="cliente.resx">
       <DependentUpon>cliente.cs</DependentUpon>

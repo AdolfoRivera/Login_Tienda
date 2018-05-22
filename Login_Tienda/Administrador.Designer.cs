@@ -172,6 +172,7 @@
             this.dataGridView_usuarios.Location = new System.Drawing.Point(396, 24);
             this.dataGridView_usuarios.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView_usuarios.Name = "dataGridView_usuarios";
+            this.dataGridView_usuarios.ReadOnly = true;
             this.dataGridView_usuarios.Size = new System.Drawing.Size(470, 193);
             this.dataGridView_usuarios.TabIndex = 6;
             // 
@@ -388,9 +389,10 @@
             this.dataGridView_productos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_productos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView_productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_productos.Location = new System.Drawing.Point(534, 262);
+            this.dataGridView_productos.Location = new System.Drawing.Point(534, 258);
             this.dataGridView_productos.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView_productos.Name = "dataGridView_productos";
+            this.dataGridView_productos.ReadOnly = true;
             this.dataGridView_productos.Size = new System.Drawing.Size(832, 269);
             this.dataGridView_productos.TabIndex = 34;
             // 
@@ -807,7 +809,7 @@
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.MinimumSize = new System.Drawing.Size(744, 366);
             this.Name = "Administrador";
             this.Load += new System.EventHandler(this.Administrador_Load);

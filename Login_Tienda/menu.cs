@@ -211,8 +211,8 @@ namespace Login_Tienda
         private void button_administrador_Click(object sender, EventArgs e)
         {
             abrirfromulario_administrador(new Administrador());
+
         }
-       
         private void timer1_Tick(object sender, EventArgs e)
         {
             label_hora_actual.Text = DateTime.Now.ToString();

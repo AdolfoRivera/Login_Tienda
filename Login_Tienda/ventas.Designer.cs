@@ -214,37 +214,37 @@
             // columnHeader_precio
             // 
             this.columnHeader_precio.Text = "Precio";
-            this.columnHeader_precio.Width = 150;
+            this.columnHeader_precio.Width = 98;
             // 
             // columnHeader_codigo
             // 
             this.columnHeader_codigo.Text = "Codigo";
             this.columnHeader_codigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader_codigo.Width = 263;
+            this.columnHeader_codigo.Width = 223;
             // 
             // columnHeader_descripcion
             // 
             this.columnHeader_descripcion.Text = "Descripcion";
             this.columnHeader_descripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader_descripcion.Width = 117;
+            this.columnHeader_descripcion.Width = 148;
             // 
             // columnHeader_presentacion
             // 
             this.columnHeader_presentacion.Text = "Presentacon";
             this.columnHeader_presentacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader_presentacion.Width = 122;
+            this.columnHeader_presentacion.Width = 154;
             // 
             // columnHeader_importe
             // 
             this.columnHeader_importe.Text = "Importe";
             this.columnHeader_importe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader_importe.Width = 151;
+            this.columnHeader_importe.Width = 219;
             // 
             // columnHeader_existencia
             // 
             this.columnHeader_existencia.Text = "Excistencia";
             this.columnHeader_existencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader_existencia.Width = 246;
+            this.columnHeader_existencia.Width = 207;
             // 
             // label4
             // 
@@ -582,6 +582,7 @@
             this.textBox_cantidad.TabIndex = 45;
             this.textBox_cantidad.Text = "1";
             this.textBox_cantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_cantidad.Visible = false;
             // 
             // label16
             // 

@@ -82,10 +82,11 @@ namespace Login_Tienda
                     double numtxtsubtotal = double.Parse(label_subtotal.Text);
                     double numtxtiva = double.Parse(label_iva.Text);
                     suma2 = (numtxtsubtotal + numtxtiva);
-                    label_total2.Text = suma2.ToString();
-                    label_total_abajo.Text = suma2.ToString();
+                    label_total2.Text = suma2.ToString("F2");
+                    label_total_abajo.Text = suma2.ToString("F2");
                     //_--------------------------
-                    label_TOTAL.Text = suma2.ToString();//.Replace(",", ".");
+                    label_TOTAL.Text = suma2.ToString("F2");//.Replace(",", ".");
+                    
                    // textBox_total.Text = suma2.ToString().Replace(",", ".");
 
                     //Operacion alternar color
@@ -336,10 +337,10 @@ namespace Login_Tienda
                     double numtxtsubtotal = double.Parse(label_subtotal.Text);
                     double numtxtiva = double.Parse(label_iva.Text);
                     suma2 = (numtxtsubtotal + numtxtiva);
-                    label_total2.Text = suma2.ToString();
-                    label_total_abajo.Text = suma2.ToString();
+                    label_total2.Text = suma2.ToString("F2");
+                    label_total_abajo.Text = suma2.ToString("F2");
                     //_--------------------------
-                    label_TOTAL.Text = suma2.ToString();//.Replace(",", ".");
+                    label_TOTAL.Text = suma2.ToString("F2");//.Replace(",", ".");
                   //  textBox_total.Text = suma2.ToString().Replace(",", ".");
 
                     //Operacion alternar color
@@ -473,11 +474,11 @@ namespace Login_Tienda
                 double numtxtsubtotal = double.Parse(label_subtotal.Text);
                 double numtxtiva = double.Parse(label_iva.Text);
                 suma2 = (numtxtsubtotal + numtxtiva);
-                label_total2.Text = suma2.ToString();
+                label_total2.Text = suma2.ToString("F2");
 
-                label_TOTAL.Text = suma2.ToString();
+                label_TOTAL.Text = suma2.ToString("F2");
                // textBox_total.Text = suma2.ToString();
-                label_total_abajo.Text = suma2.ToString();
+                label_total_abajo.Text = suma2.ToString("F2");
 
                 //operacion sumar numero de productos en venta
                 //label_num_prod_en_venta.Text = listView_venta.Items.Count.ToString();
