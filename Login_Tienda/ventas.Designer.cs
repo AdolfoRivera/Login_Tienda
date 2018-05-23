@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ventas));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -77,6 +77,7 @@
             this.label_TOTAL = new System.Windows.Forms.Label();
             this.textBox_cantidad = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -201,7 +202,7 @@
             this.columnHeader_existencia});
             this.listView_venta.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView_venta.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem2});
             this.listView_venta.Location = new System.Drawing.Point(2, 126);
             this.listView_venta.Name = "listView_venta";
             this.listView_venta.Size = new System.Drawing.Size(1055, 328);
@@ -210,6 +211,7 @@
             this.listView_venta.View = System.Windows.Forms.View.Details;
             this.listView_venta.SelectedIndexChanged += new System.EventHandler(this.listView_venta_SelectedIndexChanged_1);
             this.listView_venta.KeyUp += new System.Windows.Forms.KeyEventHandler(this.listView_venta_KeyUp);
+            this.listView_venta.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView_venta_MouseDoubleClick);
             // 
             // columnHeader_precio
             // 
@@ -594,12 +596,23 @@
             this.label16.Size = new System.Drawing.Size(40, 25);
             this.label16.TabIndex = 46;
             // 
+            // textBox2
+            // 
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(815, 32);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(144, 20);
+            this.textBox2.TabIndex = 48;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox2.Visible = false;
+            // 
             // ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1370, 596);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.textBox_cantidad);
             this.Controls.Add(this.textBox_hora_actual);
@@ -665,7 +678,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label_num_prod_en_venta;
         private System.Windows.Forms.ColumnHeader columnHeader_precio;
-        private System.Windows.Forms.ColumnHeader columnHeader_codigo;
         private System.Windows.Forms.ColumnHeader columnHeader_descripcion;
         private System.Windows.Forms.ColumnHeader columnHeader_presentacion;
         private System.Windows.Forms.ColumnHeader columnHeader_importe;
@@ -702,5 +714,7 @@
         public System.Windows.Forms.TextBox textBox_codigo_de_varrras;
         public System.Windows.Forms.TextBox textBox_cantidad;
         private System.Windows.Forms.Label label16;
+        public System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.ColumnHeader columnHeader_codigo;
     }
 }

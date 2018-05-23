@@ -112,9 +112,11 @@
             this.datos.ReadOnly = true;
             this.datos.Size = new System.Drawing.Size(607, 269);
             this.datos.TabIndex = 6;
+            this.datos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datos_CellClick);
             this.datos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datos_CellContentDoubleClick);
             this.datos.DoubleClick += new System.EventHandler(this.datos_DoubleClick);
             this.datos.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyUp);
+            this.datos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.datos_MouseDoubleClick);
             // 
             // buscar
             // 

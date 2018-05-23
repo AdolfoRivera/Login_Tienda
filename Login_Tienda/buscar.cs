@@ -216,7 +216,7 @@ namespace Login_Tienda
 
         private void textBox_buscar_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //sololNumeros(e);
+            sololNumeros(e);
         }
 
         private void button_cancelar_Click(object sender, EventArgs e)
@@ -245,5 +245,16 @@ namespace Login_Tienda
             datos.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
             
         }
+
+        private void datos_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+          
+        }
+
+        private void datos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBox_buscar.Text = (string)datos.Rows[e.RowIndex].Cells[2].Value;
+        }
     }
+    
 }

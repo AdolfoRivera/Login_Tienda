@@ -43,15 +43,14 @@ namespace Login_Tienda
         private void menu_Load(object sender, EventArgs e)
         {
            
-
         }
-
         private void button_ventas_Click(object sender, EventArgs e)
         {
             /*ventas obj = new ventas();
             obj.ShowDialog();*/
-
-            abrirfromulario_ventas(new ventas());
+            
+                abrirfromulario_ventas(new ventas());
+           
          
 
 

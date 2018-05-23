@@ -448,10 +448,21 @@ namespace Login_Tienda
 
         private void button_borrar_seleccionado_Click(object sender, EventArgs e)
         {
+            try
+            {
+                int c = Convert.ToInt32(textBox_cantidad.Text);
+                aum_Stock(textBox2.Text, c);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            //-----------------------------
+
             foreach (ListViewItem lista in listView_venta.SelectedItems)
             {
                 lista.Remove();
-                //Operaciones Para Restar Lo Que Se Elimnte
+                //Operaciones Para Restar Lo Que Se Eliminte
                 double sumaR = 0;
                 for (int i = 0; i < listView_venta.Items.Count; i++)
                 {
@@ -620,19 +631,64 @@ namespace Login_Tienda
                 }
             }
         }
-       
+
         private void ventas_Load(object sender, EventArgs e)
         {
-            //--COLOR
-          //  int i=0;
            
-           //  listView_venta.Items[i].BackColor = Color.LightBlue;
-            listView_venta.BackColor = Color.AliceBlue;
-            /*Form1 f = new Form1();
-            menu me1 = new menu();
-            string userr = f.textBox_usuario.Text;
-            label_user.Text = userr;*/
-            //label_user.Text = me1.label_usuario.Text;
+                //--COLOR
+                //  int i=0;
+
+                //  listView_venta.Items[i].BackColor = Color.LightBlue;
+                listView_venta.BackColor = Color.AliceBlue;
+                /*Form1 f = new Form1();
+                menu me1 = new menu();
+                string userr = f.textBox_usuario.Text;
+                label_user.Text = userr;*/
+                //label_user.Text = me1.label_usuario.Text;
+
+            }
+        
+        private void listView_venta_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+            ListViewItem item = listView_venta.GetItemAt(e.X, e.Y);
+            if (item != null)
+            {
+               // textBox1.Text = item.Text;
+                textBox2.Text = item.SubItems[1].Text;
+                //txtPrecio.Text = item.SubItems[2].Text;
+            }
+        }
+        //PROCEDIMIENTO AUMENTAR
+        public void aum_Stock(String nombre, int cant)
+        {
+            //string rpta = "";
+            //con = new SqlConnection("Data Source=DARCK;Initial Catalog=BTA;Integrated Security=True");
+            SqlCommand cmd = con.CreateCommand();
+
+            cmd.CommandText = "aum_Stock";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Codigo", textBox2.Text);
+
+            textBox2 .Clear();
+
+            SqlParameter p1 = new SqlParameter();
+            p1.ParameterName = "@Cantidad";
+            p1.SqlDbType = SqlDbType.Int;
+            p1.Value = cant;
+            cmd.Parameters.Add(p1);
+
+            try
+            {
+                con.Open();
+                MessageBox.Show("Canselacion existosa");
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
 
         }
     }

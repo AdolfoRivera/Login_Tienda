@@ -147,6 +147,7 @@
             // panel_contenedor
             // 
             this.panel_contenedor.BackColor = System.Drawing.Color.White;
+            this.panel_contenedor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel_contenedor.BackgroundImage")));
             this.panel_contenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel_contenedor.Location = new System.Drawing.Point(-2, 118);
             this.panel_contenedor.Name = "panel_contenedor";
