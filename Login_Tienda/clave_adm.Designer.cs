@@ -102,7 +102,6 @@
             this.Controls.Add(this.button_enter);
             this.Controls.Add(this.label1);
             this.Name = "clave_adm";
-            this.Text = "clave_adm";
             this.Load += new System.EventHandler(this.clave_adm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
