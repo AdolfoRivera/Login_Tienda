@@ -32,19 +32,19 @@ namespace Login_Tienda
         {
             if (textBox_nombre.Text.Equals(" ") == true)
             {
-                MessageBox.Show("Campos Bacios");
+                MessageBox.Show("Campos Vacios");
             }
             else if (textBox_apellido.Text.Equals(" ") == true)
             {
-                MessageBox.Show("Campos Bacios");
+                MessageBox.Show("Campos Vacios");
             }
             else if (textBox_telefono.Text.Equals(" ") == true)
             {
-                MessageBox.Show("Campos Bacios");
+                MessageBox.Show("Campos Vacios");
             }
             else if (textBox_contraseña.Text.Equals(" ") == true)
             {
-                MessageBox.Show("Campos Bacios");
+                MessageBox.Show("Campos Vacios");
             }
             else
             {
@@ -87,19 +87,19 @@ namespace Login_Tienda
         {
             if (textBox_nombre.Text.Trim() == "")
             {
-                MessageBox.Show("Campos Bacios");
+                MessageBox.Show("Campos Vacios");
             }
             else if (textBox_apellido.Text.Trim() == "")
             {
-                MessageBox.Show("Campos Bacios");
+                MessageBox.Show("Campos Vacios");
             }
             else if (textBox_telefono.Text.Trim() == "")
             {
-                MessageBox.Show("Campos Bacios");
+                MessageBox.Show("Campos Vacios");
             }
             else if (textBox_contraseña.Text.Trim() == "")
             {
-                MessageBox.Show("Campos Bacios");
+                MessageBox.Show("Campos Vacios");
             }
             else
             {
@@ -138,19 +138,19 @@ namespace Login_Tienda
         {
             if (textBox_nombre.Text.Trim() == "")
             {
-                MessageBox.Show("Campos Bacios");
+                MessageBox.Show("Campos Vacios");
             }
             else if (textBox_apellido.Text.Trim() == "")
             {
-                MessageBox.Show("Campos Bacios");
+                MessageBox.Show("Campos Vacios");
             }
             else if (textBox_telefono.Text.Trim() == "")
             {
-                MessageBox.Show("Campos Bacios");
+                MessageBox.Show("Campos Vacios");
             }
             else if (textBox_contraseña.Text.Trim() == "")
             {
-                MessageBox.Show("Campos Bacios");
+                MessageBox.Show("Campos Vacios");
             }
             else
             {
@@ -188,14 +188,31 @@ namespace Login_Tienda
         {
             try
             {
-                int clave_ant = Convert.ToInt32(textBox_pin.Text);
-                int clave_nuev = Convert.ToInt32(textBox_nueva_clave.Text);
-                act_clave(clave_ant, clave_nuev);
+                string cadsql = "select * from tabla_clave where clave_anteriar ='" + textBox_pin.Text + "'";
+                SqlCommand comando = new SqlCommand(cadsql, con);
+                con.Open();
+                SqlDataReader leer1 = comando.ExecuteReader();
+
+                if (leer1.Read() == true)
+                {
+                  int clave_ant = Convert.ToInt32(textBox_pin.Text);
+                  int clave_nuev = Convert.ToInt32(textBox_nueva_clave.Text);
+                  act_clave(clave_ant, clave_nuev);
+
+                }
+                else
+                {
+                 MessageBox.Show("PIN Incorrecto");
+                }
+               
+                
             }
+           
             catch (Exception ex)
             {
-                MessageBox.Show("Campo Bacios");
+                MessageBox.Show("Campo Vacios");
             }
+             con.Close();
         }
         public void act_clave(int clave_anterior, int clave_nueva)
         {
@@ -209,7 +226,7 @@ namespace Login_Tienda
             cmd.Parameters.AddWithValue("@clave_anteriar", textBox_pin.Text);
             cmd.Parameters.AddWithValue("@clave_nueva", textBox_nueva_clave.Text);
 
-            textBox_telefono.Clear();
+           // textBox_telefono.Clear();
             textBox_pin.Clear();
             textBox_nueva_clave.Clear();
 
@@ -237,35 +254,35 @@ namespace Login_Tienda
             }
             else if (textBox_codigo.Text.Equals("") == true)
             {
-                MessageBox.Show("Campos Bacios");
+                MessageBox.Show("Campos Vacios");
             }
             else if (textBox_descripcion.Text.Equals("") == true)
             {
-                MessageBox.Show("Campos Bacios");
+                MessageBox.Show("Campos Vacios");
             }
             else if (textBox_presentacion.Text.Equals("") == true)
             {
-                MessageBox.Show("Campos Bacios");
+                MessageBox.Show("Campos Vacios");
             }
             else if (textBox_costo.Text.Equals("") == true)
             {
-                MessageBox.Show("Campos Bacios");
+                MessageBox.Show("Campos Vacios");
             }
             else if (textBox_venta.Text.Equals("") == true)
             {
-                MessageBox.Show("Campos Bacios");
+                MessageBox.Show("Campos Vacios");
             }
             else if (textBox_cantidad.Text.Equals("") == true)
             {
-                MessageBox.Show("Campos Bacios");
+                MessageBox.Show("Campos Vacios");
             }
             else if (dateTimePicker_fecha.Text.Equals("") == true)
             {
-                MessageBox.Show("Campos Bacios");
+                MessageBox.Show("Campos Vacios");
             }
             else if (dateTimePicker_caducidad.Text.Equals("") == true)
             {
-                MessageBox.Show("Campos Bacios");
+                MessageBox.Show("Campos Vacios");
             }
             else
             {
@@ -678,6 +695,118 @@ namespace Login_Tienda
         {
             Bitacoras bi = new Bitacoras();
             bi.ShowDialog();
+        }
+
+        private void label27_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_pin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            sololNumeros(e);
+        }
+
+        private void textBox_nueva_clave_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            sololNumeros(e);
+        }
+        public static void sololNumeros(KeyPressEventArgs pe)
+        {
+
+            if (char.IsDigit(pe.KeyChar))
+            {
+                pe.Handled = false;
+            }
+            else if (char.IsControl(pe.KeyChar))
+            {
+                pe.Handled = false;
+            }
+            else
+            {
+                pe.Handled = true;
+            }
+        }
+        public static void sololLetras(KeyPressEventArgs pe)
+        {
+            if (char.IsLetter(pe.KeyChar))
+            {
+                pe.Handled = false;
+            }
+            else if (char.IsControl(pe.KeyChar))
+            {
+                pe.Handled = false;
+            }
+            else if (char.IsSeparator(pe.KeyChar))
+            {
+                pe.Handled = false;
+            }
+            else
+            {
+                pe.Handled = true;
+            }
+        }
+        private void textBox1_nombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_nombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            sololLetras(e);
+        }
+
+        private void textBox_apellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            sololLetras(e);
+        }
+
+        private void textBox_telefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            sololNumeros(e);
+        }
+
+        private void textBox_codigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            sololNumeros(e);
+        }
+
+        private void textBox_descripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            sololLetras(e);
+        }
+
+        private void textBox_costo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            sololNumeros(e);
+        }
+
+        private void textBox_venta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            sololNumeros(e);
+        }
+
+        private void textBox_cantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            sololNumeros(e);
+        }
+
+        private void textBox_pin_Enter(object sender, EventArgs e)
+        {
+            if (textBox_pin.Text == "1010")
+            {
+                textBox_pin.Text = "";
+                textBox_pin.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox_pin_Leave(object sender, EventArgs e)
+        {
+            if (textBox_pin.Text == "")
+            {
+                textBox_pin.Text = "1010";
+                textBox_pin.ForeColor = Color.Silver;
+            }
         }
     }
 }

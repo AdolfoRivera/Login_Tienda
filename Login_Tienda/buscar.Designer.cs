@@ -35,20 +35,20 @@
             this.button_aceptar = new System.Windows.Forms.Button();
             this.button_cancelar = new System.Windows.Forms.Button();
             this.datos = new System.Windows.Forms.DataGridView();
+            this.textBox_cantidad = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.datos)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calisto MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(70, 23);
+            this.label1.Location = new System.Drawing.Point(162, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(486, 24);
+            this.label1.Size = new System.Drawing.Size(287, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Tecle el codigo de barras o  el nombre del produsto";
+            this.label1.Text = "Tecle El Codigo Del Producto";
             // 
             // label2
             // 
@@ -101,15 +101,17 @@
             // 
             // datos
             // 
-            this.datos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.datos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.datos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.datos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.datos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.datos.Location = new System.Drawing.Point(4, 95);
             this.datos.Name = "datos";
             this.datos.ReadOnly = true;
+            this.datos.RowHeadersVisible = false;
+            this.datos.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.datos.Size = new System.Drawing.Size(607, 269);
             this.datos.TabIndex = 6;
             this.datos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datos_CellClick);
@@ -118,12 +120,23 @@
             this.datos.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyUp);
             this.datos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.datos_MouseDoubleClick);
             // 
+            // textBox_cantidad
+            // 
+            this.textBox_cantidad.Enabled = false;
+            this.textBox_cantidad.Location = new System.Drawing.Point(13, 25);
+            this.textBox_cantidad.Name = "textBox_cantidad";
+            this.textBox_cantidad.Size = new System.Drawing.Size(30, 20);
+            this.textBox_cantidad.TabIndex = 7;
+            this.textBox_cantidad.Text = "1";
+            this.textBox_cantidad.Visible = false;
+            // 
             // buscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(602, 428);
+            this.Controls.Add(this.textBox_cantidad);
             this.Controls.Add(this.datos);
             this.Controls.Add(this.button_cancelar);
             this.Controls.Add(this.button_aceptar);
@@ -148,6 +161,7 @@
         private System.Windows.Forms.Button button_cancelar;
         public System.Windows.Forms.TextBox textBox_buscar;
         public System.Windows.Forms.Button button_aceptar;
+        public System.Windows.Forms.TextBox textBox_cantidad;
         public System.Windows.Forms.DataGridView datos;
     }
 }

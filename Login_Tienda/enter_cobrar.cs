@@ -113,6 +113,7 @@ namespace Login_Tienda
         }
         public static void sololNumeros(KeyPressEventArgs pe)
         {
+
             if (char.IsDigit(pe.KeyChar))
             {
                 pe.Handled = false;
@@ -148,6 +149,30 @@ namespace Login_Tienda
         private void textBox_pago_KeyPress(object sender, KeyPressEventArgs e)
         {
             sololNumeros(e);
+            /*
+            bool IsDec = false;
+            int nroDec = 0;
+
+            for (int i=0; i<textBox_pago.Text.Length;i++)
+            {
+                if (textBox_pago.Text[i]==',')
+                {
+                    IsDec = true;
+
+                }
+                if (IsDec && nroDec++ >= 2)
+                {
+                    e.Handled = true;
+                    return;
+                }
+            }
+            if (e.KeyChar>=48 && e.KeyChar<=57)
+                e.Handled = false;
+            else if (e.KeyChar==46)
+                e.Handled = (IsDec) ? true : false;
+                else
+                e.Handled = true;  */
+
         }
         //EVENTO PARA PONER CURSOR EN EL TEXBOX DESDE EL INICIO
         private void textBox_pago_KeyDown(object sender, KeyEventArgs e)
@@ -156,6 +181,7 @@ namespace Login_Tienda
             {
                 textBox_pago.Focus();
             }
+            
         }
       
        

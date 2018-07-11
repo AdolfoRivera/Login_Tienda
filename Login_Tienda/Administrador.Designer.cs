@@ -84,6 +84,10 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.button_generar_bitacora = new System.Windows.Forms.Button();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_usuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_productos)).BeginInit();
             this.SuspendLayout();
@@ -173,7 +177,8 @@
             this.dataGridView_usuarios.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView_usuarios.Name = "dataGridView_usuarios";
             this.dataGridView_usuarios.ReadOnly = true;
-            this.dataGridView_usuarios.Size = new System.Drawing.Size(470, 193);
+            this.dataGridView_usuarios.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_usuarios.Size = new System.Drawing.Size(484, 204);
             this.dataGridView_usuarios.TabIndex = 6;
             // 
             // label7
@@ -242,6 +247,7 @@
             this.textBox_contraseña.Name = "textBox_contraseña";
             this.textBox_contraseña.Size = new System.Drawing.Size(154, 26);
             this.textBox_contraseña.TabIndex = 11;
+            this.textBox_contraseña.UseSystemPasswordChar = true;
             // 
             // textBox_telefono
             // 
@@ -251,6 +257,7 @@
             this.textBox_telefono.Name = "textBox_telefono";
             this.textBox_telefono.Size = new System.Drawing.Size(154, 26);
             this.textBox_telefono.TabIndex = 12;
+            this.textBox_telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_telefono_KeyPress);
             // 
             // textBox_apellido
             // 
@@ -260,6 +267,7 @@
             this.textBox_apellido.Name = "textBox_apellido";
             this.textBox_apellido.Size = new System.Drawing.Size(154, 26);
             this.textBox_apellido.TabIndex = 13;
+            this.textBox_apellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_apellido_KeyPress);
             // 
             // textBox_nombre
             // 
@@ -269,6 +277,7 @@
             this.textBox_nombre.Name = "textBox_nombre";
             this.textBox_nombre.Size = new System.Drawing.Size(154, 26);
             this.textBox_nombre.TabIndex = 14;
+            this.textBox_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_nombre_KeyPress);
             this.textBox_nombre.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox_nombre_KeyUp);
             // 
             // label8
@@ -339,6 +348,7 @@
             this.textBox_codigo.Name = "textBox_codigo";
             this.textBox_codigo.Size = new System.Drawing.Size(162, 26);
             this.textBox_codigo.TabIndex = 25;
+            this.textBox_codigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_codigo_KeyPress);
             this.textBox_codigo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox_codigo_KeyUp);
             // 
             // textBox_descripcion
@@ -349,6 +359,7 @@
             this.textBox_descripcion.Name = "textBox_descripcion";
             this.textBox_descripcion.Size = new System.Drawing.Size(132, 26);
             this.textBox_descripcion.TabIndex = 26;
+            this.textBox_descripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_descripcion_KeyPress);
             // 
             // textBox_costo
             // 
@@ -358,6 +369,7 @@
             this.textBox_costo.Name = "textBox_costo";
             this.textBox_costo.Size = new System.Drawing.Size(102, 26);
             this.textBox_costo.TabIndex = 27;
+            this.textBox_costo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_costo_KeyPress);
             // 
             // textBox_venta
             // 
@@ -367,6 +379,7 @@
             this.textBox_venta.Name = "textBox_venta";
             this.textBox_venta.Size = new System.Drawing.Size(102, 26);
             this.textBox_venta.TabIndex = 28;
+            this.textBox_venta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_venta_KeyPress);
             // 
             // comboBox_categoria
             // 
@@ -377,7 +390,12 @@
             "Alcohol",
             "Detergentes",
             "Higiene y Salud",
-            "Refrescos y Jugos"});
+            "Refrescos y Jugos",
+            "Botanas",
+            "Galletas",
+            "Carnes Frias ",
+            "Panes",
+            "Dulces"});
             this.comboBox_categoria.Location = new System.Drawing.Point(121, 262);
             this.comboBox_categoria.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.comboBox_categoria.Name = "comboBox_categoria";
@@ -393,7 +411,8 @@
             this.dataGridView_productos.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridView_productos.Name = "dataGridView_productos";
             this.dataGridView_productos.ReadOnly = true;
-            this.dataGridView_productos.Size = new System.Drawing.Size(832, 269);
+            this.dataGridView_productos.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_productos.Size = new System.Drawing.Size(832, 274);
             this.dataGridView_productos.TabIndex = 34;
             // 
             // button_borrar_procuctos
@@ -446,7 +465,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Calisto MT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(1141, 27);
+            this.label13.Location = new System.Drawing.Point(1125, 51);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(198, 28);
@@ -456,24 +475,29 @@
             // textBox_pin
             // 
             this.textBox_pin.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_pin.Location = new System.Drawing.Point(1229, 66);
+            this.textBox_pin.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox_pin.Location = new System.Drawing.Point(1213, 90);
             this.textBox_pin.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textBox_pin.Name = "textBox_pin";
             this.textBox_pin.Size = new System.Drawing.Size(96, 26);
             this.textBox_pin.TabIndex = 39;
+            this.textBox_pin.Text = "1010";
+            this.textBox_pin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_pin.Enter += new System.EventHandler(this.textBox_pin_Enter);
+            this.textBox_pin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_pin_KeyPress);
+            this.textBox_pin.Leave += new System.EventHandler(this.textBox_pin_Leave);
             // 
             // button_actualizar
             // 
             this.button_actualizar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_actualizar.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_actualizar.ForeColor = System.Drawing.Color.Black;
-            this.button_actualizar.Location = new System.Drawing.Point(1188, 148);
+            this.button_actualizar.Location = new System.Drawing.Point(1149, 174);
             this.button_actualizar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button_actualizar.Name = "button_actualizar";
-            this.button_actualizar.Size = new System.Drawing.Size(138, 30);
+            this.button_actualizar.Size = new System.Drawing.Size(143, 30);
             this.button_actualizar.TabIndex = 40;
             this.button_actualizar.Text = "Actualizar";
-            this.button_actualizar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button_actualizar.UseVisualStyleBackColor = true;
             this.button_actualizar.Click += new System.EventHandler(this.button_actualizar_Click);
             // 
@@ -504,18 +528,19 @@
             this.textBox_cantidad.Name = "textBox_cantidad";
             this.textBox_cantidad.Size = new System.Drawing.Size(86, 26);
             this.textBox_cantidad.TabIndex = 44;
+            this.textBox_cantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_cantidad_KeyPress);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Calisto MT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(358, 347);
+            this.label14.Location = new System.Drawing.Point(304, 346);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(71, 28);
+            this.label14.Size = new System.Drawing.Size(124, 28);
             this.label14.TabIndex = 43;
-            this.label14.Text = "Stock";
+            this.label14.Text = "Existencia";
             // 
             // label15
             // 
@@ -569,10 +594,10 @@
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button8.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.Black;
-            this.button8.Location = new System.Drawing.Point(909, 76);
+            this.button8.Location = new System.Drawing.Point(921, 77);
             this.button8.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(180, 41);
+            this.button8.Size = new System.Drawing.Size(143, 27);
             this.button8.TabIndex = 49;
             this.button8.Text = "Generar";
             this.button8.UseVisualStyleBackColor = true;
@@ -593,18 +618,19 @@
             // textBox_nueva_clave
             // 
             this.textBox_nueva_clave.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_nueva_clave.Location = new System.Drawing.Point(1229, 108);
+            this.textBox_nueva_clave.Location = new System.Drawing.Point(1213, 132);
             this.textBox_nueva_clave.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textBox_nueva_clave.Name = "textBox_nueva_clave";
             this.textBox_nueva_clave.Size = new System.Drawing.Size(96, 26);
             this.textBox_nueva_clave.TabIndex = 52;
+            this.textBox_nueva_clave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_nueva_clave_KeyPress);
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Calisto MT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(1141, 67);
+            this.label19.Location = new System.Drawing.Point(1125, 91);
             this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(57, 28);
@@ -616,7 +642,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Calisto MT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.Black;
-            this.label20.Location = new System.Drawing.Point(1141, 108);
+            this.label20.Location = new System.Drawing.Point(1125, 132);
             this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(82, 28);
@@ -648,30 +674,30 @@
             // 
             // button_mostrar_productos
             // 
-            this.button_mostrar_productos.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button_mostrar_productos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_mostrar_productos.BackgroundImage")));
+            this.button_mostrar_productos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_mostrar_productos.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_mostrar_productos.ForeColor = System.Drawing.Color.Black;
-            this.button_mostrar_productos.Location = new System.Drawing.Point(444, 505);
+            this.button_mostrar_productos.Location = new System.Drawing.Point(480, 496);
             this.button_mostrar_productos.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button_mostrar_productos.Name = "button_mostrar_productos";
-            this.button_mostrar_productos.Size = new System.Drawing.Size(86, 27);
+            this.button_mostrar_productos.Size = new System.Drawing.Size(50, 36);
             this.button_mostrar_productos.TabIndex = 57;
-            this.button_mostrar_productos.Text = "Mostrar";
             this.button_mostrar_productos.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button_mostrar_productos.UseVisualStyleBackColor = true;
             this.button_mostrar_productos.Click += new System.EventHandler(this.button_mostrar_Click);
             // 
             // button_mostrar_usuarios
             // 
-            this.button_mostrar_usuarios.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button_mostrar_usuarios.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_mostrar_usuarios.BackgroundImage")));
+            this.button_mostrar_usuarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_mostrar_usuarios.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_mostrar_usuarios.ForeColor = System.Drawing.Color.Black;
-            this.button_mostrar_usuarios.Location = new System.Drawing.Point(320, 27);
+            this.button_mostrar_usuarios.Location = new System.Drawing.Point(342, 24);
             this.button_mostrar_usuarios.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button_mostrar_usuarios.Name = "button_mostrar_usuarios";
-            this.button_mostrar_usuarios.Size = new System.Drawing.Size(72, 27);
+            this.button_mostrar_usuarios.Size = new System.Drawing.Size(50, 36);
             this.button_mostrar_usuarios.TabIndex = 58;
-            this.button_mostrar_usuarios.Text = "Mostrar";
             this.button_mostrar_usuarios.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button_mostrar_usuarios.UseVisualStyleBackColor = true;
             this.button_mostrar_usuarios.Click += new System.EventHandler(this.button_mostrar_usuarios_Click);
@@ -679,18 +705,18 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.label22.Location = new System.Drawing.Point(884, 212);
+            this.label22.BackColor = System.Drawing.Color.Silver;
+            this.label22.Location = new System.Drawing.Point(884, 208);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label22.MinimumSize = new System.Drawing.Size(230, 19);
+            this.label22.MinimumSize = new System.Drawing.Size(234, 23);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(230, 19);
+            this.label22.Size = new System.Drawing.Size(234, 23);
             this.label22.TabIndex = 59;
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label23.BackColor = System.Drawing.Color.Silver;
             this.label23.Location = new System.Drawing.Point(884, 22);
             this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label23.MinimumSize = new System.Drawing.Size(230, 24);
@@ -701,7 +727,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label24.BackColor = System.Drawing.Color.Silver;
             this.label24.Location = new System.Drawing.Point(884, 24);
             this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.MinimumSize = new System.Drawing.Size(20, 190);
@@ -712,7 +738,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label25.BackColor = System.Drawing.Color.Silver;
             this.label25.Location = new System.Drawing.Point(1094, 24);
             this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label25.MinimumSize = new System.Drawing.Size(20, 190);
@@ -725,24 +751,69 @@
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Calisto MT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.Color.Black;
-            this.label26.Location = new System.Drawing.Point(916, 119);
+            this.label26.Location = new System.Drawing.Point(938, 141);
             this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(175, 28);
+            this.label26.Size = new System.Drawing.Size(112, 28);
             this.label26.TabIndex = 63;
-            this.label26.Text = "Crear Bitacora";
+            this.label26.Text = " Bitacora";
             // 
             // button_generar_bitacora
             // 
             this.button_generar_bitacora.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_generar_bitacora.Location = new System.Drawing.Point(910, 155);
+            this.button_generar_bitacora.Location = new System.Drawing.Point(921, 174);
             this.button_generar_bitacora.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button_generar_bitacora.Name = "button_generar_bitacora";
-            this.button_generar_bitacora.Size = new System.Drawing.Size(181, 38);
+            this.button_generar_bitacora.Size = new System.Drawing.Size(143, 29);
             this.button_generar_bitacora.TabIndex = 64;
             this.button_generar_bitacora.Text = "Generar";
             this.button_generar_bitacora.UseVisualStyleBackColor = true;
             this.button_generar_bitacora.Click += new System.EventHandler(this.button_generar_bitacora_Click);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.Color.Silver;
+            this.label27.Location = new System.Drawing.Point(1329, 22);
+            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label27.MinimumSize = new System.Drawing.Size(20, 209);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(20, 209);
+            this.label27.TabIndex = 65;
+            this.label27.Click += new System.EventHandler(this.label27_Click);
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.BackColor = System.Drawing.Color.Silver;
+            this.label28.Location = new System.Drawing.Point(1113, 22);
+            this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label28.MinimumSize = new System.Drawing.Size(230, 24);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(230, 24);
+            this.label28.TabIndex = 66;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.BackColor = System.Drawing.Color.Silver;
+            this.label29.Location = new System.Drawing.Point(1113, 207);
+            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label29.MinimumSize = new System.Drawing.Size(230, 24);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(230, 24);
+            this.label29.TabIndex = 67;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.BackColor = System.Drawing.Color.Silver;
+            this.label30.Location = new System.Drawing.Point(884, 115);
+            this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label30.MinimumSize = new System.Drawing.Size(230, 23);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(230, 23);
+            this.label30.TabIndex = 68;
             // 
             // Administrador
             // 
@@ -750,6 +821,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1354, 566);
+            this.Controls.Add(this.label30);
+            this.Controls.Add(this.label29);
+            this.Controls.Add(this.label28);
+            this.Controls.Add(this.label27);
             this.Controls.Add(this.button_generar_bitacora);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.label25);
@@ -877,5 +952,9 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Button button_generar_bitacora;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
     }
 }

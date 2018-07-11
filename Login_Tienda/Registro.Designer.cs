@@ -50,7 +50,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Calisto MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 33);
+            this.label1.Location = new System.Drawing.Point(12, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 24);
             this.label1.TabIndex = 0;
@@ -62,7 +62,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Calisto MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(298, 35);
+            this.label2.Location = new System.Drawing.Point(298, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 24);
             this.label2.TabIndex = 1;
@@ -74,7 +74,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Calisto MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(12, 81);
+            this.label3.Location = new System.Drawing.Point(12, 106);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 24);
             this.label3.TabIndex = 2;
@@ -86,7 +86,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Calisto MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(281, 81);
+            this.label4.Location = new System.Drawing.Point(281, 106);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(119, 24);
             this.label4.TabIndex = 3;
@@ -95,7 +95,7 @@
             // textBox1_nombre
             // 
             this.textBox1_nombre.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1_nombre.Location = new System.Drawing.Point(106, 33);
+            this.textBox1_nombre.Location = new System.Drawing.Point(106, 38);
             this.textBox1_nombre.Name = "textBox1_nombre";
             this.textBox1_nombre.Size = new System.Drawing.Size(168, 26);
             this.textBox1_nombre.TabIndex = 4;
@@ -106,7 +106,7 @@
             // textBox_apellido
             // 
             this.textBox_apellido.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_apellido.Location = new System.Drawing.Point(406, 35);
+            this.textBox_apellido.Location = new System.Drawing.Point(406, 40);
             this.textBox_apellido.Name = "textBox_apellido";
             this.textBox_apellido.Size = new System.Drawing.Size(171, 26);
             this.textBox_apellido.TabIndex = 5;
@@ -115,7 +115,7 @@
             // textBox_telefono
             // 
             this.textBox_telefono.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_telefono.Location = new System.Drawing.Point(108, 81);
+            this.textBox_telefono.Location = new System.Drawing.Point(108, 106);
             this.textBox_telefono.Name = "textBox_telefono";
             this.textBox_telefono.Size = new System.Drawing.Size(166, 26);
             this.textBox_telefono.TabIndex = 6;
@@ -124,7 +124,7 @@
             // textBox_contraseña
             // 
             this.textBox_contraseña.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_contraseña.Location = new System.Drawing.Point(406, 81);
+            this.textBox_contraseña.Location = new System.Drawing.Point(406, 106);
             this.textBox_contraseña.Name = "textBox_contraseña";
             this.textBox_contraseña.Size = new System.Drawing.Size(171, 26);
             this.textBox_contraseña.TabIndex = 7;
@@ -137,7 +137,7 @@
             this.button_aseptar.BackColor = System.Drawing.Color.Silver;
             this.button_aseptar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_aseptar.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_aseptar.Location = new System.Drawing.Point(125, 125);
+            this.button_aseptar.Location = new System.Drawing.Point(130, 164);
             this.button_aseptar.Name = "button_aseptar";
             this.button_aseptar.Size = new System.Drawing.Size(115, 37);
             this.button_aseptar.TabIndex = 8;
@@ -150,7 +150,7 @@
             this.button_canselar.BackColor = System.Drawing.Color.Silver;
             this.button_canselar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_canselar.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_canselar.Location = new System.Drawing.Point(401, 125);
+            this.button_canselar.Location = new System.Drawing.Point(406, 164);
             this.button_canselar.Name = "button_canselar";
             this.button_canselar.Size = new System.Drawing.Size(105, 37);
             this.button_canselar.TabIndex = 9;
@@ -161,7 +161,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.BackColor = System.Drawing.Color.DimGray;
             this.label5.Location = new System.Drawing.Point(0, 0);
             this.label5.MinimumSize = new System.Drawing.Size(620, 10);
             this.label5.Name = "label5";
@@ -171,8 +171,8 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(0, 163);
+            this.label6.BackColor = System.Drawing.Color.DimGray;
+            this.label6.Location = new System.Drawing.Point(0, 206);
             this.label6.MinimumSize = new System.Drawing.Size(20, 10);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(20, 13);
@@ -181,8 +181,8 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(591, 163);
+            this.label7.BackColor = System.Drawing.Color.DimGray;
+            this.label7.Location = new System.Drawing.Point(590, 206);
             this.label7.MinimumSize = new System.Drawing.Size(20, 10);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(20, 13);
@@ -192,9 +192,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Navy;
+            this.BackColor = System.Drawing.Color.Gray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(610, 176);
+            this.ClientSize = new System.Drawing.Size(610, 219);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);

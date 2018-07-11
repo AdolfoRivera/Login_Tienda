@@ -108,9 +108,16 @@ namespace Login_Tienda
         {
             try
             {
+                if (textBox_cantidad.Text.Trim() == "" || textBox_consepto.Text.Trim() == "")
+                {
+                    MessageBox.Show("No Se Permiten Campos Vacios", "Llenar Registro", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                }
+                else
+                {
 
-                ins_ent_y_sal(textBox_descipcion.Text, textBox_cantidad.Text, textBox_consepto.Text, textBox_hora.Text);
-                this.Close();
+                    ins_ent_y_sal(textBox_descipcion.Text, textBox_cantidad.Text, textBox_consepto.Text, textBox_hora.Text);
+                    this.Close();
+                }
             }
             catch (Exception ex)
             {

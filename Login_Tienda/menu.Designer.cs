@@ -87,7 +87,7 @@
             this.label_usuario.AutoSize = true;
             this.label_usuario.BackColor = System.Drawing.Color.AliceBlue;
             this.label_usuario.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_usuario.Location = new System.Drawing.Point(1182, 13);
+            this.label_usuario.Location = new System.Drawing.Point(1182, 22);
             this.label_usuario.Name = "label_usuario";
             this.label_usuario.Size = new System.Drawing.Size(102, 22);
             this.label_usuario.TabIndex = 9;
@@ -160,7 +160,7 @@
             this.button_regersar_2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_regersar_2.BackgroundImage")));
             this.button_regersar_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_regersar_2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_regersar_2.Location = new System.Drawing.Point(1308, 10);
+            this.button_regersar_2.Location = new System.Drawing.Point(1298, 10);
             this.button_regersar_2.Name = "button_regersar_2";
             this.button_regersar_2.Size = new System.Drawing.Size(28, 23);
             this.button_regersar_2.TabIndex = 7;
@@ -183,9 +183,9 @@
             this.button_minimizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_minimizar.BackgroundImage")));
             this.button_minimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_minimizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_minimizar.Location = new System.Drawing.Point(1308, 83);
+            this.button_minimizar.Location = new System.Drawing.Point(1332, 10);
             this.button_minimizar.Name = "button_minimizar";
-            this.button_minimizar.Size = new System.Drawing.Size(37, 23);
+            this.button_minimizar.Size = new System.Drawing.Size(28, 23);
             this.button_minimizar.TabIndex = 41;
             this.button_minimizar.UseVisualStyleBackColor = true;
             this.button_minimizar.Click += new System.EventHandler(this.button_minimizar_Click);

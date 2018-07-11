@@ -114,10 +114,14 @@ namespace Login_Tienda
              obj.ShowDialog();*/
             try
             {
+
                 int costo = Convert.ToInt32(textBox_costo.Text);
                 int venta = Convert.ToInt32(textBox_venta.Text);
                 int cantidad = Convert.ToInt32(textBox_cantidad.Text);
                 act_prod(comboBox_categorias.Text, textBox_codigo_de_barras.Text, textBox_descrpcion.Text, textBox_presentacion.Text, costo, venta, cantidad, dateTimePicker1_caducidad.Text,dateTimePicker_fecha.Text);
+
+                this.ActiveControl = textBox_codigo_de_barras;
+                textBox_codigo_de_barras.Focus();
             }
             catch (Exception ex)
             {
@@ -135,6 +139,9 @@ namespace Login_Tienda
                 int venta = Convert.ToInt32(textBox_venta.Text);
                 int cantidad = Convert.ToInt32(textBox_cantidad.Text);
                 bor_prod(comboBox_categorias.Text, textBox_codigo_de_barras.Text, textBox_descrpcion.Text, textBox_presentacion.Text, costo, venta, cantidad, dateTimePicker1_caducidad.Text,dateTimePicker_fecha.Text);
+
+                this.ActiveControl = textBox_codigo_de_barras;
+                textBox_codigo_de_barras.Focus();
             }
             catch (Exception ex)
             {
@@ -245,6 +252,10 @@ namespace Login_Tienda
         {
             try
             {
+                //poner foco en texbox codigo
+                this.ActiveControl = textBox_codigo_de_barras;
+                textBox_codigo_de_barras.Focus();
+
                 string cadsql = "select * from Productos where Codigo ='" + textBox_codigo_de_barras.Text + "'";
                 SqlCommand comando = new SqlCommand(cadsql, con);
                 con.Open();
@@ -357,6 +368,10 @@ namespace Login_Tienda
         {
             try
             {
+                //EVENTO PONER FOCO EN TEXBOX CODIGO DESPUES DE DARLE CLIC A ACTUALIZAR
+                this.ActiveControl = textBox_codigo_de_barras;
+                textBox_codigo_de_barras.Focus();
+
                 //cnn = new SqlConnection("Data Source=DARCK;Initial Catalog=Tienda;Integrated Security=True");
                 con.Open();
                 DataTable datos = new DataTable();
@@ -695,6 +710,26 @@ namespace Login_Tienda
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void datos_data_CellClick(object sender, DataGridViewCellEventArgs e)
+        {/*
+            try
+            {
+                //comboBox_categorias.Text = (string)datos_data.Rows[e.RowIndex].Cells[0].Value;
+                textBox_codigo_de_barras.Text = (string)datos_data.Rows[e.RowIndex].Cells[2].Value;
+               // textBox_descrpcion.Text = (string)datos_data.Rows[e.RowIndex].Cells[3].Value;
+               // textBox_costo.Text = (string)datos_data.Rows[e.RowIndex].Cells[3].Value;
+                //textBox_venta.Text = (string)datos_data.Rows[e.RowIndex].Cells[4].Value;
+               // textBox_cantidad.Text = (string)datos_data.Rows[e.RowIndex].Cells[5].Value;
+               // textBox_presentacion.Text = (string)datos_data.Rows[e.RowIndex].Cells[6].Value;
+                //dateTimePicker1_caducidad.Text = (string)datos_data.Rows[e.RowIndex].Cells[7].Value;
+                //dateTimePicker_fecha.Text = (string)datos_data.Rows[e.RowIndex].Cells[8].Value;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }*/
         }
     }
 }

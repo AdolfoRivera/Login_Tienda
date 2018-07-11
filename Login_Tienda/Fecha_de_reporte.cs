@@ -28,6 +28,7 @@ namespace Login_Tienda
                // string parametro = textBox_fecha.Text;
             string parametro2 = dateTimePicker_fecha_reporte.Text;
                 _rep.mostrar(con, parametro2, "Plantilla_Reporte.rpt");
+            this.Close();
 
         }
     }

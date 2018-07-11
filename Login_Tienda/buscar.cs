@@ -164,6 +164,10 @@ namespace Login_Tienda
                 {
                     //MessageBox.Show("Producto agragado");
                     //validacion();
+        //----------------------------dis_stock--------------------------
+                    con.Close();
+                    int c = Convert.ToInt32(textBox_cantidad.Text);
+                    dis_Stock(textBox_buscar.Text, c);
                     this.Close();
                 }
                 /* if (textBox_buscar.Text.Trim() == "") {
@@ -185,6 +189,36 @@ namespace Login_Tienda
                 MessageBox.Show(ex.Message);
             }
 
+
+        }
+        public void dis_Stock(String Codigo, int cantidad)
+        {
+
+            SqlCommand cmd = con.CreateCommand();
+
+            cmd.CommandText = "dis_Stock";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Codigo", textBox_buscar.Text);
+
+            // textBox_codigo_de_varrras.Clear();
+
+            SqlParameter p1 = new SqlParameter();
+            p1.ParameterName = "@Cantidad";
+            p1.SqlDbType = SqlDbType.Int;
+            p1.Value = cantidad;
+            cmd.Parameters.Add(p1);
+
+            try
+            {
+                con.Open();
+
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
 
         }
         private void textBox1_TextChanged(object sender, EventArgs e)

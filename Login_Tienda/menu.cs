@@ -50,10 +50,6 @@ namespace Login_Tienda
             obj.ShowDialog();*/
             
                 abrirfromulario_ventas(new ventas());
-           
-         
-
-
 
         }
         private void abrirfromulario_ventas(object F_ventas)
@@ -209,6 +205,7 @@ namespace Login_Tienda
 
         private void button_administrador_Click(object sender, EventArgs e)
         {
+         
             abrirfromulario_administrador(new Administrador());
 
         }

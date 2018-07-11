@@ -57,6 +57,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(2, 89);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.Size = new System.Drawing.Size(427, 210);
             this.dataGridView1.TabIndex = 0;
             // 
@@ -149,6 +150,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(446, 89);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView2.Size = new System.Drawing.Size(435, 210);
             this.dataGridView2.TabIndex = 9;
             // 
@@ -214,6 +216,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(893, 346);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label6);

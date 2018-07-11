@@ -42,7 +42,6 @@
             this.textBox_cantidad = new System.Windows.Forms.TextBox();
             this.textBox_en_excistencia = new System.Windows.Forms.TextBox();
             this.button_aceptar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.datos_data = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
@@ -71,7 +70,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calisto MT", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(101, 38);
+            this.label1.Location = new System.Drawing.Point(48, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(364, 36);
             this.label1.TabIndex = 0;
@@ -175,6 +174,7 @@
             this.textBox_cantidad.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_cantidad.ForeColor = System.Drawing.Color.Black;
             this.textBox_cantidad.Location = new System.Drawing.Point(91, 318);
+            this.textBox_cantidad.MaxLength = 5;
             this.textBox_cantidad.Name = "textBox_cantidad";
             this.textBox_cantidad.Size = new System.Drawing.Size(105, 26);
             this.textBox_cantidad.TabIndex = 9;
@@ -209,18 +209,6 @@
             this.button_aceptar.Click += new System.EventHandler(this.button_aceptar_Click);
             this.button_aceptar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.button_aceptar_KeyUp);
             // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button1.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(456, 485);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 40);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -236,11 +224,13 @@
             this.datos_data.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.datos_data.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.datos_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datos_data.Location = new System.Drawing.Point(611, 82);
+            this.datos_data.Location = new System.Drawing.Point(461, 82);
             this.datos_data.Name = "datos_data";
             this.datos_data.ReadOnly = true;
-            this.datos_data.Size = new System.Drawing.Size(755, 443);
+            this.datos_data.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.datos_data.Size = new System.Drawing.Size(905, 443);
             this.datos_data.TabIndex = 14;
+            this.datos_data.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datos_data_CellClick);
             // 
             // label8
             // 
@@ -261,7 +251,12 @@
             "Alcohol",
             "Detergentes",
             "Higiene y Salud",
-            "Refrescos y Jugos"});
+            "Refrescos y Jugos",
+            "Botanas",
+            "Galletas",
+            "Carnes Frias ",
+            "Panes",
+            "Dulces"});
             this.comboBox_categorias.Location = new System.Drawing.Point(107, 149);
             this.comboBox_categorias.Name = "comboBox_categorias";
             this.comboBox_categorias.Size = new System.Drawing.Size(173, 25);
@@ -304,13 +299,14 @@
             // 
             // button_mostrar_datos
             // 
-            this.button_mostrar_datos.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button_mostrar_datos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_mostrar_datos.BackgroundImage")));
+            this.button_mostrar_datos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_mostrar_datos.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_mostrar_datos.Location = new System.Drawing.Point(611, 56);
+            this.button_mostrar_datos.Location = new System.Drawing.Point(461, 41);
             this.button_mostrar_datos.Name = "button_mostrar_datos";
-            this.button_mostrar_datos.Size = new System.Drawing.Size(149, 25);
+            this.button_mostrar_datos.Size = new System.Drawing.Size(48, 38);
             this.button_mostrar_datos.TabIndex = 20;
-            this.button_mostrar_datos.Text = "Mostrar";
+            this.button_mostrar_datos.Text = " ";
             this.button_mostrar_datos.UseVisualStyleBackColor = true;
             this.button_mostrar_datos.Click += new System.EventHandler(this.button_imporatr_base_de_datos_Click);
             // 
@@ -453,7 +449,6 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.datos_data);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.button_aceptar);
             this.Controls.Add(this.textBox_en_excistencia);
             this.Controls.Add(this.textBox_cantidad);
@@ -487,7 +482,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button_aceptar;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView datos_data;
         private System.Windows.Forms.Label label8;

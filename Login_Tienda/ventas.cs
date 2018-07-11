@@ -31,6 +31,9 @@ namespace Login_Tienda
         {
             try
             {
+                //poner foco en texbox codigo
+                this.ActiveControl = textBox_codigo_de_varrras;
+                textBox_codigo_de_varrras.Focus();
 
                 buscar obj_b = new buscar();
                 obj_b.ShowDialog();
@@ -85,9 +88,12 @@ namespace Login_Tienda
                     label_total2.Text = suma2.ToString("F2");
                     label_total_abajo.Text = suma2.ToString("F2");
                     //_--------------------------
-                    label_TOTAL.Text = suma2.ToString("F2");//.Replace(",", ".");
-                    
-                   // textBox_total.Text = suma2.ToString().Replace(",", ".");
+                    //-------COMENTADO DE PRUEBA----------------
+                   // label_TOTAL.Text = suma2.ToString("F2");//.Replace(",", ".");
+                    //---PRUEBA SEIN IVA---------
+                    label_TOTAL.Text = suma.ToString("F2");
+                   
+                    // textBox_total.Text = suma2.ToString().Replace(",", ".");
 
                     //Operacion alternar color
                     // ListViewItem color = new ListViewItem(obj_b.textBox_buscar.Text);
@@ -99,7 +105,7 @@ namespace Login_Tienda
                     int TP2 = Convert.ToInt32(TP);
                     int TP3 = TP2 - 1;
                     label_num_prod_en_venta.Text = TP3.ToString();
-
+                   
                 }
                 con.Close();
                 /*if (obj_b.textBox_buscar.Text.Trim()== "")
@@ -124,6 +130,9 @@ namespace Login_Tienda
 
         private void button_entradas_Click(object sender, EventArgs e)
         {
+            //poner foco en texbox codigo
+            this.ActiveControl = textBox_codigo_de_varrras;
+            textBox_codigo_de_varrras.Focus();
 
             entradas obj = new entradas();
             obj.ShowDialog();
@@ -131,6 +140,10 @@ namespace Login_Tienda
 
         private void button_salidas_Click(object sender, EventArgs e)
         {
+            //poner foco en texbox codigo
+            this.ActiveControl = textBox_codigo_de_varrras;
+            textBox_codigo_de_varrras.Focus();
+
             Salidas obj = new Salidas();
             obj.ShowDialog();
         }
@@ -257,7 +270,10 @@ namespace Login_Tienda
                 int c = Convert.ToInt32(textBox_cantidad.Text);
                 dis_Stock(textBox_codigo_de_varrras.Text, c);
                 validacion();
-                
+
+                this.ActiveControl = textBox_codigo_de_varrras;
+                textBox_codigo_de_varrras.Focus();
+
             }
             catch (Exception ex)
             {
@@ -299,6 +315,7 @@ namespace Login_Tienda
                 {
                     
 
+                    //ListViewItem lista = new ListViewItem(leer[0].ToString());
                     ListViewItem lista = new ListViewItem(leer["venta"].ToString());
                     lista.SubItems.Add(leer["Codigo"].ToString());
                     lista.SubItems.Add(leer["Descripcion"].ToString());
@@ -340,13 +357,15 @@ namespace Login_Tienda
                     label_total2.Text = suma2.ToString("F2");
                     label_total_abajo.Text = suma2.ToString("F2");
                     //_--------------------------
-                    label_TOTAL.Text = suma2.ToString("F2");//.Replace(",", ".");
-                  //  textBox_total.Text = suma2.ToString().Replace(",", ".");
+                    //-------COMENTADO CON IVA
+                   // label_TOTAL.Text = suma2.ToString("F2");//.Replace(",", ".");
+                    //---PRUEBA SEIN IVA---------
+                    label_TOTAL.Text = suma.ToString("F2");
 
                     //Operacion alternar color
-                   // ListViewItem color = new ListViewItem(textBox_codigo_de_varrras.Text);
-                   // listView_venta.Items.Add(color);
-                   // Alternarcolor();
+                    // ListViewItem color = new ListViewItem(textBox_codigo_de_varrras.Text);
+                    // listView_venta.Items.Add(color);
+                    // Alternarcolor();
 
                     //operacion sumar numero de productos en venta
                     //label_num_prod_en_venta.Text = listView_venta.Items.Count.ToString();
@@ -435,6 +454,10 @@ namespace Login_Tienda
         //Boton Borrar Todo
         private void button5_borrar_Click(object sender, EventArgs e)
         {
+            //poner foco en texbox codigo
+            this.ActiveControl = textBox_codigo_de_varrras;
+            textBox_codigo_de_varrras.Focus();
+
             listView_venta.Items.Clear();
             label_subtotal.Text = "0,00";
             label_iva.Text = "0,00";
@@ -450,6 +473,10 @@ namespace Login_Tienda
         {
             try
             {
+                //poner foco en texbox codigo
+                this.ActiveControl = textBox_codigo_de_varrras;
+                textBox_codigo_de_varrras.Focus();
+
                 int c = Convert.ToInt32(textBox_cantidad.Text);
                 aum_Stock(textBox2.Text, c);
             }
@@ -487,8 +514,10 @@ namespace Login_Tienda
                 suma2 = (numtxtsubtotal + numtxtiva);
                 label_total2.Text = suma2.ToString("F2");
 
-                label_TOTAL.Text = suma2.ToString("F2");
-               // textBox_total.Text = suma2.ToString();
+                //COMENTADO CON IVA
+               // label_TOTAL.Text = suma2.ToString("F2");
+                //---PRUEBA SEIN IVA---------
+                label_TOTAL.Text = sumaR.ToString("F2");
                 label_total_abajo.Text = suma2.ToString("F2");
 
                 //operacion sumar numero de productos en venta
@@ -640,13 +669,16 @@ namespace Login_Tienda
 
                 //  listView_venta.Items[i].BackColor = Color.LightBlue;
                 listView_venta.BackColor = Color.AliceBlue;
-                /*Form1 f = new Form1();
-                menu me1 = new menu();
-                string userr = f.textBox_usuario.Text;
-                label_user.Text = userr;*/
-                //label_user.Text = me1.label_usuario.Text;
+            /*Form1 f = new Form1();
+            menu me1 = new menu();
+            string userr = f.textBox_usuario.Text;
+            label_user.Text = userr;*/
+            //label_user.Text = me1.label_usuario.Text;
 
-            }
+            //evento para poner el cursor desde el inicio en el texbox codigo de varras
+            this.ActiveControl = textBox_codigo_de_varrras;
+            textBox_codigo_de_varrras.Focus();
+        }
         
         private void listView_venta_MouseDoubleClick(object sender, MouseEventArgs e)
         {

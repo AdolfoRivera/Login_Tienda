@@ -89,6 +89,7 @@ namespace Login_Tienda
         //Validar Usuario En la Base De Datos
 
         public static string nombre = "";
+
         public void Validacion()
         {
             try
@@ -114,11 +115,16 @@ namespace Login_Tienda
                     obj.label_usuario.Text = textBox_usuario.Text;
                     //obtiene nombre de usuario
                     nombre = dr[0].ToString();
-                   
+
+                    /*if (textBox_usuario.Text!="Vicente"&&textBox_contraseña.Text!="admin"&&textBox_usuario.Text!="Adolfo"&&textBox_contraseña.Text!="12345678")
+                    {
+                        obj.button_administrador.Enabled = false;
+                    }   */    
                         //-----
                         obj.Visible = true;
-                        Visible = false;
-                    
+                        Visible = false;  
+
+                                        
                 }
                 else
                 {
@@ -193,19 +199,19 @@ namespace Login_Tienda
         {
             sololLetras(e);
 
-            /*
-            if (char.IsNumber(e.KeyChar) || char.IsControl(e.KeyChar)
+            
+           /* if (char.IsNumber(e.KeyChar) || char.IsControl(e.KeyChar)
                 || e.KeyChar == ',' || e.KeyChar == '.' || e.KeyChar == '-')
             {
                 e.Handled = false;
             }
             else
-            {
+            {*/
                // ToolTip.IsBalloon = true;
-                toolTip1.IsBalloon = true;
-                toolTip1.Show("No se permiten caracteres locos",textBox_usuario,3000);
-                e.Handled = true;
-            }*/
+               // toolTip1.IsBalloon = true;
+                //toolTip1.Show("No se permiten caracteres locos",label1,3000);
+                //e.Handled = true;
+          //  }
         }
 
         private void textBox_usuario_KeyUp(object sender, KeyEventArgs e)
