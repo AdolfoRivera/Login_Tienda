@@ -151,7 +151,7 @@ namespace Login_Tienda
 
         private void productos_Load(object sender, EventArgs e)
         {
-            //EVENTO PARA BLOQUEAR COMBOBOX
+              //EVENTO PARA BLOQUEAR COMBOBOX
             comboBox_categorias.DropDownStyle = ComboBoxStyle.DropDownList;
 
             //evento para desabilitar el boton desde el inicio

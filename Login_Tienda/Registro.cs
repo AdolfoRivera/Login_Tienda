@@ -27,19 +27,19 @@ namespace Login_Tienda
         {
             if (textBox1_nombre.Text.Equals(" ") == true)
             {
-                MessageBox.Show("Campos Bacios");
+                MessageBox.Show("Campos Vacios");
             }
             else if (textBox_apellido.Text.Equals(" ") == true)
             {
-                MessageBox.Show("Campos Bacios");
+                MessageBox.Show("Campos Vacios");
             }
             else if (textBox_telefono.Text.Equals(" ") == true)
             {
-                MessageBox.Show("Campos Bacios");
+                MessageBox.Show("Campos Vacios");
             }
             else if (textBox_contraseña.Text.Equals(" ") == true)
             {
-                MessageBox.Show("Campos Bacios");
+                MessageBox.Show("Campos Vacios");
             }
             else
             {

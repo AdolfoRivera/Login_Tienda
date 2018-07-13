@@ -41,7 +41,11 @@
             this.textBox_telefono_agregar_cliente = new System.Windows.Forms.TextBox();
             this.textBox_limite_agregar_cliente = new System.Windows.Forms.TextBox();
             this.button_aceptar = new System.Windows.Forms.Button();
-            this.button_cancelar = new System.Windows.Forms.Button();
+            this.button_borrar = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button_actualizar = new System.Windows.Forms.Button();
+            this.button_refresh = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -152,16 +156,53 @@
             this.button_aceptar.TabIndex = 11;
             this.button_aceptar.Text = "Aceptar";
             this.button_aceptar.UseVisualStyleBackColor = true;
+            this.button_aceptar.Click += new System.EventHandler(this.button_aceptar_Click);
             // 
-            // button_cancelar
+            // button_borrar
             // 
-            this.button_cancelar.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_cancelar.Location = new System.Drawing.Point(259, 268);
-            this.button_cancelar.Name = "button_cancelar";
-            this.button_cancelar.Size = new System.Drawing.Size(139, 29);
-            this.button_cancelar.TabIndex = 12;
-            this.button_cancelar.Text = "Cancelar";
-            this.button_cancelar.UseVisualStyleBackColor = true;
+            this.button_borrar.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_borrar.Location = new System.Drawing.Point(324, 268);
+            this.button_borrar.Name = "button_borrar";
+            this.button_borrar.Size = new System.Drawing.Size(139, 29);
+            this.button_borrar.TabIndex = 12;
+            this.button_borrar.Text = "Borrar";
+            this.button_borrar.UseVisualStyleBackColor = true;
+            this.button_borrar.Click += new System.EventHandler(this.button_borrar_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(500, 68);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.Size = new System.Drawing.Size(860, 301);
+            this.dataGridView1.TabIndex = 13;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
+            // 
+            // button_actualizar
+            // 
+            this.button_actualizar.Font = new System.Drawing.Font("Calisto MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_actualizar.Location = new System.Drawing.Point(179, 268);
+            this.button_actualizar.Name = "button_actualizar";
+            this.button_actualizar.Size = new System.Drawing.Size(139, 29);
+            this.button_actualizar.TabIndex = 14;
+            this.button_actualizar.Text = "Actualizar";
+            this.button_actualizar.UseVisualStyleBackColor = true;
+            this.button_actualizar.Click += new System.EventHandler(this.button_actualizar_Click);
+            // 
+            // button_refresh
+            // 
+            this.button_refresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_refresh.BackgroundImage")));
+            this.button_refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_refresh.Location = new System.Drawing.Point(451, 67);
+            this.button_refresh.Name = "button_refresh";
+            this.button_refresh.Size = new System.Drawing.Size(43, 35);
+            this.button_refresh.TabIndex = 15;
+            this.button_refresh.UseVisualStyleBackColor = true;
+            this.button_refresh.Click += new System.EventHandler(this.button_refresh_Click);
             // 
             // agregar_cliente
             // 
@@ -169,7 +210,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(1362, 369);
-            this.Controls.Add(this.button_cancelar);
+            this.Controls.Add(this.button_refresh);
+            this.Controls.Add(this.button_actualizar);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.button_borrar);
             this.Controls.Add(this.button_aceptar);
             this.Controls.Add(this.textBox_limite_agregar_cliente);
             this.Controls.Add(this.textBox_telefono_agregar_cliente);
@@ -186,6 +230,11 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "agregar_cliente";
             this.Text = "agregar_cliente";
+            this.Load += new System.EventHandler(this.agregar_cliente_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.agregar_cliente_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.agregar_cliente_KeyPress);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.agregar_cliente_KeyUp);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,6 +254,9 @@
         private System.Windows.Forms.TextBox textBox_telefono_agregar_cliente;
         private System.Windows.Forms.TextBox textBox_limite_agregar_cliente;
         private System.Windows.Forms.Button button_aceptar;
-        private System.Windows.Forms.Button button_cancelar;
+        private System.Windows.Forms.Button button_borrar;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button_actualizar;
+        private System.Windows.Forms.Button button_refresh;
     }
 }

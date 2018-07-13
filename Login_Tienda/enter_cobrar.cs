@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Globalization;
 
 namespace Login_Tienda
 {
@@ -81,13 +82,13 @@ namespace Login_Tienda
         {
             try
             {
-                if (textBox_pago.TextLength<=0)
+                  if (textBox_pago.TextLength<=0)
                 {
                    // MessageBox.Show("Ponga Dinero");
                 }
                 else {
                   
-                    Double total_a_pagar = Convert.ToDouble(label_total_a_pagar.Text), pago = Convert.ToDouble(textBox_pago.Text), cambio = 0;
+                    float total_a_pagar = Convert.ToSingle(label_total_a_pagar.Text), pago = Convert.ToSingle(textBox_pago.Text), cambio = 0;
                          cambio = total_a_pagar - pago;
                      if (cambio>=0)
                      {
@@ -95,20 +96,37 @@ namespace Login_Tienda
                     }
                      else if(cambio<=0)
                      {
-                        double C = cambio * -1;
+                        float C = cambio * -1;
                         label_cambio_pago.Text = C.ToString("F2");
                         
                      }
-                   // double C = cambio * -1;
-                   // label_cambio_pago.Text = C.ToString();
-                    
-             
-                    
+
                 }
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+        public static void sololNumeros2(KeyPressEventArgs pe)
+        {
+
+            if (char.IsDigit(pe.KeyChar))
+            {
+                pe.Handled = false;
+            }
+            else if (char.IsControl(pe.KeyChar))
+            {
+                pe.Handled = false;
+            }
+            else if (char.IsPunctuation(pe.KeyChar))
+            {
+                pe.Handled = false;
+            }else
+            {
+                pe.Handled = true;
+                MessageBox.Show("Introdusca solo numeros","Aviso",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
         public static void sololNumeros(KeyPressEventArgs pe)
@@ -146,33 +164,45 @@ namespace Login_Tienda
                 pe.Handled = true;
             }
         }
-        private void textBox_pago_KeyPress(object sender, KeyPressEventArgs e)
+       
+        //PRUEBA 2
+        private void tex_keypress(object sebder, System.Windows.Forms.KeyPressEventArgs e)
         {
-            sololNumeros(e);
-            /*
+            if (e.KeyChar == 8)
+            {
+                e.Handled = false;
+                return;
+            }
+
             bool IsDec = false;
             int nroDec = 0;
-
-            for (int i=0; i<textBox_pago.Text.Length;i++)
+            for (int i=0;i<textBox_pago.Text.Length;i++)
             {
                 if (textBox_pago.Text[i]==',')
                 {
-                    IsDec = true;
+                        IsDec = true;
 
+                    if (IsDec &&nroDec++>=2)
+                    {
+                        e.Handled = true;
+                        return;
+                    }
                 }
-                if (IsDec && nroDec++ >= 2)
-                {
-                    e.Handled = true;
-                    return;
-                }
-            }
-            if (e.KeyChar>=48 && e.KeyChar<=57)
-                e.Handled = false;
-            else if (e.KeyChar==46)
-                e.Handled = (IsDec) ? true : false;
+                if (e.KeyChar >= 48 && e.KeyChar <= 57)
+                    e.Handled = false;
+                else if (e.KeyChar == 46)
+                    e.Handled = (IsDec) ? true : false;
                 else
-                e.Handled = true;  */
+                    e.Handled = true;
+            }
+        }
+        private void textBox_pago_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           //  tex_keypress(sender, e);
+            //sololNumeros2(e);
 
+           sololNumeros(e);
+            
         }
         //EVENTO PARA PONER CURSOR EN EL TEXBOX DESDE EL INICIO
         private void textBox_pago_KeyDown(object sender, KeyEventArgs e)
